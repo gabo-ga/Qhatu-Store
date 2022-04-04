@@ -17,6 +17,7 @@ Para el desarrollo de este proyecto se utilizaron:
 * Javascript: ES6
 * [Firebase](https://firebase.google.com): Version 10.0.2
 * [React.js](https://es.reactjs.org): Version 17.0.2
+* [Bootstrap](https://getbootstrap.com): Version 5.1.3
 
 Para el versionamiento del codigo se utilizo:
 * [Git](https://git-scm.com): Version 2.33.0
