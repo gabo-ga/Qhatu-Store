@@ -1,10 +1,13 @@
 import SupervisorPage from "./pages/supervisorProfile/supervisorProfile";
+import Footer from "./components/fotter/footer";
+import Navbar from "./components/navbar/navbar";
 
 function App() {
   return (
     <div>
-      <h1>Qhatu Store</h1>
+      <Navbar></Navbar>
       <SupervisorPage></SupervisorPage>
+      <Footer></Footer>
     </div>
   );
 }

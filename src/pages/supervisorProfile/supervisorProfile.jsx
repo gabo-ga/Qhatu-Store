@@ -7,12 +7,11 @@ import './supervisoProfile.css'
 
 const supervisorProfile = () => {
   return (
-    <div className='container-fluid border'>
+    <div className='container-fluid'>
         <div className='row p-0'>
           <div className='img-banner p-0'>
             <img
-              src="https://www.journeygazer.com/wp-content/uploads/2019/03/Moraine-lake-destination.jpg" 
-              alt="" />
+              src="https://www.journeygazer.com/wp-content/uploads/2019/03/Moraine-lake-destination.jpg"/>
           </div>
           
         </div>

@@ -14,12 +14,13 @@
 .img-banner {
     position: absolute;
     z-index: -1;
-    height: 246px;
-	overflow: hidden;
 }
 
-.img-banner > img{
-    margin: 0px;
+.img-banner  > img{
+	width: fit-content;
+	height: 246px;
+    width: 100%;
+	object-fit: none;
 }
 
 .buttons-colection{
