@@ -7,7 +7,8 @@ const usersTable = () => {
         <div className='container-fluid'>
             <div className='row'>
                 <div className='col-4'>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></input>
+                  <input type="email" class="form-control" id="exampleInputEmail1" 
+                  aria-describedby="emailHelp" placeholder="Nombre Empresa/Vendedores"></input>
                 </div>
                 <div className='col-4'>
                   <button type="button" class="btn btn-v1 table-item button-item-det">Buscar
