@@ -1,0 +1,17 @@
+.table_background {
+    background-color: #F4F4F8;
+    padding: 29px 22px 09px 29px;
+    width: 958px;
+    min-height: 554px;
+}
+
+.users-table{
+    width: 880px;
+    height: 395px;
+    overflow: scroll;
+}
+
+.table-item {
+    margin-bottom: 20px;
+}
+
