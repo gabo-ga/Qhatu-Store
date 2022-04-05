@@ -10,3 +10,8 @@
     width: 200px;
     height: 200px;
 }
+
+.card-details {
+    font-size: 20px;
+    margin: 36px 0px 0px 0px;
+}
