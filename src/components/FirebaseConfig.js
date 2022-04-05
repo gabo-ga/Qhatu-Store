@@ -14,6 +14,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 
-//Registrar usuarios, reemplazar parametros por los recibidos
+//Register usuer, replace with recived params
 const register = (params)=>
   addDoc(collection(db,'user'),{params});
