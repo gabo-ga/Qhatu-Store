@@ -1,0 +1,12 @@
+.card_back {
+    background-color: #F4F4F8;
+    padding: 30px;
+    border-radius: 16px;
+    width: 378px;
+    height: 378px;
+}
+
+.image-profile {
+    width: 200px;
+    height: 200px;
+}
