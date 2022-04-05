@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as bootstrap  from 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import TableAdministrador from './components/TableAdministrador';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <TableAdministrador />
   </React.StrictMode>,
   document.getElementById('root')
 );
