@@ -2,7 +2,12 @@
     background-color: #FDBF50;
     height: 100px;
     width: 880px;
-    
+}
+
+.item-list-table2 {
+    background-color: rgba(253, 190, 80, 0.507);
+    height: 100px;
+    width: 880px;
 }
 
 .item-list-data{
