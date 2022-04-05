@@ -14,14 +14,21 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 
-//Register user, replace with recived params
+// Register user
 export const register = (name, email, phone, password, typeOfUser) =>
   addDoc(collection(db,'user'),{name, email, phone, password, typeOfUser});
 
-//Get Users
+// Get Users
 export const onGetUsers = (callback) =>
   onSnapshot(collection(db,'user'), callback);
 
 // Delete user by id
 export const deleteUser = id =>
   deleteDoc(doc(db,'user', id));
+
+// Register company
+export const registerCompany = (name, address, representativePhone, representativeName) =>{
+  const catalog = {};
+  addDoc(collection(doc,'company'),{name, address, representativePhone, representativeName, catalog});
+}
+
