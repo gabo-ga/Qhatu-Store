@@ -1,7 +1,10 @@
+import SupervisorPage from "./pages/supervisorProfile/supervisorProfile";
+
 function App() {
   return (
-    <div className="container text-center">
+    <div>
       <h1>Qhatu Store</h1>
+      <SupervisorPage></SupervisorPage>
     </div>
   );
 }
