@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDUuVEv-hcIC0htFT4nnETtEYDQp7R7ORM',
@@ -14,6 +14,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 
-//Register usuer, replace with recived params
-const register = (params)=>
-  addDoc(collection(db,'user'),{params});
+//Register user, replace with recived params
+export const register = (name, email, phone, password, typeOfUser) =>
+  addDoc(collection(db,'user'),{name, email, phone, password, typeOfUser});
+
+//Get Users
+export const onGetUsers = (callback) =>
+  onSnapshot(collection(db,'user'), callback);
+
+// Delete user by id
+export const deleteUser = id =>
+  deleteDoc(doc(db,'user', id));
