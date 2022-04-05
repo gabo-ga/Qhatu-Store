@@ -1,4 +1,6 @@
 import React from 'react'
+import ListItem from '../listItem/listItem'
+
 import './usersTable.css'
 
 const usersTable = () => {
@@ -16,10 +18,11 @@ const usersTable = () => {
                 <div className='col-4 d-flex justify-content-end'>
                   <button type="button" class="btn  table-item">Imprimir</button></div>
                 <div className='col-12'>
-                  <button type="button" class=" btn table-item">Filtros</button></div>
+                  <button type="button" class=" btn table-item">Filtros
+                  </button></div>
                 <div className='col-12'>
                     <div className='users-table border'>
-
+                      <ListItem></ListItem>
                     </div>
                 </div>
             </div>

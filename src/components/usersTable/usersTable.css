@@ -9,6 +9,7 @@
     width: 880px;
     height: 395px;
     overflow: scroll;
+    overflow-x: hidden;
 }
 
 .table-item {
