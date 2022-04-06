@@ -2,7 +2,7 @@ import React from 'react';
 
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-
+import SupervisorProfile from './pages/supervisorProfile/supervisorProfile';
 import App from './App';
 
 import * as bootstrap  from 'bootstrap'
@@ -15,6 +15,7 @@ const root = createRoot(rootElement);
 root.render(
   <StrictMode>
     <App />
+    <SupervisorProfile />
   </StrictMode>
 );
 

@@ -1,0 +1,44 @@
+import { snapshotEqual } from "firebase/firestore";
+
+var firebaseConfig = {
+    apiKey: 'AIzaSyDUuVEv-hcIC0htFT4nnETtEYDQp7R7ORM',
+    authDomain: 'qhatu-store.firebaseapp.com',
+    projectId: 'qhatu-store',
+    storageBucket: 'qhatu-store.appspot.com',
+    messagingSenderId: '311241414333',
+    appId: '1:311241414333:web:b1dab6a0e896cfd91c09d4',
+    measurementId: 'G-RZTW6GTGLE'
+  };
+  firebaseConfig.initializeApp(firebaseConfig);
+  firebaseConfig.analytics();
+  var database = firebase.database();
+  var key;
+  function listar(){
+      var database = firebase.database().ref().child('Qhatu store');
+      database.once('value', function(sanpshot){
+        if (snapshotEqual.exists()){
+        var tabla ='';
+
+        tabla +='div class=table-responsive>';
+        tabla += 'table class=table id=datos';
+        sanpshot.forEach(function(data){
+            var key = data.key;
+            var name = data.val().name;
+            var email = data.val().email;
+            var phone = data.val().phone;
+            var type = data.val().typeOfUser;
+
+            tabla += '<tr>';
+            tabla += '<td>'+name+'</td>';
+            tabla += '<td>'+email+'</td>';
+            tabla += '<td>'+phone+'</td>';
+            tabla += '<td>'+type+'</td>';
+            tabla += '</tr>';
+        });
+        tabla += '</tbody';
+        tabla += '</table';
+        tabla += '</div';
+        $('.datos').html(tabla);
+      }
+  });
+  }
