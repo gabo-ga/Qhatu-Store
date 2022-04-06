@@ -1,0 +1,18 @@
+.users-table{
+    width: 880px;
+    height: 395px;
+    overflow: scroll;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+@media screen and (max-width: 926px) {
+    .users-table{
+        width: 316px;
+        height: 340px;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+  }
+
+
