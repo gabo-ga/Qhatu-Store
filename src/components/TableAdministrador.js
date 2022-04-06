@@ -1,18 +1,30 @@
+import { query } from 'firebase/firestore';
+import { useReducer } from 'react';
+import { onGetUsers } from './FirebaseConfig.js'
+var user='';
+var usu;
+onGetUsers((query) => {
+
+    query.forEach((doc)=>{
+        user = doc.data()
+        console.log(user.name, user.email, user.phone, user.typeOfUser)
+    })
+})
 function TableAdministrador() {
     return(
         <table border="1">
             <tbody>
                 <tr>
-                    <td rowspan="4"> Usuario</td>
+                    <td rowspan="4"> {user.name} </td>
                  </tr>
                  <tr>
-                    <td>Correo Electronico</td>
+                    <td>{user.email}</td>
                 </tr>
                 <tr>
-                    <td>Numero de Telefono</td>
+                    <td>{user.phone}</td>
                 </tr>
                 <tr>
-                    <td>Tipo de Usuario</td>
+                    <td>{user.typeOfUser}</td>
                 </tr>
             </tbody>
         </table>
