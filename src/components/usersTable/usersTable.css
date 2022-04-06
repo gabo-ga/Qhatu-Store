@@ -1,0 +1,29 @@
+.table_background {
+    background-color: #F4F4F8;
+    padding: 29px 22px 09px 29px;
+    width: 958px;
+    min-height: 554px;
+}
+
+.users-table{
+    width: 880px;
+    height: 395px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.table-item {
+    margin-bottom: 20px;
+}
+.table-print-button {
+    font-size: 20px;
+    border: #000 3px solid !important;
+    border-radius: 8px !important;
+    height: 44px;
+    width: 144px;
+}
+.table-print-img {
+    width: 24px;
+    height: 24px;
+}
+

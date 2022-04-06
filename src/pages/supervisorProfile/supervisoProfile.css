@@ -1,0 +1,44 @@
+@import url('https://fonts.google.com/specimen/Roboto');
+
+* { 
+    padding:0;
+    margin:0;
+    font-family: sans-serif;
+ }
+
+.col-table { 
+    padding-top: 299px;
+}
+
+.col-profile {
+    padding-top: 60px;
+}
+
+.img-banner {
+    position: absolute;
+    z-index: -1;
+}
+
+.img-banner  > img{
+	width: fit-content;
+	height: 246px;
+    width: 100%;
+	object-fit: none;
+}
+
+.buttons-colection{
+    margin-top: 57px;
+}
+
+.buttons-colection-item{
+    margin-bottom: 20px;
+}
+
+.btn-v1 {
+    min-width: 120px;
+    border-radius: 30px !important;
+    background-color: #FF724C !important;
+    color: #ffff !important;
+    font-size: 20px !important;
+    height: 56px;
+}

@@ -1,0 +1,25 @@
+.item-list-table {
+    background-color: #FDBF50;
+    height: 100px;
+    width: 880px;
+}
+
+.item-list-table2 {
+    background-color: rgba(253, 190, 80, 0.507);
+    height: 100px;
+    width: 880px;
+}
+
+.item-list-data{
+    padding: 18px 0px 0px 0px;
+}
+
+.item-list-id{
+    font-size: 20px;
+    padding: 38px 0px 0px 28px !important;
+}
+
+.item-list-data > p {
+    font-size: 14px;
+    margin: 0px 0px 4px 0px;
+}
