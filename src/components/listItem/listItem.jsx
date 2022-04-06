@@ -13,8 +13,8 @@ const ListItem = (props) => {
   }
   
   return (
-    <div className='container-fluid p-0'>
-        <div className={ ColorSelect() ?'item-list-table row' : 'item-list-table2 row'}>
+    <div className=''>
+        <div className={ ColorSelect() ?'item-list-table row p-0' : 'item-list-table2 row p-0'}>
             <div className='col-4 item-list-id'>
                 PEDIDO #59
             </div>

@@ -1,7 +1,7 @@
 .card_back {
     background-color: #F4F4F8;
-    padding: 30px;
     border-radius: 16px;
+    padding-top: 33px;
     width: 378px;
     height: 378px;
 }
@@ -15,3 +15,22 @@
     font-size: 20px;
     margin: 36px 0px 0px 0px;
 }
+
+@media screen and (max-width: 926px) {
+    .card_back {
+        border-radius: 16px;
+        width: 240px;
+        height: 205px;
+        padding-top: 22px;
+    }
+
+    .image-profile {
+        width: 100px;
+        height: 100px;
+    }
+
+    .card-details {
+        font-size: 14px;
+        margin: 12px 0px 0px 0px;
+    }
+  }
