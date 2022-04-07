@@ -36,3 +36,27 @@
     margin: 0px 0px 4px 0px;
     color: #2A2C41;
 }
+
+@media screen and (max-width: 960px) {
+    .item-list-table{
+        width: 316px;
+        height: 80px;
+        overflow: hidden;
+    }
+
+    .item-list-table2{
+        width: 316px;
+        height: 80px;
+        overflow: hidden;
+    }
+
+    .item-list-id{
+        font-size: 16px;
+        padding: 30px 0px 0px 15px !important;
+    }
+    
+    .item-list-data > p {
+        font-size: 12px;
+        margin: 0px 0px 4px 0px;
+    }
+  }

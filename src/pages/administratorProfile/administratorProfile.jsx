@@ -3,9 +3,9 @@ import UsersTable from '../../components/usersTable/usersTable'
 import PerfilCard from '../../components/perfilCard/perfilCard'
 
 //estilos
-import './supervisoProfile.css'
+import './administratorProfile.css'
 
-const supervisorProfile = () => {
+const administratorProfile = () => {
   return (
     <div className='container-fluid'>
         <div className='row p-0'>
@@ -49,19 +49,15 @@ const supervisorProfile = () => {
                     <div className='col-12 table-container  order-5'>
                       <UsersTable></UsersTable>
                     </div>
-
-
                   </div>
                 </div>
               </div>
-  
             </div>
-            
           </div>
 
           <div className='col-xl-4 col-12 col-profile order-1 order-xl-2'>
             <div className='d-flex justify-content-center'>
-              <PerfilCard cargo="Supervisor"></PerfilCard>
+              <PerfilCard cargo="Administrador"></PerfilCard>
             </div>
             <div className='buttons-colection'>
               <div className='row'>
@@ -82,4 +78,4 @@ const supervisorProfile = () => {
   )
 }
 
-export default supervisorProfile
+export default administratorProfile
