@@ -1,6 +1,6 @@
 import React from 'react'
 import './perfilCard.css'
-const perfilCard = () => {
+const perfilCard = ( {cargo} ) => {
   return (
     <div className='card_back shadow'>
       <div className='container-fluid'>
@@ -11,7 +11,7 @@ const perfilCard = () => {
           </div>
           <div className='col-12 text-center'>
             <p className='card-details'>Jose armando alvarez caredo</p>
-            <p className='card-details'>Cargo: supervisor</p>
+            <p className='card-details'>Cargo: { cargo } </p>
           </div>
         </div>
       </div>
