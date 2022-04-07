@@ -62,7 +62,7 @@ const supervisorProfile = () => {
 
           <div className='col-xl-4 col-12 col-profile order-1 order-xl-2'>
             <div className='d-flex justify-content-center'>
-              <PerfilCard></PerfilCard>
+              <PerfilCard cargo="Supervisor"></PerfilCard>
             </div>
             <div className='buttons-colection'>
               <div className='row'>
