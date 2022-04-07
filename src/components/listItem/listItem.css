@@ -12,14 +12,27 @@
 
 .item-list-data{
     padding: 18px 0px 0px 0px;
+    color: #2A2C41;
 }
 
 .item-list-id{
     font-size: 20px;
     padding: 38px 0px 0px 28px !important;
+    color: #2A2C41;
+}
+
+.edit-button{
+        cursor: pointer;
+        border: 0px;
+        background-color: transparent;
+        height: 50px;
+        width: 200px;
+        color: #2A2C41;
+        font-size: 1.5em;
 }
 
 .item-list-data > p {
     font-size: 14px;
     margin: 0px 0px 4px 0px;
+    color: #2A2C41;
 }

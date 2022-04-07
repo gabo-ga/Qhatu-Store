@@ -2,12 +2,10 @@ import React from 'react';
 
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import SupervisorProfile from './pages/supervisorProfile/supervisorProfile';
 import App from './App';
 
 import * as bootstrap  from 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import TableAdministrador from './components/TableAdministrador';
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -15,7 +13,6 @@ const root = createRoot(rootElement);
 root.render(
   <StrictMode>
     <App />
-    <TableAdministrador />
   </StrictMode>
 );
 
