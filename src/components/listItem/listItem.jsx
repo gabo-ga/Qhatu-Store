@@ -13,12 +13,12 @@ const ListItem = (props) => {
   }
   
   return (
-    <div className='container-fluid p-0'>
-        <div className={ ColorSelect() ?'item-list-table row' : 'item-list-table2 row'}>
-            <div className='col-4 item-list-id'>
+    <div className="container-fluid p-0">
+        <div className={ ColorSelect() ?"item-list-table row" : "item-list-table2 row"}>
+            <div className="col-4 item-list-id">
                 PEDIDO #59
             </div>
-            <div className='col-8 item-list-data'>
+            <div className="col-8 item-list-data">
                 <p>Empresa: Coca cola</p>
                 <p>Detalle: Pedido de refesco</p>
                 <p>Fecha de pedido: 30/03/2022</p>

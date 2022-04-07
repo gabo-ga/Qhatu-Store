@@ -27,19 +27,19 @@ const ListUser = () => {
   }
   
   return (
-    <div className='container-fluid p-0'>
+    <div className="container-fluid p-0">
       {userData?.map(({id,data}) =>( 
-        <div className={ ColorSelect(tableNumber) ?'item-list-table row' : 'item-list-table2 row'}
+        <div className={ ColorSelect(tableNumber) ?"item-list-table row" : "item-list-table2 row"}
           key={ id }>
-          <div className='col-4 item-list-id'>
+          <div className="col-4 item-list-id">
             { data.name }
           </div>
-          <div className='col-6 item-list-data'>
+          <div className="col-6 item-list-data">
             <p>{ data.email }</p>
             <p>{ data.phone }</p>
             <p>{ data.typeOfUser }</p>
           </div>
-          <div className='col-1 d-flex justify-content-end align-items-center'>
+          <div className="col-1 d-flex justify-content-end align-items-center">
             <button className="edit-button"><MdMode size={32}/></button>
           </div>
         </div>
