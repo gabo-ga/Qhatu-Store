@@ -6,7 +6,6 @@ function App() {
   return (
     <div>
       Qhatu store
-      <AdministratorProfile></AdministratorProfile>
     </div>
   );
 }
