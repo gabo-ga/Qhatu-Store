@@ -1,5 +1,4 @@
 import React from 'react'
-import ListItem from '../../components/listItem/listItem'
 import UsersTable from '../../components/usersTable/usersTable'
 import PerfilCard from '../../components/perfilCard/perfilCard'
 
@@ -50,14 +49,10 @@ const administratorProfile = () => {
                     <div className='col-12 table-container  order-5'>
                       <UsersTable></UsersTable>
                     </div>
-
-
                   </div>
                 </div>
               </div>
-  
             </div>
-            
           </div>
 
           <div className='col-xl-4 col-12 col-profile order-1 order-xl-2'>

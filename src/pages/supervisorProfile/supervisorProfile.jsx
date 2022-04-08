@@ -1,5 +1,4 @@
 import React from 'react'
-import ListItem from '../../components/listItem/listItem'
 import UsersTable from '../../components/usersTable/usersTable'
 import PerfilCard from '../../components/perfilCard/perfilCard'
 
