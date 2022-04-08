@@ -1,69 +1,85 @@
 import React from 'react';
 import './forms.css'
 
-const forms = () => {
+const forms = (props) => {
+
     return(
         
-        <div class="container1 align-middle">
-            <form>
-                <div class="row">
-                    <div class="col">
-                    
-                            <div class="mb-3">
+        <div class="container-fluid d-flex justify-content-center">
+            <div className='container1 d-flex justify-content-center'>
+                <div className="row align-self-center">
+                    <div className="col-lg-6 col-12 ">
+                        <form>
+                            <div class="mb-3 ">
                                 <label for="inputName" class="form-label">Nombre/s Apellidos</label>
-                                <input type="text" class="form-control" id="inputName"/>
+                                <input type="text" class=" form-control input-text" id="inputName"/>
                             </div>
 
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                                <input type="email" class="form-control input-text" id="exampleInputEmail1" aria-describedby="emailHelp"/>
                             </div>
 
                             <div class="mb-3">
                                 <label for="inputPhone" class="form-label">Celular</label>
-                                <input type="text" class="form-control" id="inputPhone"/>
+                                <input type="text" class="form-control input-text" id="inputPhone"/>
                             </div>
 
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1"/>
+                                <input type="password" class="form-control input-text" id="exampleInputPassword1"/>
+                            </div>
+                            </form>
+                    </div>
+                    <div className="col-lg-6 col-12 ">
+                        <div className='row'>
+                            <div className='col-12 order-2 order-lg-1'>
+                                <div className= "mb-3 checks ">
+                                <label className="user form-label">
+                                    Tipo de usuario
+                                </label>
+                                <br />
+                            <div className='row'>
+                                <div className='col-6'>
+                                    <div className="form-check mb-3">
+                                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+                                        <label className="form-check-label" for="flexRadioDefault1">
+                                            Vendedor
+                                        </label>
+                                    </div>
+                                </div>
+                                <div className='col-6'>
+                                    <div className="form-check mb-3 secondCheck">
+                                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"/>
+                                        <label className="form-check-label" for="flexRadioDefault2" >
+                                            Supervisor
+                                        </label>    
+                                    </div>
+                                </div>
                             </div>
                             
-                    </div>
-                    <div class="col col2 ">
-                        <div class="align-bottom">
-                                <div class= "mb-3 checks">
-                                    <label class="user form-label">
-                                        Tipo de usuario
-                                    </label>
-                                    <br />
-                                    <div class="form-check mb-3">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
-                                    <label class="form-check-label" for="flexRadioDefault1">
-                                        Vendedor
-                                    </label>
-                                    </div>
-                                    <div class="form-check mb-3 secondCheck">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"/>
-                                    <label class="form-check-label" for="flexRadioDefault2">
-                                        Supervisor
-                                    </label>    
-                                    </div>
                                 </div> 
-                                <br/>
-                                <div class="mb-3 confirm align-bottom">
+                            </div>
+                            <div className='col-12 order-1 order-lg-2'>
+                                <div className="mb-3 confirm ">
                                     <label for="exampleInputPassword1" class="form-label">Confirmacion de contraseña</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1"/>
+                                    <input type="password" class="form-control input-text" id="exampleInputPassword1"/>
                                 </div>
+                            </div>
+
+                        </div>
+                        
+                        <br/>
+                    </div>
+                    <div className='col-12'>
+                        <div className="boton">
+                        <button className="btn btn-primary" type="submit">Crear cuenta</button>
                         </div>
                     </div>
-
                 </div>
-
-                <div class="boton">
-                    <button class="btn btn-primary" type="submit">Crear cuenta</button>
-                </div>
-            </form>
+                
+            </div>
+                
         </div>
 
     );
