@@ -1,7 +1,10 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import './forms.css'
 
 const forms = (props) => {
+    const { register, handleSubmit }= useForm();
+    const onSubmit = data => console.log(data);
 
     return(
         
@@ -9,20 +12,24 @@ const forms = (props) => {
             <div className='container1 d-flex justify-content-center'>
                 <div className="row align-self-center">
                     <div className="col-lg-6 col-12 ">
-                        <form>
+                        <form onSubmit={ handleSubmit(onSubmit)}>
                             <div class="mb-3 ">
                                 <label for="inputName" class="form-label">Nombre/s Apellidos</label>
-                                <input type="text" class=" form-control input-text" id="inputName"/>
+                                <input type="text" class=" form-control input-text" {...register("name",{ 
+                                    required:true, maxLength:40 , minLength:3 , pattern:/^[A-Za-z]+$/i })}/>
                             </div>
 
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
-                                <input type="email" class="form-control input-text" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                                <input type="email" class="form-control input-text" aria-describedby="emailHelp"
+                                    {...register("email",{ required:true, maxLength:40, 
+                                    pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/})}/>
                             </div>
 
                             <div class="mb-3">
                                 <label for="inputPhone" class="form-label">Celular</label>
-                                <input type="text" class="form-control input-text" id="inputPhone"/>
+                                <input type="text" class="form-control input-text" {...register("phone",{ 
+                                    required:true, maxLength:8, minLength:8, pattern: /^[0-9]+$/ })}/>
                             </div>
 
                             <div class="mb-3">
