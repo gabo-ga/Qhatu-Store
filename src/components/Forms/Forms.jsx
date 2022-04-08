@@ -1,11 +1,11 @@
 import React from 'react';
-import './Foms.css'
+import './forms.css'
 
-const Forms = () => {
+const forms = () => {
     return(
         
         <div class="container1 align-middle">
-            <form action="">
+            <form>
                 <div class="row">
                     <div class="col">
                     
@@ -69,4 +69,4 @@ const Forms = () => {
     );
 }
 
-export default Forms
+export default forms

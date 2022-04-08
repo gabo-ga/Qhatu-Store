@@ -1,9 +1,11 @@
 
+import RegUserAdm from './pages/registrarUsuarioAdm/regUserAdm';
+
 
 function App() {
   return (
       <div>
-        Qhatu store
+        <RegUserAdm></RegUserAdm>
       </div>
   );
 }

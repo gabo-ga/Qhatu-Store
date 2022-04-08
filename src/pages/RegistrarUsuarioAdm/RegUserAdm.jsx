@@ -1,9 +1,9 @@
 import React from 'react';
-import Forms from '../components/Forms/Forms';
-import './RegUserAdm.css'
+import Forms from '../../components/forms/forms';
+import './regUserAdm.css'
 
 
-const RegUserAdm = () => {
+const regUserAdm = () => {
     return(
         <div class="cont align-middle">
             <div >
@@ -16,4 +16,4 @@ const RegUserAdm = () => {
     )
 
 }
-export default RegUserAdm
+export default regUserAdm
