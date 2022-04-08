@@ -6,7 +6,6 @@ import App from './App';
 
 import * as bootstrap  from 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom'
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
