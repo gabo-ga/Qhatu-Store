@@ -1,9 +1,7 @@
-
-
 function App() {
   return (
       <div>
-        Qhatu store
+        Qhatu Store
       </div>
   );
 }
