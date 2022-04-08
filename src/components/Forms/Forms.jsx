@@ -1,7 +1,7 @@
 import React from 'react';
 import './forms.css'
 
-const forms = (props) => {
+const forms = () => {
 
     return(
         
