@@ -1,5 +1,5 @@
 import React from 'react';
-import './forms.css'
+import './forms-supv.css'
 
 const forms = () => {
 
@@ -50,7 +50,7 @@ const forms = () => {
                                 </div>
                                 <div className='col-6'>
                                     <div className="form-check mb-3 secondCheck">
-                                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"/>
+                                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" disabled/>
                                         <label className="form-check-label" for="flexRadioDefault2" >
                                             Supervisor
                                         </label>    
