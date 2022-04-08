@@ -69,7 +69,7 @@ const administratorProfile = () => {
                 </div>
                 */}
                 <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
-                  <Link to="/supervisor/adminuser">
+                  <Link to="/administrator/adminuser">
                     <button type="button" class="btn btn-v1">Administrar usuario</button>
                   </Link>
                 </div>
