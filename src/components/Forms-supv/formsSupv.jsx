@@ -46,7 +46,7 @@ const forms = () => {
                             <div className='row'>
                                 <div className='col-6'>
                                     <div className="form-check mb-3">
-                                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" disabled/>
+                                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
                                         <label className="form-check-label" for="flexRadioDefault1">
                                             Vendedor
                                         </label>
@@ -54,7 +54,7 @@ const forms = () => {
                                 </div>
                                 <div className='col-6'>
                                     <div className="form-check mb-3 secondCheck">
-                                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"/>
+                                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" disabled/>
                                         <label className="form-check-label" for="flexRadioDefault2" >
                                             Supervisor
                                         </label>    

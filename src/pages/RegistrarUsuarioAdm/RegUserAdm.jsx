@@ -1,6 +1,6 @@
 import React from 'react';
 import Forms from '../../components/Forms/Forms';
-import './regUserAdm.css'
+import './RegUserAdm.css'
 
 
 const regUserAdm = () => {
