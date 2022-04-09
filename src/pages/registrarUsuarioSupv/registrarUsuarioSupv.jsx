@@ -1,5 +1,4 @@
 import React from 'react'
-import Forms from '../../components/Forms/Forms';
 import FormsSupv from '../../components/Forms-supv/formsSupv';
 
 import './registrarUsuarioSupv.css'
