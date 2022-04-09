@@ -1,16 +1,15 @@
 import React from 'react'
-import Forms from '../../components/Forms/Forms';
 import FormsSupv from '../../components/Forms-supv/formsSupv';
 
 import './registrarUsuarioSupv.css'
 
 const registrarUsuarioSupv = () => {
   return (
-    <div className="cont align-middle">
+    <div className="formCont">
         <div >
             <h1 className="titleQhatu text-center">Qhatu Store</h1>
         </div>
-        <div className="formCont align-middle">
+        <div className="align-middle">
             <FormsSupv></FormsSupv>
         </div>
     </div>

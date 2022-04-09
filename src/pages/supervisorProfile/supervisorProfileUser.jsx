@@ -1,6 +1,7 @@
-import React from 'react'
-import ListUsersTable from '../../components/usersTable/listUsersTable'
-import PerfilCard from '../../components/perfilCard/perfilCard'
+import React from 'react';
+import ListUsersTable from '../../components/usersTable/listUsersTable';
+import PerfilCard from '../../components/perfilCard/perfilCard';
+import { Link } from 'react-router-dom';
 
 //estilos
 import './supervisoProfile.css'
@@ -23,8 +24,11 @@ const supervisorProfile = () => {
                   <div className='row d-flex justify-content-center'>
 
                     <div className='col-lg-4 col-4 d-flex justify-content-xl-start  justify-content-end order-2'>
-                      <button type="button" class="btn btn-v1 table-item button-item-det">Registrar Usuario
-                      </button>
+                      <Link to='/supervisor/createuser'>
+                        <button type="button" class="btn btn-v1 table-item button-item-det">
+                          Registrar Usuario
+                        </button>
+                      </Link>
                     </div>
                     
                     <div className='col-12 table-container  order-5'>
