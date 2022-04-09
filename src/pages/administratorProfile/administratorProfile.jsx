@@ -1,12 +1,12 @@
-import React from 'react';
-import UsersTable from '../../components/usersTable/usersTable';
-import PerfilCard from '../../components/perfilCard/perfilCard';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import UsersTable from '../../components/usersTable/usersTable'
+import PerfilCard from '../../components/perfilCard/perfilCard'
+import { Link } from 'react-router-dom'
 
 //estilos
-import './supervisoProfile.css'
+import './administratorProfile.css'
 
-const supervisorProfile = () => {
+const administratorProfile = () => {
   return (
     <div className='container-fluid'>
         <div className='row p-0'>
@@ -47,22 +47,19 @@ const supervisorProfile = () => {
                       </button>
                     </div>
                     */}
+                    
                     <div className='col-12 table-container  order-5'>
                       <UsersTable></UsersTable>
                     </div>
-
-
                   </div>
                 </div>
               </div>
-  
             </div>
-            
           </div>
 
           <div className='col-xl-4 col-12 col-profile order-1 order-xl-2'>
             <div className='d-flex justify-content-center'>
-              <PerfilCard cargo="Supervisor"></PerfilCard>
+              <PerfilCard cargo="Administrador"></PerfilCard>
             </div>
             <div className='buttons-colection'>
               <div className='row'>
@@ -72,7 +69,7 @@ const supervisorProfile = () => {
                 </div>
                 */}
                 <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
-                  <Link to="/supervisor/adminuser">
+                  <Link to="/administrator/adminuser">
                     <button type="button" class="btn btn-v1">Administrar usuario</button>
                   </Link>
                 </div>
@@ -87,4 +84,4 @@ const supervisorProfile = () => {
   )
 }
 
-export default supervisorProfile
+export default administratorProfile

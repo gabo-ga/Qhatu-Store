@@ -41,4 +41,3 @@ Este proyecto fue realizado por:
 * Mamani Cortez Jhonny Gary.
 * Peralta Ayllon Kevin Rodrigo.
 * Rosales Caero Luis Alejandro
-* Vera Peredo Dayana
