@@ -33,7 +33,7 @@ const forms = () => {
                                 <input type="password" class="form-control input-text" id="exampleInputPassword1"
                                 placeholder="••••••••"/>
                             </div>
-                            </form>
+                        </form>
                     </div>
                     <div className="col-lg-6 col-12 ">
                         <div className='row'>
