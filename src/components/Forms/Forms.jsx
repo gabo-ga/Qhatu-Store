@@ -29,7 +29,7 @@ const forms = () => {
                                 <label for="exampleInputPassword1" class="form-label">Contraseña</label>
                                 <input type="password" class="form-control input-text" id="exampleInputPassword1"/>
                             </div>
-                            </form>
+                        </form>
                     </div>
                     <div className="col-lg-6 col-12 ">
                         <div className='row'>
