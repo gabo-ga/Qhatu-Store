@@ -6,11 +6,11 @@ import './registrarUsuarioSupv.css'
 
 const registrarUsuarioSupv = () => {
   return (
-    <div className="cont align-middle">
+    <div className="formCont">
         <div >
             <h1 className="titleQhatu text-center">Qhatu Store</h1>
         </div>
-        <div className="formCont align-middle">
+        <div className="align-middle">
             <FormsSupv></FormsSupv>
         </div>
     </div>
