@@ -1,6 +1,7 @@
 import React from 'react'
 import UsersTable from '../../components/usersTable/usersTable'
 import PerfilCard from '../../components/perfilCard/perfilCard'
+import { Link } from 'react-router-dom'
 
 //estilos
 import './administratorProfile.css'
@@ -21,7 +22,7 @@ const administratorProfile = () => {
               <div className='table_background shadow'>
                 <div className='container-fluid p-0 '>
                   <div className='row d-flex justify-content-center'>
-
+                    {/*
                     <div className='col-lg-4 col-8 order-1'>
                       <input  class="form-control table-input"
                        placeholder="Nombre Empresa/Vendedores"></input>
@@ -45,6 +46,7 @@ const administratorProfile = () => {
                       <button type="button" class=" btn table-item">Filtros         
                       </button>
                     </div>
+                    */}
                     
                     <div className='col-12 table-container  order-5'>
                       <UsersTable></UsersTable>
@@ -61,11 +63,15 @@ const administratorProfile = () => {
             </div>
             <div className='buttons-colection'>
               <div className='row'>
+                {/*
                 <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
                   <button type="button" class="btn btn-v1">Administrar catalogo</button>
                 </div>
+                */}
                 <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
-                  <button type="button" class="btn btn-v1">Añadir usuario</button>
+                  <Link to="/administrator/adminuser">
+                    <button type="button" class="btn btn-v1">Administrar usuario</button>
+                  </Link>
                 </div>
                 <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
                   <button type="button" class="btn btn-v1">Añadir empresa</button>
