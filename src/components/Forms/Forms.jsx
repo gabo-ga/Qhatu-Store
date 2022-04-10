@@ -34,7 +34,10 @@ const forms = (props) => {
 
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control input-text" id="exampleInputPassword1"/>
+                                <input type="password" class="form-control input-text" {...register("password",{
+                                    required:true, maxLength:40, minLength:8,
+                                    pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,40}$/
+                                })}/>
                             </div>
                             </form>
                     </div>
