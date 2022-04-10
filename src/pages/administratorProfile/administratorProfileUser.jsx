@@ -1,12 +1,12 @@
 import React from 'react';
-import UsersTable from '../../components/usersTable/usersTable';
+import ListUsersTable from '../../components/usersTable/listUsersTable';
 import PerfilCard from '../../components/perfilCard/perfilCard';
 import { Link } from 'react-router-dom';
-
 //estilos
-import './supervisoProfile.css'
+import './administratorProfile.css'
 
-const supervisorProfile = () => {
+
+const administratorProfile = () => {
   return (
     <div className='container-fluid'>
         <div className='row p-0'>
@@ -22,47 +22,27 @@ const supervisorProfile = () => {
               <div className='table_background shadow'>
                 <div className='container-fluid p-0 '>
                   <div className='row d-flex justify-content-center'>
-                    {/*
-                    <div className='col-lg-4 col-8 order-1'>
-                      <input  class="form-control table-input"
-                       placeholder="Nombre Empresa/Vendedores"></input>
-                    </div>
 
                     <div className='col-lg-4 col-4 d-flex justify-content-xl-start  justify-content-end order-2'>
-                      <button type="button" class="btn btn-v1 table-item button-item-det">Buscar
-                      </button>
+                      <Link to='/administrator/createuser'>
+                        <button type="button" class="btn btn-v1 table-item button-item-det">
+                          Registrar Usuario
+                        </button>
+                      </Link>
                     </div>
-                        
-                    <div className='col-lg-4 col-6 d-flex justify-content-end justify-content-xl-center order-4 order-xl-3'>
-                      <button type="button" class="btn  table-print-button
-                            d-flex justify-content-between align-items-center">
-                        <label>Imprimir</label> 
-                        <img className='table-print-img' 
-                                src="https://firebasestorage.googleapis.com/v0/b/qhatu-store.appspot.com/o/icons8-imprimir-50.png?alt=media&token=67e811c3-27da-4768-8514-e4321b5a6db2"/>
-                      </button>
-                    </div>
-
-                    <div className='col-lg-12 col-6 order-3 order-xl-4 d-flex justify-content-xl-start  justify-content-start'>
-                      <button type="button" class=" btn table-item">Filtros         
-                      </button>
-                    </div>
-                    */}
+                    
                     <div className='col-12 table-container  order-5'>
-                      <UsersTable></UsersTable>
+                      <ListUsersTable></ListUsersTable>
                     </div>
-
-
                   </div>
                 </div>
               </div>
-  
             </div>
-            
           </div>
 
           <div className='col-xl-4 col-12 col-profile order-1 order-xl-2'>
             <div className='d-flex justify-content-center'>
-              <PerfilCard cargo="Supervisor"></PerfilCard>
+              <PerfilCard cargo="Administrador"></PerfilCard>
             </div>
             <div className='buttons-colection'>
               <div className='row'>
@@ -72,10 +52,8 @@ const supervisorProfile = () => {
                 </div>
                 */}
                 <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
-                  <Link to="/supervisor/adminuser">
-                    <button type="button" class="btn btn-v1">Administrar usuario</button>
-                  </Link>
-                </div>
+                  <button type="button" class="btn btn-v1">Administrar usuario</button>
+                </div> 
                 <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
                   <button type="button" class="btn btn-v1">Añadir empresa</button>
                 </div>   
@@ -87,4 +65,4 @@ const supervisorProfile = () => {
   )
 }
 
-export default supervisorProfile
+export default administratorProfile

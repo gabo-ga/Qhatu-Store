@@ -1,10 +1,7 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
-import './forms.css'
+import './forms-supv.css'
 
 const forms = () => {
-    const { register, handleSubmit }= useForm();
-    const onSubmit = data => console.log(data);
 
     return(
         
@@ -12,34 +9,29 @@ const forms = () => {
             <div className='container1 d-flex justify-content-center'>
                 <div className="row align-self-center">
                     <div className="col-lg-6 col-12 ">
-                        <form onSubmit={ handleSubmit(onSubmit)}>
+                        <form>
                             <div class="mb-3 ">
                                 <label for="inputName" class="form-label">Nombre/s Apellidos</label>
-                                <input type="text" class=" form-control input-text" 
-                                    placeholder="Santiago Hernandez Garcia" {...register("name",{ required:true, 
-                                    maxLength:40 , minLength:3 , pattern:/^[A-Za-z]+$/i })}/>
+                                <input type="text" class=" form-control input-text" id="inputName"
+                                placeholder="Santiago Hernandez Garcia"/>
                             </div>
 
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
-                                <input type="email" class="form-control input-text" aria-describedby="emailHelp"
-                                    placeholder="SantiagoHernandez@gmail.com" {...register("email",{ required:true,
-                                    maxLength:40, pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/})}/>
+                                <input type="email" class="form-control input-text" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                placeholder="SantiagoHernandez@gmail.com"/>
                             </div>
 
                             <div class="mb-3">
                                 <label for="inputPhone" class="form-label">Celular</label>
-                                <input type="text" class="form-control input-text" placeholder="76543211"
-                                    {...register("phone",{ required:true, maxLength:8, minLength:8, 
-                                    pattern: /^[0-9]+$/ })}/>
+                                <input type="text" class="form-control input-text" id="inputPhone"
+                                placeholder="76543211"/>
                             </div>
 
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control input-text" placeholder="••••••••"
-                                    {...register("password",{required:true, maxLength:40, minLength:8,
-                                    pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,40}$/
-                                })}/>
+                                <input type="password" class="form-control input-text" id="exampleInputPassword1"
+                                placeholder="••••••••"/>
                             </div>
                         </form>
                     </div>
@@ -62,7 +54,7 @@ const forms = () => {
                                 </div>
                                 <div className='col-6'>
                                     <div className="form-check mb-3 secondCheck">
-                                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"/>
+                                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" disabled/>
                                         <label className="form-check-label" for="flexRadioDefault2" >
                                             Supervisor
                                         </label>    
