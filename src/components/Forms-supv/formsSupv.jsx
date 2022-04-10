@@ -1,10 +1,13 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { registerUser } from '../FirebaseConfig'
 import './forms-supv.css'
 
 const FormsSupv = () => {
     const { register, formState: { errors }, handleSubmit }= useForm();
-    const onSubmit = (data) => {console.log("data:",data)};
+    const onSubmit = (data) => {
+        registerUser(data.name, data.email,data.phone,data.password,data.typeOfUser)
+    };
     
     const patterns = {
         namePattern:/^[a-z ]+$/i,
@@ -48,6 +51,7 @@ const FormsSupv = () => {
                                     {...register("phone",{ required:true,
                                         maxLength:8,
                                         minLength:8,
+                                        valueAsNumber:true,
                                         pattern:patterns.phonePattern
                                     })}/>{/*errors.phone && "Last name is required"*/}
                             </div>
@@ -73,19 +77,17 @@ const FormsSupv = () => {
                                         <div className='row'>
                                             <div className='col-6'>
                                                 <div className="form-check mb-3">
-                                                    <input className="form-check-input" type="radio" name="vendedor"
-                                                        {...register("vendedor",{
-                                                            required:true
-                                                        })}
+                                                    <input className="form-check-input" type="radio" value="Vendedor"
+                                                        {...register("typeOfUser")}
                                                     />
-                                                    <label className="form-check-label" for="vendedor">
+                                                    <label className="form-check-label" for="flexRadioDefault1">
                                                         Vendedor
                                                     </label>
                                                 </div>
                                             </div>
                                             <div className='col-6'>
                                                 <div className="form-check mb-3 secondCheck">
-                                                    <input className="form-check-input" type="radio" name="supervisor"
+                                                    <input className="form-check-input" type="radio" value="Supervisor"
                                                         {...register("supervisor")} disabled
                                                     />
                                                     <label className="form-check-label" for="supervisor">

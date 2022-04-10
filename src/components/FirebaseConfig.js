@@ -15,7 +15,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 
 // Register user
-export const register = (name, email, phone, password, typeOfUser) =>
+export const registerUser = (name, email, phone, password, typeOfUser) =>
   addDoc(collection(db,'user'),{name, email, phone, password, typeOfUser});
 
 // Get Users

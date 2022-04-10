@@ -1,20 +1,14 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { register } from '../FirebaseConfig'
+import { registerUser } from '../FirebaseConfig'
 import './forms.css'
 
 const Forms = () => {
     const { register, formState: { errors }, handleSubmit }= useForm();
     const onSubmit = (data) => {
-        let typeOfUser;
-        if(data.supervisor){
-            typeOfUser="Supervisor";
-        }else if(data.vendedor){
-            typeOfUser="Vendedor";
-        }
-        console.log(data.name, data.email,data.phone,data.password,typeOfUser);
-        //register(data.name, data.email,data.phone,data.password,typeOfUser)
+        registerUser(data.name, data.email,data.phone,data.password,data.typeOfUser)
     };
+    
     
     const patterns = {
         namePattern:/^[a-z ]+$/i,
@@ -58,6 +52,7 @@ const Forms = () => {
                                     {...register("phone",{ required:true,
                                         maxLength:8,
                                         minLength:8,
+                                        valueAsNumber:true,
                                         pattern:patterns.phonePattern
                                     })}/>{/*errors.phone && "Last name is required"*/}
                             </div>
@@ -83,22 +78,22 @@ const Forms = () => {
                                         <div className='row'>
                                             <div className='col-6'>
                                                 <div className="form-check mb-3">
-                                                    <input className="form-check-input" type="radio" name="vendedor"
-                                                        {...register("vendedor")}
+                                                    <input className="form-check-input" type="radio" value="Vendedor"
+                                                        {...register("typeOfUser")}
                                                     />
-                                                    <label className="form-check-label" for="vendedor">
+                                                    <label className="form-check-label" for="flexRadioDefault1">
                                                         Vendedor
                                                     </label>
                                                 </div>
                                             </div>
                                             <div className='col-6'>
                                                 <div className="form-check mb-3 secondCheck">
-                                                    <input className="form-check-input" type="radio" name="supervisor"
-                                                        {...register("supervisor")}
+                                                    <input className="form-check-input" type="radio" value="Supervisor"
+                                                        {...register("typeOfUser")}
                                                     />
-                                                    <label className="form-check-label" for="supervisor" >
+                                                    <label className="form-check-label" for="flexRadioDefault2" >
                                                         Supervisor
-                                                    </label>    
+                                                    </label>
                                                 </div>
                                             </div>
                                         </div>
