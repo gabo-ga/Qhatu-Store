@@ -1,10 +1,20 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { register } from '../FirebaseConfig'
 import './forms.css'
 
 const Forms = () => {
     const { register, formState: { errors }, handleSubmit }= useForm();
-    const onSubmit = (data) => {console.log("data:",data)};
+    const onSubmit = (data) => {
+        let typeOfUser;
+        if(data.supervisor){
+            typeOfUser="Supervisor";
+        }else if(data.vendedor){
+            typeOfUser="Vendedor";
+        }
+        console.log(data.name, data.email,data.phone,data.password,typeOfUser);
+        //register(data.name, data.email,data.phone,data.password,typeOfUser)
+    };
     
     const patterns = {
         namePattern:/^[a-z ]+$/i,
