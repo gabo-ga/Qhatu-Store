@@ -7,8 +7,8 @@ const FormCompany = () => {
         
         <div class="container-fluid d-flex justify-content-center">
             <div className='container1 d-flex justify-content-center'>
-                <div className="row align-self-center">
-                    <div className="col-lg-6 col-12 ">
+                <div className="row align-self-center flex-fill">
+                    <div className="col-12 d-flex justify-content-center">
                         <form>
                             <div class="mb-3 ">
                                 <label for="inputName" class="form-label">Nombre de la empresa</label>
