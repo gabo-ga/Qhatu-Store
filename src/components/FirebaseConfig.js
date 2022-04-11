@@ -27,8 +27,6 @@ export const deleteUser = id =>
   deleteDoc(doc(db,'user', id));
 
 // Register company
-export const registerCompany = (name, address, representativePhone, representativeName) =>{
-  const catalog = {};
-  addDoc(collection(doc,'company'),{name, address, representativePhone, representativeName, catalog});
-}
+export const registerCompany = (name, address, representativePhone, representativeName) =>
+  addDoc(collection(db,'company'),{name, address, representativePhone, representativeName});
 
