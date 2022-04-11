@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { onGetUsers } from '../FirebaseConfig'
-import { MdMode } from "react-icons/md"
+import React, { useEffect, useState } from 'react';
+import { onGetUsers } from '../FirebaseConfig';
+import { MdMode } from "react-icons/md";
+import { deleteUser } from '../FirebaseConfig';
 import './listItem.css'
 
 const ListUser = () => {
@@ -26,11 +27,16 @@ const ListUser = () => {
     }
   }
   
+  const handleClick= (id,name,email,phone,typeOfUser) =>{
+    if(window.confirm("¿Quiere eliminar el siguiente usuario?\n"+name+"\n"+email+"\n"+phone+"\n"+typeOfUser)){
+      deleteUser(id);
+    }
+  }
+
   return (
     <div className="container-fluid p-0">
       {userData?.map(({id,data}) =>( 
-        <div className={ ColorSelect(tableNumber) ?"item-list-table row" : "item-list-table2 row"}
-          key={ id }>
+        <div className={ ColorSelect(tableNumber) ?"item-list-table row" : "item-list-table2 row"}>
           <div className="col-4 item-list-id">
             { data.name }
           </div>
@@ -40,7 +46,7 @@ const ListUser = () => {
             <p>{ data.typeOfUser }</p>
           </div>
           <div className="col-1 d-flex justify-content-end align-items-center">
-            <button className="edit-button"><MdMode size={32}/></button>
+            <button className="edit-button btn-delete" onClick={() => handleClick(id,data.name,data.email,data.phone,data.typeOfUser)}><MdMode size={32}/></button>
           </div>
         </div>
       ))}
