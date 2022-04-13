@@ -12,7 +12,7 @@ const FormsSupv = () => {
     const patterns = {
         namePattern:/^[a-z ]+$/i,
         emailPattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/i,
-        phonePattern:/^[0-9]+$/i,
+        phonePattern:/^[6-7][0-9]{8}$/i,
         passwordPattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*[!"#$%&/()=?¡¿'"´}+´[~^`{}*])(?!.*[\t\n])([A-Za-z\d]|[^ ]){8,40}$/i
     }
 
@@ -47,10 +47,10 @@ const FormsSupv = () => {
 
                             <div className="mb-3">
                                 <label for="phone" class="form-label">Celular</label>
-                                <input type="text" class="form-control input-text" placeholder="76543211"
+                                <input type="number" class="form-control input-text" placeholder="76543211"
                                     {...register("phone",{ required:true,
-                                        maxLength:8,
-                                        minLength:8,
+                                        min:60000000,
+                                        max:79999999,
                                         valueAsNumber:true,
                                         pattern:patterns.phonePattern
                                     })}/>{/*errors.phone && "Last name is required"*/}
