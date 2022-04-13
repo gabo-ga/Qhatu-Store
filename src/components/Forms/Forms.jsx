@@ -20,9 +20,9 @@ const Forms = () => {
     return(
         
         <div className="container-fluid d-flex justify-content-center">
-        <form onSubmit={ handleSubmit(onSubmit)}>
             <div className='container1 d-flex justify-content-center'>
-                <div className="row align-self-center">
+            <form onSubmit={ handleSubmit(onSubmit)} className='d-flex align-self-center'>
+                <div className="row d-flex align-self-center justify-content-center">
                         <div className="col-lg-6 col-12 ">
                             <div className="mb-3 ">
                                 <label for="name" class="form-label">Nombre/s Apellidos</label>
@@ -122,9 +122,9 @@ const Forms = () => {
                             </div>
                         </div>
                 </div>
-            </div>
                 
-            </form>
+                </form>
+            </div>
         </div>
 
     );

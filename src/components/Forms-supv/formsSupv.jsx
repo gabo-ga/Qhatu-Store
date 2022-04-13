@@ -20,7 +20,7 @@ const FormsSupv = () => {
         
         <div className="container-fluid d-flex justify-content-center">
             <div className='container1 d-flex justify-content-center'>
-                <form onSubmit={ handleSubmit(onSubmit)} className="d-flex align-self-center">
+                <form onSubmit={ handleSubmit(onSubmit)} className="">
                     <div className="row d-flex align-self-center justify-content-center">
                         <div className="col-lg-6 col-12">
                             <div className="mb-3">
