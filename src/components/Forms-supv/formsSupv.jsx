@@ -75,7 +75,7 @@ const FormsSupv = () => {
                                         </label>
                                         <br />
                                         <div className='row'>
-                                            <div className='col-6'>
+                                            <div className='col-lg-12 col-6'>
                                                 <div className="form-check mb-3">
                                                     <input className="form-check-input" type="radio" value="Vendedor" 
                                                         {...register("typeOfUser")} checked
@@ -85,7 +85,7 @@ const FormsSupv = () => {
                                                     </label>
                                                 </div>
                                             </div>
-                                            <div className='col-6'>
+                                            <div className='col-lg-12 col-6'>
                                                 <div className="form-check mb-3 secondCheck">
                                                     <input className="form-check-input" type="radio" value="Supervisor"
                                                         {...register("supervisor")} disabled
