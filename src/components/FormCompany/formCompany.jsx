@@ -10,10 +10,10 @@ const FormCompany = () => {
     };
 
     const patterns = {
-        namePattern:/^[a-zA-Z ]{3,40}$/i,
+        namePattern:/^(?=.{3,39}$)[A-Z][a-z]+(?: [A-Z][a-z]+)+$/g,
         companyPattern:/^(?=.*[a-zA-Z])([A-Z a-z\d]|[^ ]){3,39}$/i,
         phonePattern:/^[6-7][0-9]{8}$/i,
-        directionPattern: /^(?=.*[a-zA-Z])([A-Z a-z\d]|[^ ]){3,39}$/i
+        directionPattern: /^(?=.*[a-zA-Z])(?!.*[!$%()=?¡¿'¨"´+[~^`{}*])(?!.*[\t\n])([A-Z a-z\d]|[^ ]){3,39}$/i
     }
     return(
         
