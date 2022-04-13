@@ -66,8 +66,8 @@ const FormsSupv = () => {
                                 })}/>{/*errors.password && "Last name is required"*/}
                             </div>
                         </div>
-                        <div className="col-lg-6 col-12 ">
-                            <div className='row'>
+                        <div className="col-lg-6 col-12 d-flex align-items-end ">
+                            <div className='row '>
                                 <div className='col-12 order-2 order-lg-1'>
                                     <div className= "mb-3 checks ">
                                         <label className="user form-label">
