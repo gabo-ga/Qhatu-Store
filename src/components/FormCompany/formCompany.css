@@ -10,6 +10,7 @@
     width: 1px !important;
 }
 .btn{
+    margin-top: 5%;
     background-color: #FF724C !important;
     border-radius: 30px !important;
     border-style: none !important;
@@ -39,18 +40,13 @@ form{
 }
 
 .container1{
-    width: 1075px;
-    height: 716px;
+    width: 50%;
+    height: 500px;
     background-color: #FDBF50;
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
 }
 
-.form-check-input{
-    border-radius: 0% !important;
-    background-color: #ffffff !important;
-    border-style: hidden !important;
-}
 .mb-3{
     align-items: center !important;
     margin-left: 5% !important;
@@ -72,11 +68,15 @@ label{
     padding-bottom: 4%;
 }
 
-@media only screen and (max-width: 960px){
-
+@media (max-width: 915px){
     .container1{
-        Width: 320px;
-        Height: 648px;
+        Width: 95%;
+        Height: auto;
+        padding-top: 30%;
+        padding-bottom: 30%;
+        margin: auto;
+        padding-left: 0;
+        padding-right: 0;
     } 
     
     .form-control{
@@ -87,4 +87,9 @@ label{
         margin-top: 0px;
         
     }
+
 }
+
+
+
+
