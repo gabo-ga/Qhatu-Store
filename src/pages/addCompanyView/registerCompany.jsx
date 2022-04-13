@@ -1,6 +1,6 @@
 import React from 'react';
 import FormCompany from '../../components/FormCompany/formCompany';
-
+import './registerCompany.css'
 
 const RegisterCompany = () => {
     return(
