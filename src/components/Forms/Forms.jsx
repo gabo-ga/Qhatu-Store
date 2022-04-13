@@ -116,7 +116,7 @@ const Forms = () => {
                         </div>
                         <div className='col-12'>
                             <div className="boton">
-                                <button className="btn btn-primary" type="submit">
+                                <button className="btn btn-primary btn-form-admin" type="submit">
                                     Crear cuenta
                                 </button>
                             </div>

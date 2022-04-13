@@ -68,7 +68,7 @@ const FormCompany = () => {
                             </div>
                             <div className='col-12'>
                                 <div className="boton">
-                                    <button className="btn btn-primary" type="submit">
+                                    <button className="btn btn-primary btn-formCompany" type="submit">
                                     Añadir Empresa
                                     </button>
                                 </div>
