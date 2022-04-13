@@ -11,10 +11,10 @@ const Forms = () => {
     
     
     const patterns = {
-        namePattern:/^[a-z ]+$/i,
+        namePattern:/^(?=.{3,39}$)[A-Z][a-z]+(?: [A-Z][a-z]+)+$/g,
         emailPattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/i,
-        phonePattern:/^[0-9]+$/i,
-        passwordPattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*[!"#$%&/()=?¡¿'"´}+´[~^`{}*])(?!.*[\t\n])([A-Za-z\d]|[^ ]){8,40}$/i
+        phonePattern:/^[6-7][0-9]{8}$/i,
+        passwordPattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*[!"#$%&/()=?¡¿'"´}+´[~^`{}*])(?!.*[\t\n])([A-Za-z\d]|[^ ]){8,39}$/i
     }
 
     return(
@@ -37,7 +37,7 @@ const Forms = () => {
 
                             <div className="mb-3">
                                 <label for="email" class="form-label">Correo electronico</label>
-                                <input type="email" class="form-control input-text" aria-describedby="emailHelp"
+                                <input type="text" class="form-control input-text" aria-describedby="emailHelp"
                                     placeholder="SantiagoHernandez@gmail.com" {...register("email",{ 
                                         required:true,
                                         maxLength:40,
@@ -48,10 +48,10 @@ const Forms = () => {
 
                             <div className="mb-3">
                                 <label for="phone" class="form-label">Celular</label>
-                                <input type="text" class="form-control input-text" placeholder="76543211"
+                                <input type="number" class="form-control input-text" placeholder="76543211"
                                     {...register("phone",{ required:true,
-                                        maxLength:8,
-                                        minLength:8,
+                                        min:60000000,
+                                        max:79999999,
                                         valueAsNumber:true,
                                         pattern:patterns.phonePattern
                                     })}/>{/*errors.phone && "Last name is required"*/}
