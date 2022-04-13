@@ -10,10 +10,10 @@ const FormCompany = () => {
     };
 
     const patterns = {
-        namePattern:/^[a-zA-Z ]+$/i,
-        companyPattern:/^(?=.*[a-zA-Z])([A-Z a-z\d]|[^ ]){3,40}$/i,
-        phonePattern:/^[0-9]+$/i,
-        directionPattern: /^(?=.*[a-zA-Z])([A-Z a-z\d]|[^ ]){3,40}$/i
+        namePattern:/^(?=.{3,39}$)[A-Z][a-z]+(?: [A-Z][a-z]+)+$/g,
+        companyPattern:/^(?=.*[a-zA-Z])([A-Z a-z\d]|[^ ]){3,39}$/i,
+        phonePattern:/^[6-7][0-9]{8}$/i,
+        directionPattern: /^(?=.*[a-zA-Z])(?!.*[!$%()=?¡¿'¨"´+[~^`{}*])(?!.*[\t\n])([A-Z a-z\d]|[^ ]){3,39}$/i
     }
     return(
         
@@ -27,10 +27,8 @@ const FormCompany = () => {
                                 <input type="text" class=" form-control input-text" placeholder="Coca Cola"
                                 {...register("name",{
                                     required:true,
-                                    minLength:3,
-                                    maxLength:40,
                                     pattern: patterns.companyPattern
-                                })}/>{errors.name && "Last name is required"}
+                                })}/>{/*errors.name && "Last name is required"*/}
                             </div>
 
                             <div class="mb-3">
@@ -38,22 +36,21 @@ const FormCompany = () => {
                                 <input type="text" class="form-control input-text" placeholder="Av Heroinas Nro 23"
                                 {...register("direction",{
                                     required:true,
-                                    minLength:3,
-                                    maxLength:40,
                                     pattern: patterns.directionPattern
-                                })}/>{errors.direction && "Last name is required"}
+                                })}/>{/*errors.direction && "Last name is required"*/}
                             </div>
 
                             <div class="mb-3">
-                                <label for="phone" class="form-label">Teléfono del representante</label>
-                                <input type="text" class="form-control input-text" placeholder="76543211"
+                                <label for="phone" class="form-label">Telefono del representante</label>
+                                <input type="number" class="form-control input-text" placeholder="76543211"
+
                                 {...register("phone",{
                                     required:true,
-                                    minLength:8,
-                                    maxLength:8,
-                                    pattern: patterns.phonePattern,
-                                    valueAsNumber:true
-                                })}/>{errors.phone && "Last name is required"}
+                                    valueAsNumber: true,
+                                    min:60000000,
+                                    max:79999999,
+                                    pattern: patterns.phonePattern
+                                })}/>{/*errors.phone && "Last name is required"*/}
                             </div>
 
                             <div class="mb-3">
@@ -61,14 +58,12 @@ const FormCompany = () => {
                                 <input type="text" class="form-control input-text" placeholder="Santiago Hernandez Garcia"
                                 {...register("representantName",{
                                     required:true,
-                                    minLength:3,
-                                    maxLength:40,
                                     pattern: patterns.namePattern
-                                })}/>{errors.representantName && "Last name is required"}
+                                })}/>{/*errors.representantName && "Last name is required"*/}
                             </div>
                             <div className='col-12'>
                                 <div className="boton">
-                                    <button className="btn btn-primary" type="submit">
+                                    <button className="btn btn-primary btn-formCompany" type="submit">
                                     Añadir Empresa
                                     </button>
                                 </div>

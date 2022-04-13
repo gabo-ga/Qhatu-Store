@@ -9,8 +9,8 @@
     border-bottom-right-radius: 0% !important;
     width: 1px !important;
 }
-.btn{
-    margin-top: 5%;
+
+.btn-formCompany{
     background-color: #FF724C !important;
     border-radius: 30px !important;
     border-style: none !important;
@@ -87,9 +87,5 @@ label{
         margin-top: 0px;
         
     }
-
+    
 }
-
-
-
-
