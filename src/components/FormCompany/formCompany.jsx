@@ -62,7 +62,13 @@ const FormCompany = () => {
                             </div>
                             <div className='col-12'>
                                 <div className="boton">
-                                    <button className="btn btn-primary btn-formCompany" type="submit">
+                                    <button className="btn btn-primary btn-formCompany" type="submit" onClick={()=>{
+                                        {errors.name?.type === 'required' &&
+                                        errors.direction?.type === 'required' &&
+                                        errors.phone?.type === 'required' &&
+                                        errors.representantName?.type === 'required' &&
+                                        alert("Todos los campos son requeridos")}
+                                    }}>
                                     Añadir Empresa
                                     </button>
                                 </div>

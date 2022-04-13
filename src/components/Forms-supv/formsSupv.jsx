@@ -6,7 +6,15 @@ import './forms-supv.css'
 const FormsSupv = () => {
     const { register, formState: { errors }, handleSubmit }= useForm();
     const onSubmit = (data) => {
-        registerUser(data.name, data.email,data.phone,data.password,data.typeOfUser)
+        if(data.password == data.confirmPassword){
+            if(data.typeOfUser != null){
+                registerUser(data.name, data.email,data.phone,data.password,data.typeOfUser)
+            }else{
+                alert("Todos los campos deben ser llenados");
+            }
+        }else{
+            alert("Las contraseñas deben ser iguales");
+        }
     };
     
     const patterns = {
@@ -115,11 +123,17 @@ const FormsSupv = () => {
                         </div>
                         <div className='col-12'>
                             <div className="boton">
-                                <button className="btn btn-primary btn-form-supv" type="submit">
+                                <button className="btn btn-primary btn-form-admin" type="submit" onClick={()=>{
+                                    {errors.name?.type === 'required' &&
+                                     errors.email?.type === 'required' &&
+                                     errors.phone?.type === 'required' &&
+                                     errors.password?.type === 'required' &&
+                                     alert("Todos los campos son requeridos")}
+                                }}>
                                     Crear cuenta
                                 </button>
                             </div>
-                    </div>
+                        </div>
                     </div>
                 </form>
             </div> 
