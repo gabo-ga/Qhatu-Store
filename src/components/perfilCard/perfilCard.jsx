@@ -10,7 +10,7 @@ const perfilCard = ( {cargo} ) => {
             class="image-profile rounded-circle"></img>
           </div>
           <div className="col-12 text-center">
-            <p className="card-details">Jose armando alvarez caredo</p>
+            <p className="card-details">Jose Armando Alvarez Caredo</p>
             <p className="card-details">Cargo: { cargo } </p>
           </div>
         </div>

@@ -11,18 +11,18 @@ const Forms = () => {
     
     
     const patterns = {
-        namePattern:/^[a-z ]+$/i,
+        namePattern:/^(?=.{3,39}$)[A-Z][a-z]+(?: [A-Z][a-z]+)+$/g,
         emailPattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/i,
-        phonePattern:/^[0-9]+$/i,
-        passwordPattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*[!"#$%&/()=?¡¿'"´}+´[~^`{}*])(?!.*[\t\n])([A-Za-z\d]|[^ ]){8,40}$/i
+        phonePattern:/^[6-7][0-9]{8}$/i,
+        passwordPattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*[!"#$%&/()=?¡¿'"´}+´[~^`{}*])(?!.*[\t\n])([A-Za-z\d]|[^ ]){8,39}$/i
     }
 
     return(
         
         <div className="container-fluid d-flex justify-content-center">
             <div className='container1 d-flex justify-content-center'>
-                <div className="row align-self-center">
-                    <form onSubmit={ handleSubmit(onSubmit)}>
+            <form onSubmit={ handleSubmit(onSubmit)} className='d-flex align-self-center'>
+                <div className="row d-flex align-self-center justify-content-center">
                         <div className="col-lg-6 col-12 ">
                             <div className="mb-3 ">
                                 <label for="name" class="form-label">Nombre/s Apellidos</label>
@@ -37,7 +37,7 @@ const Forms = () => {
 
                             <div className="mb-3">
                                 <label for="email" class="form-label">Correo electronico</label>
-                                <input type="email" class="form-control input-text" aria-describedby="emailHelp"
+                                <input type="text" class="form-control input-text" aria-describedby="emailHelp"
                                     placeholder="SantiagoHernandez@gmail.com" {...register("email",{ 
                                         required:true,
                                         maxLength:40,
@@ -48,10 +48,10 @@ const Forms = () => {
 
                             <div className="mb-3">
                                 <label for="phone" class="form-label">Celular</label>
-                                <input type="text" class="form-control input-text" placeholder="76543211"
+                                <input type="number" class="form-control input-text" placeholder="76543211"
                                     {...register("phone",{ required:true,
-                                        maxLength:8,
-                                        minLength:8,
+                                        min:60000000,
+                                        max:79999999,
                                         valueAsNumber:true,
                                         pattern:patterns.phonePattern
                                     })}/>{/*errors.phone && "Last name is required"*/}
@@ -67,16 +67,16 @@ const Forms = () => {
                                 })}/>{/*errors.password && "Last name is required"*/}
                             </div>
                         </div>
-                        <div className="col-lg-6 col-12 ">
+                        <div className="col-lg-6 col-12 d-flex align-items-end ">
                             <div className='row'>
-                                <div className='col-12 order-2 order-lg-1'>
+                                <div className='col-12 order-2 order-lg-1 '>
                                     <div className= "mb-3 checks ">
                                         <label className="user form-label">
                                             Tipo de usuario
                                         </label>
                                         <br />
                                         <div className='row'>
-                                            <div className='col-6'>
+                                            <div className='col-lg-12 col-6'>
                                                 <div className="form-check mb-3">
                                                     <input className="form-check-input" type="radio" value="Vendedor"
                                                         {...register("typeOfUser")}
@@ -86,7 +86,7 @@ const Forms = () => {
                                                     </label>
                                                 </div>
                                             </div>
-                                            <div className='col-6'>
+                                            <div className='col-lg-12 col-6'>
                                                 <div className="form-check mb-3 secondCheck">
                                                     <input className="form-check-input" type="radio" value="Supervisor"
                                                         {...register("typeOfUser")}
@@ -116,15 +116,15 @@ const Forms = () => {
                         </div>
                         <div className='col-12'>
                             <div className="boton">
-                                <button className="btn btn-primary" type="submit">
+                                <button className="btn btn-primary btn-form-admin" type="submit">
                                     Crear cuenta
                                 </button>
                             </div>
                         </div>
-                    </form>
                 </div>
-            </div>
                 
+                </form>
+            </div>
         </div>
 
     );

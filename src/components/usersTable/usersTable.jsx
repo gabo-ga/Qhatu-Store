@@ -1,5 +1,5 @@
 import React from 'react'
-import ListItem from '../listItem/listItem'
+import ListUser from '../listItem/listUser'
 
 import './usersTable.css'
 
@@ -9,8 +9,7 @@ const usersTable = () => {
     <div>
         <div className='col-12'>
           <div className='users-table border'>
-              <ListItem color="1"/>
-              <ListItem color="2"/>
+              <ListUser />
           </div>
         </div>
     </div>
