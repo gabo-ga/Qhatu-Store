@@ -37,7 +37,7 @@ const Forms = () => {
 
                             <div className="mb-3">
                                 <label for="email" class="form-label">Correo electronico</label>
-                                <input type="email" class="form-control input-text" aria-describedby="emailHelp"
+                                <input type="text" class="form-control input-text" aria-describedby="emailHelp"
                                     placeholder="SantiagoHernandez@gmail.com" {...register("email",{ 
                                         required:true,
                                         maxLength:40,
