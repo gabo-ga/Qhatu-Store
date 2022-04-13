@@ -14,16 +14,17 @@
     padding-top: 60px;
 }
 
-.img-banner {
+.img-banner-suprv {
     position: absolute;
     z-index: -1;
+    width: 100%;
 }
 
-.img-banner  > img{
+.img-banner-suprv > img{
 	width: fit-content;
 	height: 246px;
     width: 100%;
-	object-fit: none;
+	object-fit:cover;
 }
 
 .buttons-colection{
@@ -35,7 +36,7 @@
 }
 
 .btn-supv-profile {
-    min-width: 120px;
+    width: 253px;
     border-radius: 30px !important;
     background-color: #FF724C !important;
     color: #ffff !important;

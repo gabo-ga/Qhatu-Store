@@ -20,9 +20,9 @@ const Forms = () => {
     return(
         
         <div className="container-fluid d-flex justify-content-center">
+        <form onSubmit={ handleSubmit(onSubmit)}>
             <div className='container1 d-flex justify-content-center'>
                 <div className="row align-self-center">
-                    <form onSubmit={ handleSubmit(onSubmit)}>
                         <div className="col-lg-6 col-12 ">
                             <div className="mb-3 ">
                                 <label for="name" class="form-label">Nombre/s Apellidos</label>
@@ -67,16 +67,16 @@ const Forms = () => {
                                 })}/>{/*errors.password && "Last name is required"*/}
                             </div>
                         </div>
-                        <div className="col-lg-6 col-12 ">
+                        <div className="col-lg-6 col-12 d-flex align-items-end ">
                             <div className='row'>
-                                <div className='col-12 order-2 order-lg-1'>
+                                <div className='col-12 order-2 order-lg-1 '>
                                     <div className= "mb-3 checks ">
                                         <label className="user form-label">
                                             Tipo de usuario
                                         </label>
                                         <br />
                                         <div className='row'>
-                                            <div className='col-6'>
+                                            <div className='col-lg-12 col-6'>
                                                 <div className="form-check mb-3">
                                                     <input className="form-check-input" type="radio" value="Vendedor"
                                                         {...register("typeOfUser")}
@@ -86,7 +86,7 @@ const Forms = () => {
                                                     </label>
                                                 </div>
                                             </div>
-                                            <div className='col-6'>
+                                            <div className='col-lg-12 col-6'>
                                                 <div className="form-check mb-3 secondCheck">
                                                     <input className="form-check-input" type="radio" value="Supervisor"
                                                         {...register("typeOfUser")}
@@ -121,10 +121,10 @@ const Forms = () => {
                                 </button>
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
                 
+            </form>
         </div>
 
     );

@@ -1,6 +1,10 @@
 import React from 'react';
 import ListUsersTable from '../../components/usersTable/listUsersTable';
 import PerfilCard from '../../components/perfilCard/perfilCard';
+import Footer from '../../components/fotter/footer'
+import Navbar from '../../components/navbar/navbar'
+
+
 import { Link } from 'react-router-dom';
 //estilos
 import './administratorProfile.css'
@@ -8,14 +12,13 @@ import './administratorProfile.css'
 
 const administratorProfile = () => {
   return (
-    <div className='container-fluid'>
-        <div className='row p-0'>
-          <div className='img-banner p-0'>
+    <div className='container-fluid p-0'>
+        <Navbar></Navbar>
+        <div className='img-banner-admin p-0'>
             <img
               src="https://www.journeygazer.com/wp-content/uploads/2019/03/Moraine-lake-destination.jpg"/>
           </div>
-          
-        </div>
+        <div className='container-fluid'>
         <div className='row'>
           <div className='col-xl-8 col-12 col-table d-flex justify-content-center order-2 order-xl-1'>
             <div>
@@ -51,7 +54,7 @@ const administratorProfile = () => {
                   <button type="button" class="btn btn-v1">Administrar catalogo</button>
                 </div>
                 */}
-                <div className='col--12 col-6 d-flex justify-content-center buttons-colection-item'>
+                <div className='col-lg-12 col-6 d-flex justify-content-center buttons-colection-item'>
                   <button type="button" class="btn btn-admin-profile">Administrar usuario</button>
                 </div> 
                 <div className='col-lg-12 col-6 d-flex justify-content-center buttons-colection-item'>
@@ -63,6 +66,9 @@ const administratorProfile = () => {
             </div>
           </div>
         </div>
+
+        </div>
+        <Footer></Footer>
     </div>
   )
 }
