@@ -19,8 +19,8 @@ const FormsSupv = () => {
     return(
         
         <div className="container-fluid d-flex justify-content-center">
-            <div className='container1 d-flex justify-content-center'>
-                <form onSubmit={ handleSubmit(onSubmit)} className="">
+            <div className='container1 d-flex justify-content-center align-self-center'>
+                <form onSubmit={ handleSubmit(onSubmit)} className="d-flex justify-content-center align-self-center">
                     <div className="row d-flex align-self-center justify-content-center">
                         <div className="col-lg-6 col-12">
                             <div className="mb-3">
@@ -66,7 +66,7 @@ const FormsSupv = () => {
                                 })}/>{/*errors.password && "Last name is required"*/}
                             </div>
                         </div>
-                        <div className="col-lg-6 col-12">
+                        <div className="col-lg-6 col-12 d-flex align-self-end">
                             <div className='row '>
                                 <div className='col-12 order-2 order-lg-1'>
                                     <div className= "mb-3 checks ">
