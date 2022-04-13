@@ -20,10 +20,10 @@ const FormsSupv = () => {
         
         <div className="container-fluid d-flex justify-content-center">
             <div className='container1 d-flex justify-content-center'>
-                <div className="row align-self-center">
-                    <form onSubmit={ handleSubmit(onSubmit)}>
-                        <div className="col-lg-6 col-12 ">
-                            <div className="mb-3 ">
+                <form onSubmit={ handleSubmit(onSubmit)} className="d-flex align-self-center">
+                    <div className="row d-flex align-self-center justify-content-center">
+                        <div className="col-lg-6 col-12">
+                            <div className="mb-3">
                                 <label for="name" class="form-label">Nombre/s Apellidos</label>
                                 <input type="text" class=" form-control input-text" 
                                     placeholder="Santiago Hernandez Garcia" {...register("name",{ 
@@ -77,8 +77,8 @@ const FormsSupv = () => {
                                         <div className='row'>
                                             <div className='col-6'>
                                                 <div className="form-check mb-3">
-                                                    <input className="form-check-input" type="radio" value="Vendedor"
-                                                        {...register("typeOfUser")}
+                                                    <input className="form-check-input" type="radio" value="Vendedor" 
+                                                        {...register("typeOfUser")} checked
                                                     />
                                                     <label className="form-check-label" for="flexRadioDefault1">
                                                         Vendedor
@@ -119,9 +119,9 @@ const FormsSupv = () => {
                                     Crear cuenta
                                 </button>
                             </div>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    </div>
+                </form>
             </div> 
         </div>
 
