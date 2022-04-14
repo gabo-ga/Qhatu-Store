@@ -6,7 +6,15 @@ import './forms-supv.css'
 const FormsSupv = () => {
     const { register, formState: { errors }, handleSubmit }= useForm();
     const onSubmit = (data) => {
-        registerUser(data.name, data.email,data.phone,data.password,data.typeOfUser)
+        if(data.password == data.confirmPassword){
+            if(data.typeOfUser != null){
+                registerUser(data.name, data.email,data.phone,data.password,data.typeOfUser)
+            }else{
+                alert("Todos los campos deben ser llenados");
+            }
+        }else{
+            alert("Las contraseñas deben ser iguales");
+        }
     };
     
     const patterns = {
@@ -35,7 +43,7 @@ const FormsSupv = () => {
                             </div>
 
                             <div className="mb-3">
-                                <label for="email" class="form-label">Correo electronico</label>
+                                <label for="email" class="form-label">Correo electrónico</label>
                                 <input type="text" class="form-control input-text" aria-describedby="emailHelp"
                                     placeholder="SantiagoHernandez@gmail.com" {...register("email",{ 
                                         required:true,
@@ -46,7 +54,7 @@ const FormsSupv = () => {
                             </div>
 
                             <div className="mb-3">
-                                <label for="phone" class="form-label">Celular</label>
+                                <label for="phone" class="form-label">Número de Celular</label>
                                 <input type="number" class="form-control input-text" placeholder="76543211"
                                     {...register("phone",{ required:true,
                                         min:60000000,
@@ -100,7 +108,7 @@ const FormsSupv = () => {
                                 </div>
                                 <div className='col-12 order-1 order-lg-2'>
                                     <div className="mb-3 confirm ">
-                                        <label for="confirmPassword" class="form-label">Confirmacion de contraseña</label>
+                                        <label for="confirmPassword" class="form-label">Confirmación de contraseña</label>
                                         <input type="password" class="form-control input-text" placeholder="••••••••"
                                             {...register("confirmPassword",{ 
                                                 required:true,
@@ -115,11 +123,17 @@ const FormsSupv = () => {
                         </div>
                         <div className='col-12'>
                             <div className="boton">
-                                <button className="btn btn-primary btn-form-supv" type="submit">
+                                <button className="btn btn-primary btn-form-admin" type="submit" onClick={()=>{
+                                    {errors.name?.type === 'required' &&
+                                     errors.email?.type === 'required' &&
+                                     errors.phone?.type === 'required' &&
+                                     errors.password?.type === 'required' &&
+                                     alert("Todos los campos son requeridos")}
+                                }}>
                                     Crear cuenta
                                 </button>
                             </div>
-                    </div>
+                        </div>
                     </div>
                 </form>
             </div> 

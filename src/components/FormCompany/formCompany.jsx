@@ -32,7 +32,7 @@ const FormCompany = () => {
                             </div>
 
                             <div class="mb-3">
-                                <label for="direction" class="form-label">Direccion de la central</label>
+                                <label for="direction" class="form-label">Dirección de la central</label>
                                 <input type="text" class="form-control input-text" placeholder="Av Heroinas Nro 23"
                                 {...register("direction",{
                                     required:true,
@@ -41,7 +41,7 @@ const FormCompany = () => {
                             </div>
 
                             <div class="mb-3">
-                                <label for="phone" class="form-label">Telefono del representante</label>
+                                <label for="phone" class="form-label">Teléfono del representante</label>
                                 <input type="number" class="form-control input-text" placeholder="76543211"
                                 {...register("phone",{
                                     required:true,
@@ -62,7 +62,13 @@ const FormCompany = () => {
                             </div>
                             <div className='col-12'>
                                 <div className="boton">
-                                    <button className="btn btn-primary btn-formCompany" type="submit">
+                                    <button className="btn btn-primary btn-formCompany" type="submit" onClick={()=>{
+                                        {errors.name?.type === 'required' &&
+                                        errors.direction?.type === 'required' &&
+                                        errors.phone?.type === 'required' &&
+                                        errors.representantName?.type === 'required' &&
+                                        alert("Todos los campos son requeridos")}
+                                    }}>
                                     Añadir Empresa
                                     </button>
                                 </div>
