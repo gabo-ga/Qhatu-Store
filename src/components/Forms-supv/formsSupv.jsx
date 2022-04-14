@@ -43,7 +43,7 @@ const FormsSupv = () => {
                             </div>
 
                             <div className="mb-3">
-                                <label for="email" class="form-label">Correo electronico</label>
+                                <label for="email" class="form-label">Correo electrónico</label>
                                 <input type="text" class="form-control input-text" aria-describedby="emailHelp"
                                     placeholder="SantiagoHernandez@gmail.com" {...register("email",{ 
                                         required:true,
@@ -54,7 +54,7 @@ const FormsSupv = () => {
                             </div>
 
                             <div className="mb-3">
-                                <label for="phone" class="form-label">Celular</label>
+                                <label for="phone" class="form-label">Número de Celular</label>
                                 <input type="number" class="form-control input-text" placeholder="76543211"
                                     {...register("phone",{ required:true,
                                         min:60000000,
@@ -108,7 +108,7 @@ const FormsSupv = () => {
                                 </div>
                                 <div className='col-12 order-1 order-lg-2'>
                                     <div className="mb-3 confirm ">
-                                        <label for="confirmPassword" class="form-label">Confirmacion de contraseña</label>
+                                        <label for="confirmPassword" class="form-label">Confirmación de contraseña</label>
                                         <input type="password" class="form-control input-text" placeholder="••••••••"
                                             {...register("confirmPassword",{ 
                                                 required:true,

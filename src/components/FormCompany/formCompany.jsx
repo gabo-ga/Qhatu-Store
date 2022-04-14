@@ -32,7 +32,7 @@ const FormCompany = () => {
                             </div>
 
                             <div class="mb-3">
-                                <label for="direction" class="form-label">Direccion de la central</label>
+                                <label for="direction" class="form-label">Dirección de la central</label>
                                 <input type="text" class="form-control input-text" placeholder="Av Heroinas Nro 23"
                                 {...register("direction",{
                                     required:true,
@@ -41,7 +41,7 @@ const FormCompany = () => {
                             </div>
 
                             <div class="mb-3">
-                                <label for="phone" class="form-label">Telefono del representante</label>
+                                <label for="phone" class="form-label">Teléfono del representante</label>
                                 <input type="number" class="form-control input-text" placeholder="76543211"
                                 {...register("phone",{
                                     required:true,
