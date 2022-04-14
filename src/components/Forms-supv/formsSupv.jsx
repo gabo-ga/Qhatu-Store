@@ -124,16 +124,17 @@ const FormsSupv = () => {
                         </div>
                         <div className='col-12'>
                             <div className="boton">
+                                <Link to="/supervisor">
                                 <button className="btn btn-primary btn-form-admin" type="submit" onClick={()=>{
                                     {errors.name?.type === 'required' &&
                                      errors.email?.type === 'required' &&
                                      errors.phone?.type === 'required' &&
                                      errors.password?.type === 'required' &&
                                      alert("Todos los campos son requeridos")}
-                                     supervisorProfile
                                 }}>
                                     Crear cuenta
                                 </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
