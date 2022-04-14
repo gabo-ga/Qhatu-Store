@@ -8,7 +8,7 @@ const navbar = () => {
             <div className="col-12 p-0">
                 <div className="nav-page text-center d-flex align-items-center justify-content-center">
                   <navbar>
-                      Nav
+                      Navbar
                   </navbar>
                 </div>
             </div>

@@ -9,11 +9,11 @@
     border-bottom-right-radius: 0% !important;
     width: 1px !important;
 }
-.btn{
+.btn-form-supv{
     background-color: #FF724C !important;
     border-radius: 30px !important;
     border-style: none !important;
-    width: 200 px;
+    width: 200px;
     font-size: 20px !important;
     height: 56px;
 }
