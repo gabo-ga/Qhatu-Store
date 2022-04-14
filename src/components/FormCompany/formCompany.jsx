@@ -28,7 +28,7 @@ const FormCompany = () => {
                                 {...register("name",{
                                     required:true,
                                     pattern: patterns.companyPattern
-                                })}/>{/*errors.name && "Last name is required"*/}
+                                })}/>{errors.name && "Nombre de empresa requerido"}
                             </div>
 
                             <div class="mb-3">
@@ -37,7 +37,7 @@ const FormCompany = () => {
                                 {...register("direction",{
                                     required:true,
                                     pattern: patterns.directionPattern
-                                })}/>{/*errors.direction && "Last name is required"*/}
+                                })}/>{errors.direction && "Direccion de central requerida"}
                             </div>
 
                             <div class="mb-3">
@@ -49,7 +49,7 @@ const FormCompany = () => {
                                     min:60000000,
                                     max:79999999,
                                     pattern: patterns.phonePattern
-                                })}/>{/*errors.phone && "Last name is required"*/}
+                                })}/>{errors.phone && "Telefono de representante requerido"}
                             </div>
 
                             <div class="mb-3">
@@ -58,7 +58,7 @@ const FormCompany = () => {
                                 {...register("representantName",{
                                     required:true,
                                     pattern: patterns.namePattern
-                                })}/>{/*errors.representantName && "Last name is required"*/}
+                                })}/>{errors.representantName && "Nombre de representante requerido"}
                             </div>
                             <div className='col-12'>
                                 <div className="boton">
