@@ -123,7 +123,7 @@ const FormsSupv = () => {
                         </div>
                         <div className='col-12'>
                             <div className="boton">
-                                <button className="btn btn-primary btn-form-admin" type="submit" onClick={()=>{
+                                <button className="btn btn-primary btn-form-admin" type="submit" onClick={(supervisoProfile)=>{
                                     {errors.name?.type === 'required' &&
                                      errors.email?.type === 'required' &&
                                      errors.phone?.type === 'required' &&
