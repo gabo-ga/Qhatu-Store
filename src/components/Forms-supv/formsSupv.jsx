@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import supervisorProfile from '../../pages/supervisorProfile/supervisorProfile';
 import { registerUser } from '../FirebaseConfig'
 import './forms-supv.css'
 
@@ -123,12 +124,13 @@ const FormsSupv = () => {
                         </div>
                         <div className='col-12'>
                             <div className="boton">
-                                <button className="btn btn-primary btn-form-admin" type="submit" onClick={(supervisoProfile)=>{
+                                <button className="btn btn-primary btn-form-admin" type="submit" onClick={()=>{
                                     {errors.name?.type === 'required' &&
                                      errors.email?.type === 'required' &&
                                      errors.phone?.type === 'required' &&
                                      errors.password?.type === 'required' &&
                                      alert("Todos los campos son requeridos")}
+                                     supervisorProfile
                                 }}>
                                     Crear cuenta
                                 </button>
