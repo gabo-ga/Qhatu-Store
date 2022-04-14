@@ -28,20 +28,20 @@ const FormCompany = () => {
                                 {...register("name",{
                                     required:true,
                                     pattern: patterns.companyPattern
-                                })}/>{/*errors.name && "Last name is required"*/}
+                                })}/>{errors.name && "Nombre de empresa requerido"}
                             </div>
 
                             <div class="mb-3">
-                                <label for="direction" class="form-label">Direccion de la central</label>
+                                <label for="direction" class="form-label">Dirección de la central</label>
                                 <input type="text" class="form-control input-text" placeholder="Av Heroinas Nro 23"
                                 {...register("direction",{
                                     required:true,
                                     pattern: patterns.directionPattern
-                                })}/>{/*errors.direction && "Last name is required"*/}
+                                })}/>{errors.direction && "Direccion de central requerida"}
                             </div>
 
                             <div class="mb-3">
-                                <label for="phone" class="form-label">Telefono del representante</label>
+                                <label for="phone" class="form-label">Teléfono del representante</label>
                                 <input type="number" class="form-control input-text" placeholder="76543211"
                                 {...register("phone",{
                                     required:true,
@@ -49,7 +49,7 @@ const FormCompany = () => {
                                     min:60000000,
                                     max:79999999,
                                     pattern: patterns.phonePattern
-                                })}/>{/*errors.phone && "Last name is required"*/}
+                                })}/>{errors.phone && "Telefono de representante requerido"}
                             </div>
 
                             <div class="mb-3">
@@ -58,11 +58,17 @@ const FormCompany = () => {
                                 {...register("representantName",{
                                     required:true,
                                     pattern: patterns.namePattern
-                                })}/>{/*errors.representantName && "Last name is required"*/}
+                                })}/>{errors.representantName && "Nombre de representante requerido"}
                             </div>
                             <div className='col-12'>
                                 <div className="boton">
-                                    <button className="btn btn-primary btn-formCompany" type="submit">
+                                    <button className="btn btn-primary btn-formCompany" type="submit" onClick={()=>{
+                                        {errors.name?.type === 'required' &&
+                                        errors.direction?.type === 'required' &&
+                                        errors.phone?.type === 'required' &&
+                                        errors.representantName?.type === 'required' &&
+                                        alert("Todos los campos son requeridos")}
+                                    }}>
                                     Añadir Empresa
                                     </button>
                                 </div>
