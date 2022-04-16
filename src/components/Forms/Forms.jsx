@@ -56,7 +56,7 @@ const Forms = () => {
 
                             <div className="mb-3">
                                 <label for="phone" class="form-label">Número de Celular</label>
-                                <input type="number" class="form-control input-text" placeholder="76543211"
+                                <input type="number" class="form-control input-text" placeholder="76543211" min="60000000" max="79999999"
                                     {...register("phone",{ required:true,
                                         min:60000000,
                                         max:79999999,
