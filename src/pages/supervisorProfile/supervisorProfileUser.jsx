@@ -1,6 +1,10 @@
 import React from 'react';
 import ListUsersTable from '../../components/usersTable/listUsersTable';
 import PerfilCard from '../../components/perfilCard/perfilCard';
+import Footer from '../../components/fotter/footer'
+import Navbar from '../../components/navbar/navbar'
+
+
 import { Link } from 'react-router-dom';
 
 //estilos
@@ -8,9 +12,11 @@ import './supervisoProfile.css'
 
 const supervisorProfile = () => {
   return (
-    <div className='container-fluid'>
+    <div className='container-fluid  p-0'>
+        <Navbar></Navbar>
+        <div className='container-fluid'>
         <div className='row p-0'>
-          <div className='img-banner p-0'>
+          <div className='img-banner-suprv p-0'>
             <img
               src="https://www.journeygazer.com/wp-content/uploads/2019/03/Moraine-lake-destination.jpg"/>
           </div>
@@ -20,12 +26,12 @@ const supervisorProfile = () => {
           <div className='col-xl-8 col-12 col-table d-flex justify-content-center order-2 order-xl-1'>
             <div>
               <div className='table_background shadow'>
-                <div className='container-fluid p-0 '>
+                <div className='container-fluid p-0'>
                   <div className='row d-flex justify-content-center'>
 
-                    <div className='col-lg-4 col-4 d-flex justify-content-xl-start  justify-content-end order-2'>
+                    <div className='col-12 d-flex justify-content-lg-center justify-content-center order-2'>
                       <Link to='/supervisor/createuser'>
-                        <button type="button" class="btn btn-v1 table-item button-item-det">
+                        <button type="button" class="btn btn-supv-profile table-item button-item-det">
                           Registrar Usuario
                         </button>
                       </Link>
@@ -43,8 +49,7 @@ const supervisorProfile = () => {
             </div>
             
           </div>
-
-          <div className='col-xl-4 col-12 col-profile order-1 order-xl-2'>
+          <div className='col-xl-4 col-12 col-profile order-1 order-xl-2 pr-0'>
             <div className='d-flex justify-content-center'>
               <PerfilCard cargo="Supervisor"></PerfilCard>
             </div>
@@ -56,17 +61,20 @@ const supervisorProfile = () => {
                 </div>
                 */}
                 <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
-                  <button type="button" class="btn btn-v1">Administrar usuario</button>
+                  <button type="button" class="btn btn-supv-profile">Administrar usuario</button>
                 </div>
                 <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
                   <Link to="/supervisor/registercompany">
-                    <button type="button" class="btn btn-v1">Añadir empresa</button>
+                    <button type="button" class="btn btn-supv-profile">Añadir empresa</button>
                   </Link>
                 </div>   
               </div>
             </div>
           </div>
         </div>
+
+        </div>
+        <Footer></Footer>
     </div>
   )
 }
