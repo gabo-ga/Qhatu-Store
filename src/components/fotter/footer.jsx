@@ -8,7 +8,6 @@ const footer = () => {
             <div className="col-12 p-0">
                 <div className="footer-page text-center d-flex align-items-center justify-content-center">
                   <footer>
-                      Footer
                   </footer>
                 </div>
             </div>
