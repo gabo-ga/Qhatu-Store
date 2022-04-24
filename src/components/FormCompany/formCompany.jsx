@@ -2,11 +2,15 @@ import React from 'react';
 import './formCompany.css';
 import { useForm } from 'react-hook-form';
 import { registerCompany } from '../FirebaseConfig';
+import { useNavigate } from "react-router-dom";
 
-const FormCompany = () => {
+const FormCompany = ({cargo}) => {
     const { register,formState:{ errors }, handleSubmit }=useForm();
+    let navigate = useNavigate();
+    let path ="/"+cargo;
     const onSubmit= (data) => {
         registerCompany(data.name,data.direction,data.phone,data.representantName);
+        navigate(path, {replace: true});
     };
 
     const patterns = {
@@ -49,7 +53,7 @@ const FormCompany = () => {
                                     min:60000000,
                                     max:79999999,
                                     pattern: patterns.phonePattern
-                                })}/>{errors.phone && "Telefono de representante requerido"}
+                                })}/>{errors.phone && "Telefono del representante requerido"}
                             </div>
 
                             <div class="mb-3">
@@ -58,7 +62,7 @@ const FormCompany = () => {
                                 {...register("representantName",{
                                     required:true,
                                     pattern: patterns.namePattern
-                                })}/>{errors.representantName && "Nombre de representante requerido"}
+                                })}/>{errors.representantName && "Nombre del representante requerido"}
                             </div>
                             <div className='col-12'>
                                 <div className="boton">

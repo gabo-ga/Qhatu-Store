@@ -1,14 +1,17 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { registerUser } from '../FirebaseConfig'
+import { useNavigate } from "react-router-dom";
 import './forms.css'
 
 const Forms = () => {
     const { register, formState: { errors }, handleSubmit }= useForm();
+    let navigate = useNavigate();
     const onSubmit = (data) => {
         if(data.password == data.confirmPassword){
             if(data.typeOfUser != null){
                 registerUser(data.name, data.email,data.phone,data.password,data.typeOfUser)
+                navigate("/administrator", {replace: true});
             }else{
                 alert("Todos los campos deben ser llenados");
             }
@@ -40,7 +43,7 @@ const Forms = () => {
                                         maxLength:40,
                                         minLength:3,
                                         pattern:patterns.namePattern
-                                })}/>{/*errors.name && "Last name is required"*/}
+                                })}/>{errors.name?.type === 'required' && "Nombre completo es requerido"}
                             </div>
 
                             <div className="mb-3">
@@ -51,7 +54,7 @@ const Forms = () => {
                                         maxLength:40,
                                         minLength:10,
                                         pattern:patterns.emailPattern
-                                })}/>{/*errors.email && "Last name is required"*/}
+                                })}/>{errors.email?.type === 'required' && "Email es requerido"}
                             </div>
 
                             <div className="mb-3">
@@ -62,7 +65,7 @@ const Forms = () => {
                                         max:79999999,
                                         valueAsNumber:true,
                                         pattern:patterns.phonePattern
-                                    })}/>{/*errors.phone && "Last name is required"*/}
+                                    })}/>{errors.phone?.type === 'required' && "Numero de celular es requerido"}
                             </div>
 
                             <div className="mb-3">
@@ -72,7 +75,7 @@ const Forms = () => {
                                         maxLength:40,
                                         minLength:8,
                                         pattern:patterns.passwordPattern
-                                })}/>{/*errors.password && "Last name is required"*/}
+                                })}/>{errors.password?.type === 'required' && "La contraseña es requerida"}
                             </div>
                         </div>
                         <div className="col-lg-6 col-12 d-flex align-items-end ">
@@ -116,7 +119,7 @@ const Forms = () => {
                                                 maxLength:40,
                                                 minLength:8,
                                                 pattern:patterns.passwordPattern
-                                            })}/> {/*errors.confirmPassword && "Password is required"*/}
+                                            })}/> {errors.confirmPassword?.type === 'required' && "Confirme su contraseña"}
                                     </div>
                                 </div>
                             </div>
