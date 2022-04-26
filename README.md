@@ -12,7 +12,7 @@ Sistema que registra los pedidos de una tienda/almacen con todos los datos neces
 ## Tecnologias
 ***
 Para el desarrollo de este proyecto se utilizaron:
-* [Node.js](https://nodejs.org/es/): Version 16.13.0
+* [Node.js](https://nodejs.org/es/): Version 16.14.0
 * [npm/npx](https://www.npmjs.com): Version 8.1.0
 * Javascript: ES6
 * [Firebase](https://firebase.google.com): Version 10.0.2

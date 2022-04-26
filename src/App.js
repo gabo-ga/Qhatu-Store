@@ -15,11 +15,11 @@ function App() {
         <Route exact path="/administrator" element={ <AdministratorProfile /> }/>
         <Route exact path="/administrator/adminuser" element={ <AdministratorProfileUser /> }/>
         <Route exact path="/administrator/createuser" element={ <RegUserAdm /> }></Route>
-        <Route exact path="/administrator/registercompany" element={ <RegisterCompany /> }></Route>
+        <Route exact path="/administrator/registercompany" element={ <RegisterCompany cargo="administrator"/> }></Route>
         <Route exact path="/supervisor" element={ <SupervisorProfile /> }/>
         <Route exact path="/supervisor/adminuser" element={ <SupervisorProfileUser /> }/>
         <Route exact path="/supervisor/createuser" element={ <RegistrarUsuarioSupv /> }></Route>
-        <Route exact path="/supervisor/registercompany" element={ <RegisterCompany /> }></Route>
+        <Route exact path="/supervisor/registercompany" element={ <RegisterCompany cargo="supervisor"/> }></Route>
       </Routes>
     </BrowserRouter>
   );
