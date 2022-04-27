@@ -6,7 +6,6 @@ import { deleteUser } from '../FirebaseConfig';
 import "./empItemList.css"
 
 const EmpItemList = () => {
-    const [count, setCount] = useState(0);
     const [userData,setUserData]= useState([]);
     let tableNumber=0;
 
