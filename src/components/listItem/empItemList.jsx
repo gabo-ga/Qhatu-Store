@@ -4,8 +4,7 @@ import { MdMode } from "react-icons/md";
 import { deleteUser } from '../FirebaseConfig';
 
 import "./empItemList.css"
-
-import DelEmpModal from '../modal/delete/delEmpModal';
+import "../modal/companyModal.css"
 
 const EmpItemList = (props) => {
     const [userData,setUserData]= useState([]);
