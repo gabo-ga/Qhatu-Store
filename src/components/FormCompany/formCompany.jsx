@@ -134,5 +134,5 @@ formulario.addEventListener('submit', (e) => {
 				</form>
 			</section>
 		</main>
-		</>);
+	</>);
 }
