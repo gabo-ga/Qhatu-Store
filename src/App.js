@@ -5,8 +5,6 @@ import AdministratorProfileUser from './pages/administratorProfile/administrator
 import RegUserAdm from './pages/RegistrarUsuarioAdm/RegUserAdm';
 import RegistrarUsuarioSupv from './pages/registrarUsuarioSupv/registrarUsuarioSupv';
 import RegisterCompany from './pages/addCompanyView/registerCompany';
-import EmpItemList from './components/listItem/empItemList';
-import DelEmpModal from './components/modal/delete/delEmpModal';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -23,7 +21,6 @@ function App() {
         <Route exact path="/supervisor/createuser" element={ <RegistrarUsuarioSupv /> }></Route>
         <Route exact path="/supervisor/registercompany" element={ <RegisterCompany cargo="supervisor"/> }></Route>
       </Routes>
-      <DelEmpModal></DelEmpModal>
     </BrowserRouter>
   );
 }
