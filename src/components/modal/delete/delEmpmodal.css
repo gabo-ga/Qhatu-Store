@@ -33,3 +33,20 @@
     font-size: 20px !important;
     height: 56px;
 }
+
+@media screen and (max-width: 960px) {
+    .modal-del-container {
+        width: 318px;
+        height: 378px;
+    }
+    
+    .modal-del-header {
+        padding-top: 42px;
+        font-size: 24px;
+    }
+
+    .modal-del-btn{
+        width: 120px;
+        height: 56px;
+    }
+}

@@ -7,7 +7,7 @@ import "./empItemList.css"
 
 import DelEmpModal from '../modal/delete/delEmpModal';
 
-const EmpItemList = () => {
+const EmpItemList = (props) => {
     const [userData,setUserData]= useState([]);
     let tableNumber=0;
 
@@ -33,17 +33,17 @@ const EmpItemList = () => {
   return (
     <div className="container-fluid p-0 ">
         <div className={ ColorSelect() ?"emp-item-list-1 row p-0" : "emp-item-list-2 row p-0"}>
-            <div className="col-8 d-flex align-items-center">
-                <p className='m-0  item-name'>Empresa: Coca cola</p>
+            <div className="col-6 col-lg-8 d-flex align-items-center">
+                <p className='m-0 item-name'>Empresa: {props.name}</p>
             </div>
-            <div className="col-2 d-flex align-items-center">
+            <div className="col-lg-2 col-3 d-flex align-items-center">
               <button type='button' class="btn" data-bs-toggle="modal" data-bs-target="#editEmp">
                 <img className='img-edit' 
                 src="https://firebasestorage.googleapis.com/v0/b/qhatu-store.appspot.com/o/lapiz.png?alt=media&token=9e834e4f-8b4d-42af-bf4a-ef08deae3cd0" 
                 alt="" />
               </button>
             </div>
-            <div className="col-2 d-flex align-items-center">
+            <div className="col-lg-2 col-3 d-flex align-items-center">
               <button  type='button' class="btn" data-bs-toggle="modal" data-bs-target="#delEmp">
                 <img className='img-del'
                 src="https://firebasestorage.googleapis.com/v0/b/qhatu-store.appspot.com/o/basurero.png?alt=media&token=5378bed1-9615-4b17-8d70-942ed0829678"
@@ -66,10 +66,10 @@ const EmpItemList = () => {
                           </div>
                           <div className='col-12 modal-del-data text-center'>
                             <p>
-                              Empresa: Coca cola   
+                              Empresa: {props.name}  
                             </p>
                             <p>
-                               Representante: Carlos Saenz
+                               Representante: {props.representativeName}
                            </p>
                           </div>
                           <div className='col-12 d-flex justify-content-evenly modal-del-btns'>
@@ -98,10 +98,10 @@ const EmpItemList = () => {
                           </div>
                           <div className='col-12 modal-del-data text-center'>
                             <p>
-                              Empresa: Coca cola   
+                              Empresa: {props.name}    
                             </p>
                             <p>
-                               Representante: Carlos Saenz
+                              Representante: {props.representativeName}
                            </p>
                           </div>
                           <div className='col-12 d-flex justify-content-evenly modal-del-btns'>

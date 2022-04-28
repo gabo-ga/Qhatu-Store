@@ -1,6 +1,4 @@
-
-
-.emp-item-list-table-2 {
+.emp-item-list-1 {
     background-color: rgba(253, 190, 80, 0.75);
     height: 100px;
     width: 880px;
@@ -26,27 +24,6 @@
     padding-left: 128px;
 }
 
-.item-list-data{
-    padding: 18px 0px 0px 0px;
-    color: #2A2C41;
-}
-
-.item-list-id{
-    font-size: 20px;
-    padding: 38px 0px 0px 28px !important;
-    color: #2A2C41;
-}
-
-.edit-button{
-        cursor: pointer;
-        border: 0px;
-        background-color: transparent;
-        height: 50px;
-        width: 200px;
-        color: #2A2C41;
-        font-size: 1.5em;
-}
-
 .item-list-data > p {
     font-size: 14px;
     margin: 0px 0px 4px 0px;
@@ -57,15 +34,39 @@
     max-width: none;
     width: max-content !important;
     background-color: transparent !important;
-    border: none;
+    border: none !important;
 }
 
 .modal-body-edit{
     max-width: none;
     width: max-content !important;
     background-color: transparent !important;
-    border: none;
+    border: none !important;
 }
 
 @media screen and (max-width: 960px) {
-  }
+    .emp-item-list-1 {
+        height: 79px;
+        width: 316px;
+    }
+    
+    .emp-item-list-2 {
+        height: 79px;
+        width: 316px;
+    }
+    
+    .item-name{
+        padding-left: 40px;
+        font-size: 12px;
+    }
+
+    .img-edit{
+        width: 36px;
+        height: 36px;
+    }
+    
+    .img-del{
+        width: 36px;
+        height: 36px;
+    }
+}
