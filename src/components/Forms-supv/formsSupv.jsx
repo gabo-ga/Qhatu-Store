@@ -45,6 +45,8 @@ const FormsSupv = () => {
                                         minLength:3,
                                         pattern:patterns.namePattern
                                 })}/>{errors.name?.type === 'required' && "Nombre completo es requerido"}
+                                 <div className='errors'>{errors.name?.type === 'pattern' && 'El nombre y apellido deben empezar por mayúscula'}</div>
+                                 <div className='errors'>{errors.name?.type === 'maxLength' && 'Tamaño Superado'}</div>
                             </div>
 
                             <div className="mb-3">
@@ -56,17 +58,21 @@ const FormsSupv = () => {
                                         minLength:10,
                                         pattern:patterns.emailPattern
                                 })}/>{errors.email?.type === 'required' && "Email es requerido"}
+                                <div className='errors'>{errors.email?.type === 'pattern' && 'Formato de Correo Inválido'}</div>
                             </div>
 
                             <div className="mb-3">
                                 <label for="phone" class="form-label">Número de Celular</label>
-                                <input type="number" class="form-control input-text" placeholder="76543211" min="60000000" max="79999999"
+                                <input type="number" class="form-control input-text" placeholder="76543211"
                                     {...register("phone",{ required:true,
                                         min:60000000,
                                         max:79999999,
                                         valueAsNumber:true,
                                         pattern:patterns.phonePattern
                                     })}/>{errors.phone?.type === 'required' && "Numero de celular es requerido"}
+                                    <div className='errors'>{errors.phone?.type === 'pattern' && 'Número Invalido'}</div>
+                                    <div className='errors'>{errors.phone?.type === 'min' && 'Tamaño de número Inválido'}</div>
+                                    <div className='errors'>{errors.phone?.type === 'max' && 'Tamaño de número Inválido'}</div>
                             </div>
 
                             <div className="mb-3">
@@ -77,6 +83,9 @@ const FormsSupv = () => {
                                         minLength:8,
                                         pattern:patterns.passwordPattern
                                 })}/>{errors.password?.type === 'required' && "La contraseña es requerida"}
+                                <div className='errors'>{errors.password?.type === 'pattern' && 'La contraseña debe contener almenos una mayuscula y un numero'}</div>
+                                <div className='errors'>{errors.password?.type === 'minLength' && 'La contraseña debe contener mínimo 8 carácteres'}</div>
+                                <div className='errors'>{errors.password?.type === 'manLength' && 'La contraseña debe contener máximo 39 carácteres'}</div>
                             </div>
                         </div>
                         <div className="col-lg-6 col-12 d-flex align-self-end">
@@ -121,6 +130,7 @@ const FormsSupv = () => {
                                                 minLength:8,
                                                 pattern:patterns.passwordPattern
                                             })}/> {errors.confirmPassword?.type === 'required' && "Confirme su contraseña"}
+                                            <div className='errors'>{errors.confirmPassword?.type === 'pattern' && 'Las contraseñas deben ser iguales'}</div>
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +138,6 @@ const FormsSupv = () => {
                         </div>
                         <div className='col-12'>
                             <div className="boton">
-                                <Link to="/supervisor">
                                 <button className="btn btn-primary btn-form-admin" type="submit" onClick={()=>{
                                     {errors.name?.type === 'required' &&
                                      errors.email?.type === 'required' &&
@@ -138,7 +147,6 @@ const FormsSupv = () => {
                                 }}>
                                     Crear cuenta
                                 </button>
-                                </Link>
                             </div>
                         </div>
                     </div>

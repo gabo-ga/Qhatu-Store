@@ -85,55 +85,54 @@ formulario.addEventListener('submit', (e) => {
 	}
 });
     return( 
-    <><header>
-            <h1>Qhatu Store</h1>
-        </header><main>
-                <section>
-                    <form action="" class="formulario" id="formulario">
-                        <div class="formulario__grupo" id="grupo__nombreEmp">
-                            <label for="nombreEmp" class="formulario__label">Nombre de la empresa</label>
-                            <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="nombreEmp" id="nombreEmp" placeholder="Pil Andina"/>
-                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                            </div>
-                            <p class="formulario__input-error">El nombre tiene que ser de 2 a 40 dígitos y solo puede contener letras</p>
-                        </div>
-                        <div class="formulario__grupo" id="grupo__direccion">
-                            <label for="direccion" class="formulario__label">Direccion de la central</label>
-                            <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="direccion" id="direccion" placeholder="Av. America"/>
-                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                                </div>
-                            <p class="formulario__input-error">La direccion tiene que ser de 2 a 40 dígitos y solo puede contener numeros y letras</p>
-                        </div>
-                        <div class="formulario__grupo" id="grupo__telefono">
-                            <label for="telefono" class="formulario__label">Telefono del representante</label>
-                            <div class="formulario__grupo-input">
-                                <input type="email" class="formulario__input" name="telefono" id="telefono" placeholder="70392999"/>
-                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                                </div>
-                            <p class="formulario__input-error">El numero del representante solo debe incluir numeros</p>
-                        </div>
+    <><main>
+			<section>
+				<form action="" class="formulario" id="formulario">
+					<div class="formulario__grupo" id="grupo__nombreEmp">
+						<label for="nombreEmp" class="formulario__label">Nombre de la empresa</label>
+						<div class="formulario__grupo-input">
+							<input type="text" class="formulario__input" name="nombreEmp" id="nombreEmp" placeholder="Pil Andina" />
+							<i class="formulario__validacion-estado fas fa-times-circle"></i>
+						</div>
+						<p class="formulario__input-error">El nombre tiene que ser de 2 a 40 dígitos y solo puede contener letras</p>
+					</div>
+					<div class="formulario__grupo" id="grupo__direccion">
+						<label for="direccion" class="formulario__label">Direccion de la central</label>
+						<div class="formulario__grupo-input">
+							<input type="text" class="formulario__input" name="direccion" id="direccion" placeholder="Av. America" />
+							<i class="formulario__validacion-estado fas fa-times-circle"></i>
+						</div>
+						<p class="formulario__input-error">La direccion tiene que ser de 2 a 40 dígitos y solo puede contener numeros y letras</p>
+					</div>
+					<div class="formulario__grupo" id="grupo__telefono">
+						<label for="telefono" class="formulario__label">Telefono del representante</label>
+						<div class="formulario__grupo-input">
+							<input type="email" class="formulario__input" name="telefono" id="telefono" placeholder="70392999" />
+							<i class="formulario__validacion-estado fas fa-times-circle"></i>
+						</div>
+						<p class="formulario__input-error">El numero del representante solo debe incluir numeros</p>
+					</div>
 
 
-                        <div class="formulario__grupo" id="grupo__nombreRep">
-                            <label for="nombreRep" class="formulario__label">Nombre del representante</label>
-                            <div class="formulario__grupo-input">
-                                <input type="text" class="formulario__input" name="nombreRep" id="nombreRep" placeholder="Jose Garcia"/>
-                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                                </div>
-                            <p class="formulario__input-error">El nombre del representante solo debe contener letras</p>
-                        </div>
+					<div class="formulario__grupo" id="grupo__nombreRep">
+						<label for="nombreRep" class="formulario__label">Nombre del representante</label>
+						<div class="formulario__grupo-input">
+							<input type="text" class="formulario__input" name="nombreRep" id="nombreRep" placeholder="Jose Garcia" />
+							<i class="formulario__validacion-estado fas fa-times-circle"></i>
+						</div>
+						<p class="formulario__input-error">El nombre del representante solo debe contener letras</p>
+					</div>
 
-                        <div class="formulario__mensaje" id="formulario__mensaje">
-                            <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente.</p>
-                        </div>
+					<div class="formulario__mensaje" id="formulario__mensaje">
+						<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente.</p>
+					</div>
 
-                        <div class="formulario__grupo formulario__grupo-btn-enviar">
-                            <button type="submit" class="formulario__btn">Enviar</button>
-                            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
-                        </div>
-                    </form>
-                </section>
-            </main><script src="./formulario.js"></script></>)
+					<div class="formulario__grupo formulario__grupo-btn-enviar">
+						<button type="submit" class="formulario__btn">Enviar</button>
+						<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+					</div>
+				</form>
+			</section>
+		</main>
+		</>);
 }
