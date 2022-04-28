@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { onGetUsers } from '../FirebaseConfig';
+import { onGetUsers, deleteUser } from '../FirebaseConfig';
 import { MdMode } from "react-icons/md";
-import { deleteUser } from '../FirebaseConfig';
 import './listItem.css'
 
 const ListUser = () => {

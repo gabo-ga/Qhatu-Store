@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { onGetUsers } from '../FirebaseConfig';
-import { MdMode } from "react-icons/md";
-import { deleteUser } from '../FirebaseConfig';
+import { deleteCompany } from '../FirebaseConfig';
 
 import "./empItemList.css"
 import "../modal/companyModal.css"
@@ -10,14 +8,9 @@ const EmpItemList = (props) => {
     const [userData,setUserData]= useState([]);
     let tableNumber=0;
 
-    useEffect(()=>{
-        onGetUsers((querySnapshot) => {
-        setUserData(querySnapshot.docs.map((doc) => ({
-            id: doc.id,
-            data: doc.data(),
-            })))
-        });
-    },[]);
+    const handleClick= () =>{
+      deleteCompany(props.id);
+    }
 
   const ColorSelect = (props) => {
     if (props%2 > 0){
@@ -72,7 +65,9 @@ const EmpItemList = (props) => {
                            </p>
                           </div>
                           <div className='col-12 d-flex justify-content-evenly modal-del-btns'>
-                              <button type="button" class="btn modal-del-btn">Eliminar</button>
+                              <button type="button" class="btn modal-del-btn" data-bs-dismiss="modal"
+                              onClick={() => handleClick()}
+                              >Eliminar</button>
                               <button type="button" class="btn modal-del-btn" data-bs-dismiss="modal">Cancelar</button>
                             </div>
                       </div>
@@ -104,7 +99,7 @@ const EmpItemList = (props) => {
                            </p>
                           </div>
                           <div className='col-12 d-flex justify-content-evenly modal-del-btns'>
-                              <button type="button" class="btn modal-del-btn">Eliminar</button>
+                              <button type="button" class="btn modal-del-btn">Editar</button>
                               <button type="button" class="btn modal-del-btn" data-bs-dismiss="modal">Cancelar</button>
                             </div>
                       </div>
