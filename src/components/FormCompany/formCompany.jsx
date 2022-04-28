@@ -136,3 +136,5 @@ formulario.addEventListener('submit', (e) => {
 		</main>
 	</>);
 }
+
+export default FormCompany
