@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc, setDoc, getDoc, updateDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc, getDoc, updateDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDUuVEv-hcIC0htFT4nnETtEYDQp7R7ORM',
@@ -42,13 +42,7 @@ export const deleteCompany = id =>
 export const editCompany =  (id, data) =>{
   
   const docRef = doc(db, "colors", id);
-
-  const payload = {
-    name: data.name, 
-    address: data.direction, 
-    representativePhone: data.phone, 
-    representativeName: data.representatName
-  };
+  
   updateDoc(docRef, {
     name: data.name, 
     address: data.direction, 

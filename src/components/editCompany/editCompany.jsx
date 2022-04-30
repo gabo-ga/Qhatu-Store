@@ -1,11 +1,9 @@
-import { Link } from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
 import { useForm } from 'react-hook-form';
 import {onGetCompany, editCompany} from '../FirebaseConfig';
 import { useNavigate } from "react-router-dom";
 
 import './editCompany.css'
-import { collection, onSnapshot } from 'firebase/firestore';
 
 const inputs = document.querySelectorAll('#formulario input');
 
@@ -21,30 +19,6 @@ inputs.forEach((input) => {
         console.log('tecla levantada')
     });
 })
-
-const validarForm = (e) => {
-    switch(e.target.name){
-        case "nombre":
-            validarCampo(patterns.namePattern, e.target, 'name');
-        break;
-        case "direccion":
-            validarCampo();
-        break;
-        case "telefono":
-            validarCampo();
-        break;
-        case "representante":
-        break;
-    }
-}
-
-const validarCampo = (expresion, input, campo) => {
-    if(expresion.test(input.value)){
-        document.querySelector('.forms-input-error').classList.remove('.forms-input-error-active');
-    }else{
-        document.querySelector('#grupo-nombre .forms-input-error').classList.add('forms-input-error-active');
-    }
-}
 
 const EditCompany = (props) => {
     const [companyData,setCompanyData]= useState([]);
@@ -65,6 +39,7 @@ const EditCompany = (props) => {
     let navigate = useNavigate();
     const onSubmit= (data) => {
         console.log(companyData.id);
+        editCompany(companyData.id, data)
         console.log(data.name, data.direction);
         navigate(-1)
     };
@@ -131,9 +106,9 @@ const EditCompany = (props) => {
 
                                 </div>
                             </div>
-                            <div className='col-6'>
+                            <div className='col-12 col-lg-6'>
                             <div className="boton">
-                                            <button className="btn btn-primary btn-formCompany" type="submit" onClick={()=>{
+                                            <button className="btn btn-form-editCompany" type="submit" onClick={()=>{
                                                 {errors.name?.type === 'required' &&
                                                 errors.direction?.type === 'required' &&
                                                 errors.phone?.type === 'required' &&
@@ -145,9 +120,9 @@ const EditCompany = (props) => {
                                     
                                         </div>
                             </div>
-                            <div className='col-6'>
+                            <div className='col-12 col-lg-6'>
                             <div className="boton">
-                                            <button className="btn btn-primary btn-formCompany" onClick={() => navigate(-1)}>
+                                            <button className="btn btn-form-editCompany" onClick={() => navigate(-1)}>
                                             Cancelar
                                             </button>
                                         </div>
