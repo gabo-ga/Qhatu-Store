@@ -25,7 +25,7 @@ function App() {
         <Route exact path="/supervisor/registercompany" element={ <RegisterCompany cargo="supervisor"/> }></Route>
         <Route exact path="/adminsitrator/editcompany/:id" element={ <EditCompanyView cargo="supervisor"/> }></Route>
       </Routes>
-      <EmpItemList id="mLR6mHe9LKIoqCpc22HG"></EmpItemList>
+      <EmpItemList id="d5l1nzh1bUP1CzTwxdId"></EmpItemList>
     </BrowserRouter>
   );
 }
