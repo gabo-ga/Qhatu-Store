@@ -63,7 +63,7 @@ const EmpItemList = (props) => {
         
         <div class="modal fade " id="delEmp" tabindex="-1" aria-labelledby="delEmp" aria-hidden="true">
                 <div className='d-flex d-flex justify-content-center'>
-                <div class="modal-dialog modal-body-edit">
+                <div class="modal-dialog modal-body-edit d-flex justify-content-center">
                   <div class="modal-content modal-body-edit">
                     <div class="modal-body  d-flex justify-content-center">
                     <div className='modal-del-container'>
@@ -97,8 +97,8 @@ const EmpItemList = (props) => {
         </div>
         <div class="modal fade " id="editEmp" tabindex="-1" aria-labelledby="editEmp" aria-hidden="true">
                 <div className='d-flex justify-content-center'>
-                <div class="modal-dialog modal-body-del ">
-                  <div class="modal-content modal-body-del">
+                <div class="modal-dialog modal-body-del d-flex justify-content-center">
+                  <div class="modal-content modal-body-del ">
                     <div class="modal-body  d-flex justify-content-center">
                     <div className='modal-del-container'>
                         <div className='row'>
