@@ -38,9 +38,8 @@ const EditCompany = (props) => {
     const { register,formState:{ errors }, handleSubmit }=useForm();
     let navigate = useNavigate();
     const onSubmit= (data) => {
-        console.log(companyData.id);
-        editCompany(companyData.id, data)
-        console.log(data.name, data.direction);
+        console.log(data);
+        editCompany(props.id)
         navigate(-1)
     };
     return(
