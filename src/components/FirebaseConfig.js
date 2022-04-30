@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc, setDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc, setDoc, getDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDUuVEv-hcIC0htFT4nnETtEYDQp7R7ORM',
@@ -25,6 +25,11 @@ export const onGetUsers = (callback) =>
 // Delete user by id
 export const deleteUser = id =>
   deleteDoc(doc(db,'user', id));
+
+// Get company
+
+export const onGetCompany = id =>
+  getDoc(doc(db,'company', id));
 
 // Register company
 export const registerCompany = (name, address, representativePhone, representativeName) =>
