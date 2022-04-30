@@ -5,6 +5,7 @@ import AdministratorProfileUser from './pages/administratorProfile/administrator
 import RegUserAdm from './pages/RegistrarUsuarioAdm/RegUserAdm';
 import RegistrarUsuarioSupv from './pages/registrarUsuarioSupv/registrarUsuarioSupv';
 import RegisterCompany from './pages/addCompanyView/registerCompany';
+import EmpItemList from './components/listItem/empItemList';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
