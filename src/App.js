@@ -6,10 +6,12 @@ import RegUserAdm from './pages/RegistrarUsuarioAdm/RegUserAdm';
 import RegistrarUsuarioSupv from './pages/registrarUsuarioSupv/registrarUsuarioSupv';
 import RegisterCompany from './pages/addCompanyView/registerCompany';
 import EditCompanyView from './pages/editCompany/editCompanyView';
+import EmpItemList from './components/listItem/empItemList';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>
@@ -23,6 +25,7 @@ function App() {
         <Route exact path="/supervisor/registercompany" element={ <RegisterCompany cargo="supervisor"/> }></Route>
         <Route exact path="/adminsitrator/editcompany/:id" element={ <EditCompanyView cargo="supervisor"/> }></Route>
       </Routes>
+      <EmpItemList id="mLR6mHe9LKIoqCpc22HG"></EmpItemList>
     </BrowserRouter>
   );
 }

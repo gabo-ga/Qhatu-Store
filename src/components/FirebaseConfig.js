@@ -28,6 +28,10 @@ export const deleteUser = id =>
 
 // Get company
 
+export const onGetCompanys = (id) =>
+getDoc(doc(db,'company',id));
+
+
 export const onGetCompany = id =>
   getDoc(doc(db,'company', id));
 

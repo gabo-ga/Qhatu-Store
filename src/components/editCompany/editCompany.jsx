@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
-
 import { useForm } from 'react-hook-form';
-import { onGetUsers, onGetCompany } from '../FirebaseConfig';
+import {onGetCompany} from '../FirebaseConfig';
 import { useNavigate } from "react-router-dom";
 
 import './editCompany.css'
+import { collection, onSnapshot } from 'firebase/firestore';
 
 const inputs = document.querySelectorAll('#formulario input');
 
@@ -48,12 +48,22 @@ const validarCampo = (expresion, input, campo) => {
 
 const EditCompany = (props) => {
     const [companyData,setCompanyData]= useState([]);
+    const getLinkById = async (id) => {
+        try {
+          const doc = await onGetCompany(id);
+          setCompanyData({ ...doc.data() });
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
     useEffect(()=>{
-        setCompanyData(
-        onGetCompany(props.id)
-        );
+        getLinkById(props.id);
+        console.log(companyData.name);
+        
+        //console.log(props.id)
         //const data = onGetCompany(props.id);
-        console.log(companyData)
+        
       },[]);
 
     const { register,formState:{ errors }, handleSubmit }=useForm();
@@ -76,20 +86,20 @@ const EditCompany = (props) => {
                                 <div>
                                 <div class="mb-3" id="grupo-nombre">
                                     <label for="name" class="form-label" >Nombre de la empresa</label>
-                                    <input type="text" className='form-control input-text' placeholder="Coca Cola" value={empData.name}
+                                    <input type="text" className='form-control input-text' placeholder="Coca Cola" value={companyData.name}
                                     {...register("name",{
                                         required:true,
-                                        pattern: patterns.companyPattern
+                                        pattern: companyData.companyPattern
                                     })}/>{errors.name && "Nombre de empresa requerido"}
                                     <p className="forms-input-error"> El nombre de la empresa solo acepta caracteres alfabeticos</p>
                                 </div>
                             
                                 <div class="mb-3">
                                     <label for="direction" class="form-label" name="direccion">Dirección de la central</label>
-                                    <input type="text" class="form-control input-text" placeholder="Av Heroinas Nro 23" value={empData.address}
+                                    <input type="text" class="form-control input-text" placeholder="Av Heroinas Nro 23" value={companyData.address}
                                     {...register("direction",{
                                         required:true,
-                                        pattern: patterns.directionPattern
+                                        pattern: companyData.directionPattern
                                     })}/>{errors.direction && "Direccion de central requerida"}
                                 </div>
                                 <div>
@@ -98,7 +108,7 @@ const EditCompany = (props) => {
 
                                 <div class="mb-3">
                                     <label for="phone" class="form-label" name="telefono">Teléfono del representante</label>
-                                    <input type="number" class="form-control input-text" placeholder="76543211" min="60000000" max="79999999" value={empData.representativePhone}
+                                    <input type="number" class="form-control input-text" placeholder="76543211" min="60000000" max="79999999" value={companyData.representativePhone}
                                     {...register("phone",{
                                         required:true,
                                         valueAsNumber: true,
@@ -113,7 +123,7 @@ const EditCompany = (props) => {
 
                                 <div class="mb-3">
                                     <label for="representantName" class="form-label" name="representante">Nombre del representante</label>
-                                    <input type="text" class="form-control input-text" placeholder="Santiago Hernandez Garcia" value={empData.representativeName}
+                                    <input type="text" class="form-control input-text" placeholder="Santiago Hernandez Garcia" value={companyData.representativeName}
                                     {...register("representantName",{
                                         required:true,
                                         pattern: patterns.namePattern
