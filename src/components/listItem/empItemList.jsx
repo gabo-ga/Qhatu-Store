@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { deleteCompany } from '../FirebaseConfig';
-
+import { Link } from 'react-router-dom'
 import "./empItemList.css"
 import "../modal/companyModal.css"
+import { Navigate } from 'react-router-dom';
 
 const EmpItemList = (props) => {
     const [userData,setUserData]= useState([]);
     let tableNumber=0;
+    
+    var data = {id:props.id};
+    //data = JSON.stringify(data);
+    var path = `/adminsitrator/editcompany/${props.id}`;
 
     const handleClick= () =>{
       deleteCompany(props.id);
@@ -99,7 +104,10 @@ const EmpItemList = (props) => {
                            </p>
                           </div>
                           <div className='col-12 d-flex justify-content-evenly modal-del-btns'>
-                              <button type="button" class="btn modal-del-btn">Editar</button>
+                            <Link to={path}> 
+                              <button type="button" class="btn modal-del-btn " data-bs-dismiss="modal"
+                              >Editar</button>
+                            </Link>
                               <button type="button" class="btn modal-del-btn" data-bs-dismiss="modal">Cancelar</button>
                             </div>
                       </div>

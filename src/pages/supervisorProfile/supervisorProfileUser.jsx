@@ -14,14 +14,11 @@ const supervisorProfile = () => {
   return (
     <div className='container-fluid  p-0'>
         <Navbar></Navbar>
-        <div className='container-fluid'>
-        <div className='row p-0'>
-          <div className='img-banner-suprv p-0'>
+        <div className='img-banner-suprv p-0'>
             <img
               src="https://www.journeygazer.com/wp-content/uploads/2019/03/Moraine-lake-destination.jpg"/>
           </div>
-          
-        </div>
+        <div className='container-fluid'>
         <div className='row'>
           <div className='col-xl-8 col-12 col-table d-flex justify-content-center order-2 order-xl-1'>
             <div>
