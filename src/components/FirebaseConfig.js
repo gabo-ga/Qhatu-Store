@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc, setDoc, getDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc, getDoc, updateDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDUuVEv-hcIC0htFT4nnETtEYDQp7R7ORM',
@@ -42,11 +42,16 @@ export const registerCompany = (name, address, representativePhone, representati
 export const deleteCompany = id =>
   deleteDoc(doc(db,'company', id));
 
-  // Delete Company by id
-export const editCompany = (id, name, address, representativePhone, representativeName) =>
-  setDoc(doc(db,'company', id), {
-    name: name, 
-    address: address, 
-    representativePhone: representativePhone, 
-    representativeName: representativeName
+// Edit Company by id
+export const editCompany =  (id) =>{
+  
+  const docRef = doc(db, "company", id);
+  
+  updateDoc(docRef, {
+    name: 'Editado', 
+    address: 'Editado', 
+    representativePhone: 65730307, 
+    representativeName: 'Editado'
   });
+}
+  

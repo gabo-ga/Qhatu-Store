@@ -1,8 +1,6 @@
-import { Link } from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
-
 import { useForm } from 'react-hook-form';
-import { onGetUsers, onGetCompany } from '../FirebaseConfig';
+import {onGetCompany, editCompany} from '../FirebaseConfig';
 import { useNavigate } from "react-router-dom";
 
 import './editCompany.css'
@@ -22,46 +20,28 @@ inputs.forEach((input) => {
     });
 })
 
-const validarForm = (e) => {
-    switch(e.target.name){
-        case "nombre":
-            validarCampo(patterns.namePattern, e.target, 'name');
-        break;
-        case "direccion":
-            validarCampo();
-        break;
-        case "telefono":
-            validarCampo();
-        break;
-        case "representante":
-        break;
-    }
-}
-
-const validarCampo = (expresion, input, campo) => {
-    if(expresion.test(input.value)){
-        document.querySelector('.forms-input-error').classList.remove('.forms-input-error-active');
-    }else{
-        document.querySelector('#grupo-nombre .forms-input-error').classList.add('forms-input-error-active');
-    }
-}
-
 const EditCompany = (props) => {
     const [companyData,setCompanyData]= useState([]);
+    const getCompanyById = async (id) => {
+        try {
+          const doc = await onGetCompany(id);
+          setCompanyData({ ...doc.data() });
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
     useEffect(()=>{
-        setCompanyData(
-        onGetCompany(props.id)
-        );
-        //const data = onGetCompany(props.id);
-        console.log(companyData)
+        getCompanyById(props.id);
       },[]);
 
     const { register,formState:{ errors }, handleSubmit }=useForm();
     let navigate = useNavigate();
-    var empData = {id:props.id, name: props.name, address: props.address, 
-        representativePhone: props.representativePhone, representativeName: props.representativePhone};
-  
-
+    const onSubmit= (data) => {
+        console.log(data);
+        editCompany(props.id)
+        navigate(-1)
+    };
     return(
         
         <div class="container-fluid d-flex justify-content-center">
@@ -71,25 +51,25 @@ const EditCompany = (props) => {
                         Modificar Datos
                     </div>
                     <div className="col-12 d-flex justify-content-center">
-                        <form id="formulario" className='flex-fill row '>
+                        <form onSubmit={handleSubmit(onSubmit)} id="formulario" className='flex-fill row '>
                             <div className='col-12 d-flex justify-content-center'>
                                 <div>
                                 <div class="mb-3" id="grupo-nombre">
                                     <label for="name" class="form-label" >Nombre de la empresa</label>
-                                    <input type="text" className='form-control input-text' placeholder="Coca Cola" value={empData.name}
+                                    <input type="text" className='form-control input-text' placeholder={companyData.name}
                                     {...register("name",{
                                         required:true,
-                                        pattern: patterns.companyPattern
+                                        pattern: companyData.companyPattern
                                     })}/>{errors.name && "Nombre de empresa requerido"}
                                     <p className="forms-input-error"> El nombre de la empresa solo acepta caracteres alfabeticos</p>
                                 </div>
                             
                                 <div class="mb-3">
                                     <label for="direction" class="form-label" name="direccion">Dirección de la central</label>
-                                    <input type="text" class="form-control input-text" placeholder="Av Heroinas Nro 23" value={empData.address}
+                                    <input type="text" class="form-control input-text" placeholder={companyData.address}
                                     {...register("direction",{
                                         required:true,
-                                        pattern: patterns.directionPattern
+                                        pattern: companyData.directionPattern
                                     })}/>{errors.direction && "Direccion de central requerida"}
                                 </div>
                                 <div>
@@ -98,7 +78,7 @@ const EditCompany = (props) => {
 
                                 <div class="mb-3">
                                     <label for="phone" class="form-label" name="telefono">Teléfono del representante</label>
-                                    <input type="number" class="form-control input-text" placeholder="76543211" min="60000000" max="79999999" value={empData.representativePhone}
+                                    <input type="number" class="form-control input-text" placeholder={companyData.representativePhone} min="60000000" max="79999999"
                                     {...register("phone",{
                                         required:true,
                                         valueAsNumber: true,
@@ -113,7 +93,7 @@ const EditCompany = (props) => {
 
                                 <div class="mb-3">
                                     <label for="representantName" class="form-label" name="representante">Nombre del representante</label>
-                                    <input type="text" class="form-control input-text" placeholder="Santiago Hernandez Garcia" value={empData.representativeName}
+                                    <input type="text" class="form-control input-text" placeholder={companyData.representativeName}
                                     {...register("representantName",{
                                         required:true,
                                         pattern: patterns.namePattern
@@ -125,9 +105,9 @@ const EditCompany = (props) => {
 
                                 </div>
                             </div>
-                            <div className='col-6'>
+                            <div className='col-12 col-lg-6'>
                             <div className="boton">
-                                            <button className="btn btn-primary btn-formCompany" type="submit" onClick={()=>{
+                                            <button className="btn btn-form-editCompany" type="submit" onClick={()=>{
                                                 {errors.name?.type === 'required' &&
                                                 errors.direction?.type === 'required' &&
                                                 errors.phone?.type === 'required' &&
@@ -139,9 +119,9 @@ const EditCompany = (props) => {
                                     
                                         </div>
                             </div>
-                            <div className='col-6'>
+                            <div className='col-12 col-lg-6'>
                             <div className="boton">
-                                            <button className="btn btn-primary btn-formCompany" onClick={() => navigate(-1)}>
+                                            <button className="btn btn-form-editCompany" onClick={() => navigate(-1)}>
                                             Cancelar
                                             </button>
                                         </div>

@@ -1,12 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { deleteCompany } from '../FirebaseConfig';
+import { deleteCompany, onGetCompany } from '../FirebaseConfig';
 import { Link } from 'react-router-dom'
 import "./empItemList.css"
 import "../modal/companyModal.css"
 import { Navigate } from 'react-router-dom';
 
 const EmpItemList = (props) => {
-    const [userData,setUserData]= useState([]);
+    const [companyData,setCompanyData]= useState([]);
+    const getCompanyById = async (id) => {
+        try {
+          const doc = await onGetCompany(id);
+          setCompanyData({ ...doc.data() });
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
+    useEffect(()=>{
+        getCompanyById(props.id);
+      },[]);
     let tableNumber=0;
     
     var data = {id:props.id};
@@ -31,7 +43,7 @@ const EmpItemList = (props) => {
     <div className="container-fluid p-0 ">
         <div className={ ColorSelect() ?"emp-item-list-1 row p-0" : "emp-item-list-2 row p-0"}>
             <div className="col-6 col-lg-8 d-flex align-items-center">
-                <p className='m-0 item-name'>Empresa: {props.name}</p>
+                <p className='m-0 item-name'>Empresa: {companyData.name}</p>
             </div>
             <div className="col-lg-2 col-3 d-flex align-items-center">
               <button type='button' class="btn" data-bs-toggle="modal" data-bs-target="#editEmp">
@@ -51,7 +63,7 @@ const EmpItemList = (props) => {
         
         <div class="modal fade " id="delEmp" tabindex="-1" aria-labelledby="delEmp" aria-hidden="true">
                 <div className='d-flex d-flex justify-content-center'>
-                <div class="modal-dialog modal-body-edit">
+                <div class="modal-dialog modal-body-edit d-flex justify-content-center">
                   <div class="modal-content modal-body-edit">
                     <div class="modal-body  d-flex justify-content-center">
                     <div className='modal-del-container'>
@@ -63,10 +75,10 @@ const EmpItemList = (props) => {
                           </div>
                           <div className='col-12 modal-del-data text-center'>
                             <p>
-                              Empresa: {props.name}  
+                              Empresa: {companyData.name}  
                             </p>
                             <p>
-                               Representante: {props.representativeName}
+                               Representante: {companyData.representativeName}
                            </p>
                           </div>
                           <div className='col-12 d-flex justify-content-evenly modal-del-btns'>
@@ -85,8 +97,8 @@ const EmpItemList = (props) => {
         </div>
         <div class="modal fade " id="editEmp" tabindex="-1" aria-labelledby="editEmp" aria-hidden="true">
                 <div className='d-flex justify-content-center'>
-                <div class="modal-dialog modal-body-del ">
-                  <div class="modal-content modal-body-del">
+                <div class="modal-dialog modal-body-del d-flex justify-content-center">
+                  <div class="modal-content modal-body-del ">
                     <div class="modal-body  d-flex justify-content-center">
                     <div className='modal-del-container'>
                         <div className='row'>
@@ -97,10 +109,10 @@ const EmpItemList = (props) => {
                           </div>
                           <div className='col-12 modal-del-data text-center'>
                             <p>
-                              Empresa: {props.name}    
+                              Empresa: {companyData.name}    
                             </p>
                             <p>
-                              Representante: {props.representativeName}
+                              Representante: {companyData.representativeName}
                            </p>
                           </div>
                           <div className='col-12 d-flex justify-content-evenly modal-del-btns'>

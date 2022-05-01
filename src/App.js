@@ -12,6 +12,7 @@ import EditCompanyView from './pages/editCompany/editCompanyView';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>
@@ -26,7 +27,8 @@ function App() {
         <Route exact path="/supervisor/adminuser" element={ <SupervisorProfileUser /> }/>
         <Route exact path="/supervisor/createuser" element={ <RegistrarUsuarioSupv /> }></Route>
         <Route exact path="/supervisor/registercompany" element={ <RegisterCompany cargo="supervisor"/> }></Route>
-        <Route exact path="/adminsitrator/editcompany/:id" element={ <EditCompanyView cargo="supervisor"/> }></Route>
+        <Route exact path="/supervisor/editcompany/:id" element={ <EditCompanyView cargo="supervisor"/> }></Route>
+        <Route exact path="/adminsitrator/editcompany/:id" element={ <EditCompanyView cargo="administrator"/> }></Route>
       </Routes>
     </BrowserRouter>
   );
