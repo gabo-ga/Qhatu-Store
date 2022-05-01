@@ -1,0 +1,35 @@
+
+.img-edit{
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+
+.img-del{
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+
+.item-list-id p{
+    margin-left: 30%;
+}
+
+.buttons{
+    width: fit-content !important;
+    margin-right: 15%;
+    margin-left: auto;
+    float: left;
+}
+
+.buttonItem{
+    margin-left: 40%;
+    margin-right: 40%;
+}
+.buttons button{
+    display: inline-block !important;
+}
+
+@media screen and (max-width: 960px) {
+
+}

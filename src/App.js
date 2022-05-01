@@ -2,6 +2,8 @@ import SupervisorProfile from './pages/supervisorProfile/supervisorProfile';
 import AdministratorProfile from './pages/administratorProfile/administratorProfile';
 import SupervisorProfileUser from './pages/supervisorProfile/supervisorProfileUser';
 import AdministratorProfileUser from './pages/administratorProfile/administratorProfileUser';
+import AdministratorProfileCompany from './pages/administratorProfile/administratorProfileCompany';
+
 import RegUserAdm from './pages/RegistrarUsuarioAdm/RegUserAdm';
 import RegistrarUsuarioSupv from './pages/registrarUsuarioSupv/registrarUsuarioSupv';
 import RegisterCompany from './pages/addCompanyView/registerCompany';
@@ -15,6 +17,9 @@ function App() {
       <Routes>
         <Route exact path="/administrator" element={ <AdministratorProfile /> }/>
         <Route exact path="/administrator/adminuser" element={ <AdministratorProfileUser /> }/>
+        <Route exact path="/administrator/admincompany" element={ <AdministratorProfileCompany /> }/>
+
+
         <Route exact path="/administrator/createuser" element={ <RegUserAdm /> }></Route>
         <Route exact path="/administrator/registercompany" element={ <RegisterCompany cargo="administrator"/> }></Route>
         <Route exact path="/supervisor" element={ <SupervisorProfile /> }/>
