@@ -43,15 +43,15 @@ export const deleteCompany = id =>
   deleteDoc(doc(db,'company', id));
 
 // Edit Company by id
-export const editCompany =  (id) =>{
+export const editCompany =  (id, data) =>{
   
   const docRef = doc(db, "company", id);
   
   updateDoc(docRef, {
-    name: 'Editado', 
-    address: 'Editado', 
-    representativePhone: 65730307, 
-    representativeName: 'Editado'
+    name: data.name, 
+    address: data.direction, 
+    representativePhone: data.phone, 
+    representativeName: data.representantName
   });
 }
   
