@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc , query, where} from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDUuVEv-hcIC0htFT4nnETtEYDQp7R7ORM',
@@ -30,3 +30,6 @@ export const deleteUser = id =>
 export const registerCompany = (name, address, representativePhone, representativeName) =>
   addDoc(collection(db,'company'),{name, address, representativePhone, representativeName});
 
+//Login User
+export const loginUser = (email, password) =>
+  query(collection(db,'user'), where('email', '==', email), where('password', '==', password))
