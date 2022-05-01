@@ -32,4 +32,28 @@
 
 @media screen and (max-width: 960px) {
 
+    .img-edit{
+        width: 25px;
+        height: 25px;
+        margin: auto;
+    }
+    
+    .img-del{
+        width: 25px;
+        height: 25px;
+        margin: auto;
+    }
+    .buttons{
+        width: 30% !important;
+        margin-right: 20%;
+        margin-left: auto;
+        float: left;
+    }
+
+    .item-list-id p{
+        width: 100% !important;
+       
+    }
+
+    
 }

@@ -44,7 +44,7 @@ const ListCompany = () => {
       {companyData?.map(({id,data}) =>( 
         <div className={ ColorSelect(tableNumber) ?"item-list-table row" : "item-list-table2 row"}>
           <div className="col-4 item-list-id">
-                <p>Empresa: {data.name}</p>     
+                <p> <strong>Empresa: </strong> {data.name}</p>     
           </div>
           <div class= "buttons g-col-4 d-flex">
             <div className="col-lg-2 col-3 d-flex align-items-center buttonItem">
