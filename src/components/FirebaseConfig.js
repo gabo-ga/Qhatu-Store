@@ -27,6 +27,9 @@ export const deleteUser = id =>
   deleteDoc(doc(db,'user', id));
 
 // Get company
+export const onGetCompanies = (callback) =>
+  onSnapshot(collection(db,'company'), callback);
+
 
 export const onGetCompany = id =>
   getDoc(doc(db,'company', id));
