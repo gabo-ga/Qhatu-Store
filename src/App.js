@@ -3,7 +3,7 @@ import AdministratorProfile from './pages/administratorProfile/administratorProf
 import SupervisorProfileUser from './pages/supervisorProfile/supervisorProfileUser';
 import AdministratorProfileUser from './pages/administratorProfile/administratorProfileUser';
 import AdministratorProfileCompany from './pages/administratorProfile/administratorProfileCompany';
-
+import LoginUser from './pages/LoginUser/LoginUser';
 import RegUserAdm from './pages/RegistrarUsuarioAdm/RegUserAdm';
 import RegistrarUsuarioSupv from './pages/registrarUsuarioSupv/registrarUsuarioSupv';
 import RegisterCompany from './pages/addCompanyView/registerCompany';

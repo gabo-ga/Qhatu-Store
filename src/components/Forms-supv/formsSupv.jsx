@@ -30,15 +30,16 @@ const FormsSupv = () => {
     }
 
     return(
-        
         <div className="container-fluid d-flex justify-content-center">
-            <div className='container1 d-flex justify-content-center align-self-center'>
-                <form onSubmit={ handleSubmit(onSubmit)} className="d-flex justify-content-center align-self-center">
-                    <div className="row d-flex align-self-center justify-content-center">
-                        <div className="col-lg-6 col-12">
-                            <div className="mb-3">
+        <div className='container2 d-flex justify-content-center'>
+            <div className="row align-self-center">
+                <form onSubmit={ handleSubmit(onSubmit)}>
+
+                    <div class="mycontainer">
+                        <div className="col-lg-6 col-12 firstCol">
+                            <div className="mb-3 ">
                                 <label for="name" class="form-label">Nombre/s Apellidos</label>
-                                <input type="text" class=" form-control input-text" 
+                                <input type="text" class=" form-control input-text myinput" 
                                     placeholder="Santiago Hernandez Garcia" {...register("name",{ 
                                         required:true,
                                         maxLength:40,
@@ -48,7 +49,8 @@ const FormsSupv = () => {
                             </div>
 
                             <div className="mb-3">
-                                <label for="email" class="form-label">Correo electrónico</label>
+                              
+                                <label for="email" class="form-label">Correo electronico</label>
                                 <input type="text" class="form-control input-text" aria-describedby="emailHelp"
                                     placeholder="SantiagoHernandez@gmail.com" {...register("email",{ 
                                         required:true,
@@ -59,8 +61,10 @@ const FormsSupv = () => {
                             </div>
 
                             <div className="mb-3">
-                                <label for="phone" class="form-label">Número de Celular</label>
-                                <input type="number" class="form-control input-text" placeholder="76543211" min="60000000" max="79999999"
+
+                                <label for="phone" class="form-label">Celular</label>
+                                <input type="number" class="form-control input-text" placeholder="76543211"
+
                                     {...register("phone",{ required:true,
                                         min:60000000,
                                         max:79999999,
@@ -71,7 +75,7 @@ const FormsSupv = () => {
 
                             <div className="mb-3">
                                 <label for="password" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control input-text" placeholder="••••••••"
+                                <input type="password" class="form-control input-text myinput" placeholder="••••••••"
                                     {...register("password",{ required:true,
                                         maxLength:40,
                                         minLength:8,
@@ -79,8 +83,10 @@ const FormsSupv = () => {
                                 })}/>{errors.password?.type === 'required' && "La contraseña es requerida"}
                             </div>
                         </div>
-                        <div className="col-lg-6 col-12 d-flex align-self-end">
-                            <div className='row '>
+
+                        <div className="col-lg-6 col-12 secondCol">
+                            <div className='row'>
+
                                 <div className='col-12 order-2 order-lg-1'>
                                     <div className= "mb-3 checks ">
                                         <label className="user form-label">
@@ -106,25 +112,27 @@ const FormsSupv = () => {
                                                     <label className="form-check-label" for="supervisor">
                                                         Supervisor
                                                     </label>    
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className='col-12 order-1 order-lg-2'>
-                                    <div className="mb-3 confirm ">
-                                        <label for="confirmPassword" class="form-label">Confirmación de contraseña</label>
-                                        <input type="password" class="form-control input-text" placeholder="••••••••"
-                                            {...register("confirmPassword",{ 
-                                                required:true,
-                                                maxLength:40,
-                                                minLength:8,
-                                                pattern:patterns.passwordPattern
-                                            })}/> {errors.confirmPassword?.type === 'required' && "Confirme su contraseña"}
+                                    <div className='col-12 order-1 order-lg-2'>
+                                        <div className="mb-3 confirm ">
+                                            <label for="confirmPassword" class="form-label">Confirmación de contraseña</label>
+                                            <input type="password" class="form-control input-text myinput" placeholder="••••••••"
+                                                {...register("confirmPassword",{ 
+                                                    required:true,
+                                                    maxLength:40,
+                                                    minLength:8,
+                                                    pattern:patterns.passwordPattern
+                                                })}/> {/*errors.confirmPassword && "Password is required"*/}
+                                        </div>
                                     </div>
                                 </div>
+                                <br/>
                             </div>
-                            <br/>
+
                         </div>
                         <div className='col-12'>
                             <div className="boton">
@@ -141,9 +149,10 @@ const FormsSupv = () => {
                                 </Link>
                             </div>
                         </div>
-                    </div>
-                </form>
-            </div> 
+                    </form>
+                </div>
+            </div>
+
         </div>
 
     );

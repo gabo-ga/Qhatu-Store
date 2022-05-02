@@ -26,8 +26,8 @@
     
 }
 
-.form-control{
-    width: 300px !important;
+.myinput{
+    width: 80px !important;
 }
 
 body{
@@ -39,9 +39,9 @@ form{
 }
 
 
-.container1{
-    width: 1075px;
-    height: 716px;
+.container2{
+    width: 850px;
+    height: 550px;
     background-color: #FDBF50;
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -87,20 +87,50 @@ label{
     margin-bottom: 4%;
     padding-bottom: 4%;
 }
+.mycontainer{
+    padding: 5%;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 
+.firstCol{
+    width: 50%;
+}
+.secondCol{
+    margin-bottom: 0;
+    margin-top: auto;
+    width: 50%;
+    height: 172px;
+}
+.order-1{
+    margin-bottom: 0 !important;
+    margin-top: auto;
+    padding-bottom: 0;
+}
+.checks{
+    width: 100%;
+}
 @media only screen and (max-width: 960px){
 
-    .container1{
-        Width: 320px;
-        Height: 648px;
-    } 
-    
-    .form-control{
-        width: 234px !important;
+    .myinput{
+        width: 100% !important;
     }
-
-    .boton{
-        margin-top: 0px;
-        
+    form{
+        width: 100%;
+    }
+    .container2{
+        padding-top: 10%;
+        padding-bottom: 10%;
+        width: 95% !important;
+        height: 100% !important;
+        border-top-left-radius: 50px;
+        border-bottom-right-radius: 50px;
     }
 }

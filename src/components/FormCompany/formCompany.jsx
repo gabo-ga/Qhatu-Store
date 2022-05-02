@@ -75,7 +75,7 @@ const FormCompany = ({cargo}) => {
                         
 
                             <div class="mb-3">
-                                <label for="direction" class="form-label" name="direccion">Dirección de la central</label>
+                                <label for="direction" class="form-label">Dirección de la central</label>
                                 <input type="text" class="form-control input-text" placeholder="Av Heroinas Nro 23"
                                 {...register("direction",{
                                     required:true,
@@ -87,8 +87,9 @@ const FormCompany = ({cargo}) => {
                             </div>
 
                             <div class="mb-3">
-                                <label for="phone" class="form-label" name="telefono">Teléfono del representante</label>
-                                <input type="number" class="form-control input-text" placeholder="76543211" min="60000000" max="79999999"
+                                <label for="phone" class="form-label">Telefono del representante</label>
+                                <input type="number" class="form-control input-text" placeholder="76543211"
+
                                 {...register("phone",{
                                     required:true,
                                     valueAsNumber: true,

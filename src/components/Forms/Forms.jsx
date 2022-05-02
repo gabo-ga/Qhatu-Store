@@ -68,6 +68,7 @@ const Forms = () => {
                                     })}/>{errors.phone?.type === 'required' && "Numero de celular es requerido"}
                             </div>
 
+<<<<<<< HEAD
                             <div className="mb-3">
                                 <label for="password" class="form-label">Contraseña</label>
                                 <input type="password" class="form-control input-text" placeholder="••••••••"
@@ -76,7 +77,19 @@ const Forms = () => {
                                         minLength:8,
                                         pattern:patterns.passwordPattern
                                 })}/>{errors.password?.type === 'required' && "La contraseña es requerida"}
+=======
+                                <div className="mb-3">
+                                    <label for="password" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control input-text myinput" placeholder="••••••••"
+                                        {...register("password",{ required:true,
+                                            maxLength:40,
+                                            minLength:8,
+                                            pattern:patterns.passwordPattern
+                                    })}/>{/*errors.password && "Last name is required"*/}
+                                </div>
+>>>>>>> origin/BUGS/HU-8
                             </div>
+
                         </div>
                         <div className="col-lg-6 col-12 d-flex align-items-end ">
                             <div className='row'>
@@ -109,6 +122,7 @@ const Forms = () => {
                                             </div>
                                         </div>
                                     </div>
+<<<<<<< HEAD
                                 </div>
                                 <div className='col-12 order-1 order-lg-2'>
                                     <div className="mb-3 confirm ">
@@ -120,10 +134,24 @@ const Forms = () => {
                                                 minLength:8,
                                                 pattern:patterns.passwordPattern
                                             })}/> {errors.confirmPassword?.type === 'required' && "Confirme su contraseña"}
+=======
+                                    <div className='col-12 order-1 order-lg-2'>
+                                        <div className="mb-3 confirm ">
+                                            <label for="confirmPassword" class="form-label">Confirmación de contraseña</label>
+                                            <input type="password" class="form-control input-text myinput" placeholder="••••••••"
+                                                {...register("confirmPassword",{ 
+                                                    required:true,
+                                                    maxLength:40,
+                                                    minLength:8,
+                                                    pattern:patterns.passwordPattern
+                                                })}/> {/*errors.confirmPassword && "Password is required"*/}
+                                        </div>
+>>>>>>> origin/BUGS/HU-8
                                     </div>
                                 </div>
+                                <br/>
                             </div>
-                            <br/>
+
                         </div>
                         <div className='col-12'>
                             <div className="boton">
