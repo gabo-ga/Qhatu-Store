@@ -5,12 +5,14 @@ import Footer from '../../components/fotter/footer'
 import Navbar from '../../components/navbar/navbar'
 
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 //estilos
 import './supervisoProfile.css'
 
-const supervisorProfile = () => {
+const SupervisorProfile = () => {
+  let location = useLocation();
+  let {name}=location;
   return (
     <div className='container-fluid  p-0'>
         <Navbar></Navbar>
@@ -51,7 +53,7 @@ const supervisorProfile = () => {
           </div>
           <div className='col-xl-4 col-12 col-profile order-1 order-xl-2 pr-0'>
             <div className='d-flex justify-content-center'>
-              <PerfilCard cargo="Supervisor"></PerfilCard>
+              <PerfilCard cargo="Supervisor" name={name}></PerfilCard>
             </div>
             <div className='buttons-colection'>
               <div className='row'>
@@ -79,4 +81,4 @@ const supervisorProfile = () => {
   )
 }
 
-export default supervisorProfile
+export default SupervisorProfile

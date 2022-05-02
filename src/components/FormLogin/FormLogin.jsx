@@ -2,24 +2,40 @@ import React from 'react';
 import './FormLogin.css';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from "react-router-dom";
-import { loginUser } from '../FirebaseConfig';
-import { getDoc } from 'firebase/firestore';
+import { onGetUsers} from '../FirebaseConfig';
+import { useEffect, useState} from 'react';
 const FormLogin = () => {
     const { register,formState:{ errors }, handleSubmit }=useForm();
     let navigate = useNavigate();
-    let path ="/login";//falta que redirija despues del submit
-    let doc;
-    async function  onSubmit (data)  {
-         doc =await getDoc(loginUser(data.email,data.password));
-         console.log(doc.id, " => ", doc.data());
-        //navigate(path, {replace: true});
+    const [userData,setUserData]= useState([]);
+    let encontrado=false;
+    const onSubmit= (doc) =>{
+        userData?.map(({id,data}) =>{ 
+            if(doc.email==data.email && doc.password== data.password){
+                encontrado=true;
+                if(data.typeOfUser=='Supervisor'){
+                    navigate('/supervisor', {state:{name:data.name}});
+                }else if(data.typeOfUser=='Administrador'){
+                    navigate('/administrador', {state:{name:data.name}});
+                }else if(data.typeOfUser=='Vendedor'){
+                    navigate('/vendedor', {state:{name:data.name}});
+                }
+            }
+        })
+        if(!encontrado){
+            alert("Email y/o contraseña incorrecto perro");
+        }
     };
-    
+    useEffect(()=>{
+        onGetUsers((querySnapshot) => {
+            setUserData(querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                data: doc.data(),
+            })))
+        });
+    },[]);
 
-    const patterns = {
-        emailPattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/i,
-        passwordPattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*[!"#$%&/()=?¡¿'"´}+´[~^`{}*])(?!.*[\t\n])([A-Za-z\d]|[^ ]){8,39}$/i
-    }
+    
     return(
         <div className="container-fluid d-flex justify-content-center">
             <div className='container1 d-flex justify-content-center align-self-center'>
@@ -36,10 +52,7 @@ const FormLogin = () => {
                                 <input type="text" class="form-control input-text" aria-describedby="emailHelp"
                                     placeholder="SantiagoHernandez@gmail.com" 
                                     {...register("email",{ 
-                                        required:true,
-                                        maxLength:40,
-                                        minLength:10,
-                                        pattern:patterns.emailPattern
+                                        required:true
                                     })}/>{errors.email?.type === 'required' && "Email es requerido"}
                         </div>
 
@@ -47,10 +60,7 @@ const FormLogin = () => {
                             <label for="password" class="form-label">Contraseña</label>
                                 <input type="password" class="form-control input-text" placeholder="••••••••"
                                     {...register("password",{ 
-                                        required:true,
-                                        maxLength:40,
-                                        minLength:8,
-                                        pattern:patterns.passwordPattern
+                                        required:true
                                     })}/>{errors.password?.type === 'required' && "La contraseña es requerida"}
                         </div>
 

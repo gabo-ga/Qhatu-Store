@@ -5,12 +5,13 @@ import Footer from '../../components/fotter/footer'
 import Navbar from '../../components/navbar/navbar'
 
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation} from 'react-router-dom';
 //estilos
 import './administratorProfile.css'
 
 
-const administratorProfile = () => {
+const AdministratorProfile = () => {
+  let location = useLocation();
   return (
     <div className='container-fluid p-0'>
         <Navbar></Navbar>
@@ -45,7 +46,7 @@ const administratorProfile = () => {
 
           <div className='col-xl-4 col-12 col-profile order-1 order-xl-2'>
             <div className='d-flex justify-content-center'>
-              <PerfilCard cargo="Administrador"></PerfilCard>
+              <PerfilCard cargo="Administrador" name={location.state.name}></PerfilCard>
             </div>
             <div className='buttons-colection'>
               <div className='row'>
@@ -73,4 +74,4 @@ const administratorProfile = () => {
   )
 }
 
-export default administratorProfile
+export default AdministratorProfile
