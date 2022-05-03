@@ -29,7 +29,3 @@ export const deleteUser = id =>
 // Register company
 export const registerCompany = (name, address, representativePhone, representativeName) =>
   addDoc(collection(db,'company'),{name, address, representativePhone, representativeName});
-
-//Login User
-export const loginUser = (email, password) =>
-  query(collection(db,'user'), where('email', '==', email), where('password', '==', password))
