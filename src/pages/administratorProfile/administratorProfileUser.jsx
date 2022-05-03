@@ -5,13 +5,12 @@ import Footer from '../../components/fotter/footer'
 import Navbar from '../../components/navbar/navbar'
 
 
-import { Link, useLocation} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 //estilos
 import './administratorProfile.css'
 
 
-const AdministratorProfile = () => {
-  let location = useLocation();
+const administratorProfile = () => {
   return (
     <div className='container-fluid p-0'>
         <Navbar></Navbar>
@@ -46,7 +45,7 @@ const AdministratorProfile = () => {
 
           <div className='col-xl-4 col-12 col-profile order-1 order-xl-2'>
             <div className='d-flex justify-content-center'>
-              <PerfilCard cargo="Administrador" name={location.state.name}></PerfilCard>
+              <PerfilCard cargo="Administrador"></PerfilCard>
             </div>
             <div className='buttons-colection'>
               <div className='row'>
@@ -59,8 +58,8 @@ const AdministratorProfile = () => {
                   <button type="button" class="btn btn-admin-profile">Administrar usuario</button>
                 </div> 
                 <div className='col-lg-12 col-6 d-flex justify-content-center buttons-colection-item'>
-                  <Link to="/administrator/registercompany">
-                    <button type="button" class="btn btn-admin-profile">Añadir empresa</button>
+                  <Link to="/administrator/admincompany">
+                    <button type="button" class="btn btn-admin-profile">Administrar empresa</button>
                   </Link>
                 </div>   
               </div>
@@ -74,4 +73,4 @@ const AdministratorProfile = () => {
   )
 }
 
-export default AdministratorProfile
+export default administratorProfile

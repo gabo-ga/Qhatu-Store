@@ -59,6 +59,13 @@ form{
     align-self: center !important;
 }
 
+.forms-input-error{
+    display:none;
+}
+.forms-input-error-active{
+    display:block !important;
+}
+
 .form-control{
     margin-top: 0 !important;
 }
@@ -71,6 +78,7 @@ label{
     margin-bottom: 4%;
     padding-bottom: 4%;
 }
+
 
 @media only screen and (max-width: 960px){
 
