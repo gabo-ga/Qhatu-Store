@@ -1,0 +1,51 @@
+
+
+
+.modal-del-container {
+    width: 657px;
+    height: 348px;
+    background-color: #FDBE50;
+    border-radius: 30px 0px 30px 0px;
+}
+
+.modal-del-header {
+    padding-top: 46px;
+    font-size: 32px;
+}
+
+.modal-del-data {
+    font-size: 20px;
+    padding: 28px 0px;
+    line-height : 40px;
+}
+
+.modal-del-btns {
+    padding-bottom: 46px;
+}
+
+.modal-del-btn{
+    background-color: #FF724C !important;
+    color: white !important;
+    border-radius: 30px !important;
+    border-style: none !important;
+    width: 160px;
+    font-size: 20px !important;
+    height: 56px;
+}
+
+@media screen and (max-width: 960px) {
+    .modal-del-container {
+        width: 318px;
+        height: 378px;
+    }
+    
+    .modal-del-header {
+        padding-top: 42px;
+        font-size: 24px;
+    }
+
+    .modal-del-btn{
+        width: 120px;
+        height: 56px;
+    }
+}

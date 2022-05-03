@@ -1,0 +1,38 @@
+.edit-company-tittle{
+    font-size: 48px;
+    height: 54px;
+    padding-top: 45px;
+}
+
+.form-edit{
+    width: 100%;
+}
+
+.btn-form-editCompany{
+    background-color: #FF724C !important;
+    color: white !important;
+    border-radius: 30px !important;
+    border-style: none !important;
+    width: 222px;
+    font-size: 30px !important;
+    height: 93px;
+}
+
+@media only screen and (max-width: 960px){
+
+    .edit-company-tittle{
+        font-size: 32px;
+        height: 54px;
+        padding-top: 45px;
+    }
+
+    .btn-form-editCompany{
+        width: 239px;
+        font-size: 24px !important;
+        height: 52px;
+    }
+
+
+
+    
+}

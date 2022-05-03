@@ -3,13 +3,12 @@ import UsersTable from '../../components/usersTable/usersTable';
 import PerfilCard from '../../components/perfilCard/perfilCard';
 import Footer from '../../components/fotter/footer'
 import Navbar from '../../components/navbar/navbar'
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 //estilos
 import './supervisoProfile.css'
 
-const SupervisorProfile = () => {
-  let location = useLocation();
+const supervisorProfile = () => {
   return (
     <div className='container-fluid  p-0'>
         <Navbar></Navbar>
@@ -63,7 +62,7 @@ const SupervisorProfile = () => {
           </div>
           <div className='col-xl-4 col-12 col-profile order-1 order-xl-2 '>
             <div className='d-flex justify-content-center'>
-              <PerfilCard cargo="Supervisor" name={location.state.name}></PerfilCard>
+              <PerfilCard cargo="Supervisor"></PerfilCard>
             </div>
             <div className='buttons-colection'>
               <div className='row'>
@@ -73,7 +72,7 @@ const SupervisorProfile = () => {
                 </div>
                 */}
                 <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
-                  <Link to={{pathname:"/supervisor/adminuser" ,state:{name:location.state.name}}}>
+                  <Link to="/supervisor/adminuser">
                     <button type="button" class="btn btn-supv-profile">Administrar usuario</button>
                   </Link>
                 </div>
@@ -93,4 +92,4 @@ const SupervisorProfile = () => {
   )
 }
 
-export default SupervisorProfile
+export default supervisorProfile

@@ -1,7 +1,6 @@
 import './listItem.css'
 
 const ListItem = (props) => {
-
   const ColorSelect = () => {
     if (props.color == "1"){
       return true

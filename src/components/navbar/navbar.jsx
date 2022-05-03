@@ -3,7 +3,7 @@ import './navbar.css'
 
 const navbar = () => {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid p-0">
         <div className="row">
             <div className="col-12 p-0">
                 <div className="nav-page text-center d-flex align-items-center justify-content-center">
