@@ -28,7 +28,7 @@ function App() {
         <Route exact path="/supervisor/createuser" element={ <RegistrarUsuarioSupv /> }></Route>
         <Route exact path="/supervisor/registercompany" element={ <RegisterCompany cargo="supervisor"/> }></Route>
         <Route exact path="/supervisor/editcompany/:id" element={ <EditCompanyView cargo="supervisor"/> }></Route>
-        <Route exact path="/adminsitrator/editcompany/:id" element={ <EditCompanyView cargo="administrator"/> }></Route>
+        <Route exact path="/administrator/editcompany/:id" element={ <EditCompanyView cargo="administrator"/> }></Route>
       </Routes>
     </BrowserRouter>
   );

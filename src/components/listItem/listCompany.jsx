@@ -46,7 +46,7 @@ const ListCompany = () => {
             <p className='m-0 item-name'>Empresa: {data.name}</p>
         </div>
         <div className="col-lg-2 col-3 d-flex align-items-center">
-          <button type='button' class="btn" data-bs-toggle="modal" data-bs-target="#editEmp">
+          <button type='button' class="btn" data-bs-toggle="modal" data-bs-target="#">
             <img className='img-edit' 
             src="https://firebasestorage.googleapis.com/v0/b/qhatu-store.appspot.com/o/lapiz.png?alt=media&token=9e834e4f-8b4d-42af-bf4a-ef08deae3cd0" 
             alt="" />
