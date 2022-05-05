@@ -58,8 +58,8 @@ const administratorProfile = () => {
                   <button type="button" class="btn btn-admin-profile">Administrar usuario</button>
                 </div> 
                 <div className='col-lg-12 col-6 d-flex justify-content-center buttons-colection-item'>
-                  <Link to="/administrator/registercompany">
-                    <button type="button" class="btn btn-admin-profile">Añadir empresa</button>
+                  <Link to="/administrator/admincompany">
+                    <button type="button" class="btn btn-admin-profile">Administrar empresa</button>
                   </Link>
                 </div>   
               </div>

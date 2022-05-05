@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import supervisorProfile from '../../pages/supervisorProfile/supervisorProfile';
 import { registerUser } from '../FirebaseConfig'
 import { useNavigate } from "react-router-dom";
 import './forms-supv.css'
@@ -126,6 +128,7 @@ const FormsSupv = () => {
                         </div>
                         <div className='col-12'>
                             <div className="boton">
+                                <Link to="/supervisor">
                                 <button className="btn btn-primary btn-form-admin" type="submit" onClick={()=>{
                                     {errors.name?.type === 'required' &&
                                      errors.email?.type === 'required' &&
@@ -135,6 +138,7 @@ const FormsSupv = () => {
                                 }}>
                                     Crear cuenta
                                 </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
