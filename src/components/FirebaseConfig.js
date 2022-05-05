@@ -38,6 +38,7 @@ export const onGetCompany = id =>
 export const registerCompany = (name, address, representativePhone, representativeName) =>
   addDoc(collection(db,'company'),{name, address, representativePhone, representativeName});
 
+
 // Delete Company by id
 export const deleteCompany = id =>
   deleteDoc(doc(db,'company', id));
@@ -54,4 +55,3 @@ export const editCompany =  (id, data) =>{
     representativeName: data.representantName
   });
 }
-  
