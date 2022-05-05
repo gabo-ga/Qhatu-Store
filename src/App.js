@@ -8,9 +8,9 @@ import RegUserAdm from './pages/RegistrarUsuarioAdm/RegUserAdm';
 import RegistrarUsuarioSupv from './pages/registrarUsuarioSupv/registrarUsuarioSupv';
 import RegisterCompany from './pages/addCompanyView/registerCompany';
 import EditCompanyView from './pages/editCompany/editCompanyView';
-
+import FormLogin from './components/FormLogin/FormLogin';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
+import LoginUser from './pages/LoginUser/LoginUser';
 function App() {
 
   return (
@@ -19,16 +19,13 @@ function App() {
         <Route exact path="/administrator" element={ <AdministratorProfile /> }/>
         <Route exact path="/administrator/adminuser" element={ <AdministratorProfileUser /> }/>
         <Route exact path="/administrator/admincompany" element={ <AdministratorProfileCompany /> }/>
-
-
         <Route exact path="/administrator/createuser" element={ <RegUserAdm /> }></Route>
         <Route exact path="/administrator/registercompany" element={ <RegisterCompany cargo="administrator"/> }></Route>
         <Route exact path="/supervisor" element={ <SupervisorProfile /> }/>
         <Route exact path="/supervisor/adminuser" element={ <SupervisorProfileUser /> }/>
         <Route exact path="/supervisor/createuser" element={ <RegistrarUsuarioSupv /> }></Route>
         <Route exact path="/supervisor/registercompany" element={ <RegisterCompany cargo="supervisor"/> }></Route>
-        <Route exact path="/supervisor/editcompany/:id" element={ <EditCompanyView cargo="supervisor"/> }></Route>
-        <Route exact path="/administrator/editcompany/:id" element={ <EditCompanyView cargo="administrator"/> }></Route>
+        <Route exact path="/editcompany/:id" element={ <EditCompanyView/> }></Route>
       </Routes>
     </BrowserRouter>
   );
