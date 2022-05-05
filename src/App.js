@@ -3,14 +3,14 @@ import AdministratorProfile from './pages/administratorProfile/administratorProf
 import SupervisorProfileUser from './pages/supervisorProfile/supervisorProfileUser';
 import AdministratorProfileUser from './pages/administratorProfile/administratorProfileUser';
 import AdministratorProfileCompany from './pages/administratorProfile/administratorProfileCompany';
-
 import RegUserAdm from './pages/RegistrarUsuarioAdm/RegUserAdm';
 import RegistrarUsuarioSupv from './pages/registrarUsuarioSupv/registrarUsuarioSupv';
 import RegisterCompany from './pages/addCompanyView/registerCompany';
 import EditCompanyView from './pages/editCompany/editCompanyView';
-import FormLogin from './components/FormLogin/FormLogin';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LoginUser from './pages/LoginUser/LoginUser';
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 function App() {
 
   return (
@@ -26,6 +26,8 @@ function App() {
         <Route exact path="/supervisor/createuser" element={ <RegistrarUsuarioSupv /> }></Route>
         <Route exact path="/supervisor/registercompany" element={ <RegisterCompany cargo="supervisor"/> }></Route>
         <Route exact path="/editcompany/:id" element={ <EditCompanyView/> }></Route>
+        <Route exact path="/login" element={ <LoginUser></LoginUser> }></Route>
+        
       </Routes>
     </BrowserRouter>
   );
