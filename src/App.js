@@ -1,13 +1,13 @@
 import SupervisorProfile from './pages/supervisorProfile/supervisorProfile';
-import AdministratorProfile from './pages/administratorProfile/administratorProfile';
+import AdministratorProfile from './pages/administratorProfile/AdministratorProfile';
 import SupervisorProfileUser from './pages/supervisorProfile/supervisorProfileUser';
-import AdministratorProfileUser from './pages/administratorProfile/administratorProfileUser';
+import AdministratorProfileUser from './pages/administratorProfile/AdministratorProfileUser';
 import AdministratorProfileCompany from './pages/administratorProfile/administratorProfileCompany';
-
 import RegUserAdm from './pages/RegistrarUsuarioAdm/RegUserAdm';
 import RegistrarUsuarioSupv from './pages/registrarUsuarioSupv/registrarUsuarioSupv';
 import RegisterCompany from './pages/addCompanyView/registerCompany';
 import EditCompanyView from './pages/editCompany/editCompanyView';
+import LoginUser from './pages/LoginUser/LoginUser'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -19,8 +19,6 @@ function App() {
         <Route exact path="/administrator" element={ <AdministratorProfile /> }/>
         <Route exact path="/administrator/adminuser" element={ <AdministratorProfileUser /> }/>
         <Route exact path="/administrator/admincompany" element={ <AdministratorProfileCompany /> }/>
-
-
         <Route exact path="/administrator/createuser" element={ <RegUserAdm /> }></Route>
         <Route exact path="/administrator/registercompany" element={ <RegisterCompany cargo="administrator"/> }></Route>
         <Route exact path="/supervisor" element={ <SupervisorProfile /> }/>
@@ -29,6 +27,7 @@ function App() {
         <Route exact path="/supervisor/registercompany" element={ <RegisterCompany cargo="supervisor"/> }></Route>
         <Route exact path="/supervisor/editcompany/:id" element={ <EditCompanyView cargo="supervisor"/> }></Route>
         <Route exact path="/adminsitrator/editcompany/:id" element={ <EditCompanyView cargo="administrator"/> }></Route>
+        <Route exact path="/login" element={<LoginUser/>}></Route>
       </Routes>
     </BrowserRouter>
   );

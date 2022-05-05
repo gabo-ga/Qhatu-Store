@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc, getDoc, updateDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc, getDoc, updateDoc, query, where } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDUuVEv-hcIC0htFT4nnETtEYDQp7R7ORM',
@@ -30,6 +30,9 @@ export const deleteUser = id =>
 export const onGetCompanies = (callback) =>
   onSnapshot(collection(db,'company'), callback);
 
+  //Login User
+ export const loginUser = (email, password) =>
+ query(collection(db,'user'), where('email', '==', email), where('password', '==', password))
 
 export const onGetCompany = id =>
   getDoc(doc(db,'company', id));
