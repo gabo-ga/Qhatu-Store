@@ -1,0 +1,14 @@
+* { 
+  padding:0;
+  margin:0;
+  font-family: sans-serif;
+}
+
+.formCont{
+  background-color: #fdbe5044;
+  padding-bottom: 128px;
+  padding-top: 30px;
+}
+.errors{
+  color: #FF724C !important;
+}
