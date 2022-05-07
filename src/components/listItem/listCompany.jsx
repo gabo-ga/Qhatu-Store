@@ -115,7 +115,7 @@ const ListCompany = () => {
                            </p>
                           </div>
                           <div className='col-12 d-flex justify-content-evenly modal-del-btns'>
-                            <Link to={`/administrator/editcompany/${id}`}> 
+                            <Link to={`/editcompany/${id}`}> 
                               <button type="button" class="btn modal-del-btn " data-bs-dismiss="modal"
                               >Editar</button>
                             </Link>
