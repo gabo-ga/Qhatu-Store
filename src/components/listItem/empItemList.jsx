@@ -3,7 +3,6 @@ import { deleteCompany, onGetCompany } from '../FirebaseConfig';
 import { Link } from 'react-router-dom'
 import "./empItemList.css"
 import "../modal/companyModal.css"
-import { Navigate } from 'react-router-dom';
 
 const EmpItemList = (props) => {
     const [companyData,setCompanyData]= useState([]);
@@ -20,9 +19,6 @@ const EmpItemList = (props) => {
         getCompanyById(props.id);
       },[]);
     let tableNumber=0;
-    
-    var data = {id:props.id};
-    //data = JSON.stringify(data);
     var path = `/adminsitrator/editcompany/${props.id}`;
 
     const handleClick= () =>{

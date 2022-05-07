@@ -38,8 +38,7 @@ const EditCompany = (props) => {
     const { register,formState:{ errors }, handleSubmit }=useForm();
     let navigate = useNavigate();
     const onSubmit= (data) => {
-        console.log(data);
-        editCompany(props.id)
+        editCompany(props.id, data)
         navigate(-1)
     };
     return(
