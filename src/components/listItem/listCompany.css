@@ -1,13 +1,13 @@
 
 .img-edit{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     margin: auto;
 }
 
 .img-del{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     margin: auto;
 }
 
@@ -23,8 +23,8 @@
 }
 
 .buttonItem{
-    margin-left: 40%;
-    margin-right: 40%;
+    margin-left: 00%;
+    margin-right: 10%;
 }
 .buttons button{
     display: inline-block !important;

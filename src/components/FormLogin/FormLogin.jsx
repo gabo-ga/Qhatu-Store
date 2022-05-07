@@ -17,8 +17,8 @@ const FormLogin = () => {
                 encontrado=true;
                 if(data.typeOfUser=='Supervisor'){
                     navigate('/supervisor', {state:{name:data.name}});
-                }else if(data.typeOfUser=='Administrador'){
-                    navigate('/administrador', {state:{name:data.name}});
+                }else if(data.typeOfUser=='Administrator'){
+                    navigate('/administrator', {state:{name:data.name}});
                 }else if(data.typeOfUser=='Vendedor'){
                     navigate('/vendedor', {state:{name:data.name}});
                 }

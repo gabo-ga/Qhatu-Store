@@ -41,9 +41,9 @@ const ListCompany = () => {
   return (
     <div className="container-fluid p-0">
       {companyData?.map(({id,data}) =>( 
-        <div className={ ColorSelect() ?"emp-item-list-1 row p-0" : "emp-item-list-2 row p-0"}>
+        <div className={ ColorSelect(tableNumber) ?"emp-item-list-1 row p-0" : "emp-item-list-2 row p-0"}>
         <div className="col-6 col-lg-8 d-flex align-items-center">
-            <p className='m-0 item-name'>Empresa: {data.name}</p>
+            <p className='m-0 item-name'> Empresa: {data.name}</p>
         </div>
         <div className="col-lg-2 col-3 d-flex align-items-center">
           <button type='button' class="btn" data-bs-toggle="modal" data-bs-target={`#edtEmp-${id}`}>
@@ -115,7 +115,7 @@ const ListCompany = () => {
                            </p>
                           </div>
                           <div className='col-12 d-flex justify-content-evenly modal-del-btns'>
-                            <Link to={`/editcompany/${id}`}> 
+                            <Link to={`/administrator/editcompany/${id}`}> 
                               <button type="button" class="btn modal-del-btn " data-bs-dismiss="modal"
                               >Editar</button>
                             </Link>

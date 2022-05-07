@@ -56,11 +56,11 @@ const administratorProfile = () => {
                 */}
                 <div className='col-lg-12 col-6 d-flex justify-content-center buttons-colection-item'>
                     <Link to="/administrator/adminuser">
-                  <button type="button" class="btn btn-admin-profile">Administrar usuario</button>
+                  <button type="button" class="btn btn-admin-profile">Administrar Usuario</button>
                   </Link>
                 </div> 
                 <div className='col-lg-12 col-6 d-flex justify-content-center buttons-colection-item'>
-                    <button type="button" class="btn btn-admin-profile">Administrar empresa</button>
+                    <button type="button" class="btn btn-admin-profile">Administrar Empresa</button>
                 </div>   
               </div>
             </div>

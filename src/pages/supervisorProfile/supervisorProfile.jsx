@@ -4,11 +4,13 @@ import PerfilCard from '../../components/perfilCard/perfilCard';
 import Footer from '../../components/fotter/footer'
 import Navbar from '../../components/navbar/navbar'
 import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom'
 
 //estilos
 import './supervisoProfile.css'
 
-const supervisorProfile = () => {
+const SupervisorProfile = () => {
+  let {name} = useParams();
   return (
     <div className='container-fluid  p-0'>
         <Navbar></Navbar>
@@ -62,7 +64,7 @@ const supervisorProfile = () => {
           </div>
           <div className='col-xxl-4 col-12 col-profile order-1 order-xxl-2 '>
             <div className='d-flex justify-content-center'>
-              <PerfilCard cargo="Supervisor"></PerfilCard>
+              <PerfilCard cargo="Supervisor" name={name}></PerfilCard>
             </div>
             <div className='buttons-colection'>
               <div className='row'>
@@ -73,12 +75,12 @@ const supervisorProfile = () => {
                 */}
                 <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
                   <Link to="/supervisor/adminuser">
-                    <button type="button" class="btn btn-supv-profile">Administrar usuario</button>
+                    <button type="button" class="btn btn-supv-profile">Administrar Usuario</button>
                   </Link>
                 </div>
                 <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
                   <Link to="/supervisor/registercompany">
-                    <button type="button" class="btn btn-supv-profile">Añadir empresa</button>
+                    <button type="button" class="btn btn-supv-profile">Añadir Empresa</button>
                   </Link>
                 </div>   
               </div>
@@ -92,4 +94,4 @@ const supervisorProfile = () => {
   )
 }
 
-export default supervisorProfile
+export default SupervisorProfile
