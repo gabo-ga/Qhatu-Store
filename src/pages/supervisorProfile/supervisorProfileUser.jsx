@@ -58,11 +58,11 @@ const supervisorProfile = () => {
                 </div>
                 */}
                 <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
-                  <button type="button" class="btn btn-supv-profile">Administrar usuario</button>
+                  <button type="button" class="btn btn-supv-profile">Administrar Usuario</button>
                 </div>
                 <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
                   <Link to="/supervisor/registercompany">
-                    <button type="button" class="btn btn-supv-profile">Añadir empresa</button>
+                    <button type="button" class="btn btn-supv-profile">Añadir Empresa</button>
                   </Link>
                 </div>   
               </div>

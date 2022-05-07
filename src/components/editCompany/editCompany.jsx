@@ -55,7 +55,7 @@ const EditCompany = (props) => {
                                 <div>
                                 <div class="mb-3" id="grupo-nombre">
                                     <label for="name" class="form-label" >Nombre de la empresa</label>
-                                    <input type="text" className='form-control input-text' placeholder={companyData.name}
+                                    <input type="text" className='form-control input-text' placeholder={companyData.name}zz
                                     {...register("name",{
                                         required:true,
                                         pattern: companyData.companyPattern
