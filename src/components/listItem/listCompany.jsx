@@ -46,21 +46,21 @@ const ListCompany = () => {
             <p className='m-0 item-name'>Empresa: {data.name}</p>
         </div>
         <div className="col-lg-2 col-3 d-flex align-items-center">
-          <button type='button' class="btn" data-bs-toggle="modal" data-bs-target="#editEmp">
+          <button type='button' class="btn" data-bs-toggle="modal" data-bs-target={`#edtEmp-${id}`}>
             <img className='img-edit' 
             src="https://firebasestorage.googleapis.com/v0/b/qhatu-store.appspot.com/o/lapiz.png?alt=media&token=9e834e4f-8b4d-42af-bf4a-ef08deae3cd0" 
             alt="" />
           </button>
         </div>
         <div className="col-lg-2 col-3 d-flex align-items-center">
-          <button  type='button' class="btn" data-bs-toggle="modal" data-bs-target="#delEmp">
+          <button  type='button' class="btn" data-bs-toggle="modal" data-bs-target={`#delEmp-${id}`}>
             <img className='img-del'
             src="https://firebasestorage.googleapis.com/v0/b/qhatu-store.appspot.com/o/basurero.png?alt=media&token=5378bed1-9615-4b17-8d70-942ed0829678"
             alt="" />
           </button>
         </div>
 
-        <div class="modal fade " id="delEmp" tabindex="-1" aria-labelledby="delEmp" aria-hidden="true">
+        <div class="modal fade " id={`delEmp-${id}`} tabindex="-1" aria-labelledby={`delEmp-${id}`} aria-hidden="true">
                 <div className='d-flex d-flex justify-content-center'>
                 <div class="modal-dialog modal-body-edit d-flex justify-content-center">
                   <div class="modal-content modal-body-edit">
@@ -82,7 +82,7 @@ const ListCompany = () => {
                           </div>
                           <div className='col-12 d-flex justify-content-evenly modal-del-btns'>
                               <button type="button" class="btn modal-del-btn" data-bs-dismiss="modal"
-                              onClick={() => handleClick()}
+                              onClick={() => handleClick(id)}
                               >Eliminar</button>
                               <button type="button" class="btn modal-del-btn" data-bs-dismiss="modal">Cancelar</button>
                             </div>
@@ -94,7 +94,7 @@ const ListCompany = () => {
 
                 </div>
         </div>
-        <div class="modal fade " id="editEmp" tabindex="-1" aria-labelledby="editEmp" aria-hidden="true">
+        <div class="modal fade " id={`edtEmp-${id}`} tabindex="-1" aria-labelledby={`edtEmp-${id}`} aria-hidden="true">
                 <div className='d-flex justify-content-center'>
                 <div class="modal-dialog modal-body-del d-flex justify-content-center">
                   <div class="modal-content modal-body-del ">
