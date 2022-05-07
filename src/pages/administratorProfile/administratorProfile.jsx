@@ -18,7 +18,7 @@ const administratorProfile = () => {
         </div>
         <div className='container-fluid'>
         <div className='row'>
-          <div className='col-xl-8 col-12 col-table d-flex justify-content-center order-2 order-xl-1'>
+          <div className='col-xxl-8 col-12 col-table d-flex justify-content-center order-2 order-xxl-1'>
             <div>
               <div className='table_background shadow'>
                 <div className='container-fluid p-0 '>
@@ -58,7 +58,7 @@ const administratorProfile = () => {
             </div>
           </div>
 
-          <div className='col-xl-4 col-12 col-profile order-1 order-xl-2'>
+          <div className='col-xxl-4 col-12 col-profile order-1 order-xxl-2'>
             <div className='d-flex justify-content-center'>
               <PerfilCard cargo="Administrador"></PerfilCard>
             </div>
@@ -69,12 +69,12 @@ const administratorProfile = () => {
                   <button type="button" class="btn btn-v1">Administrar catalogo</button>
                 </div>
                 */}
-                <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
+                <div className='col-lg-12 col-6 d-flex justify-content-center buttons-colection-item'>
                   <Link to="/administrator/adminuser">
                     <button type="button" class="btn btn-admin-profile">Administrar usuario</button>
                   </Link>
                 </div>
-                <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
+                <div className='col-lg-12 col-6 d-flex justify-content-center buttons-colection-item'>
                   <Link to="/administrator/admincompany">
                     <button type="button" class="btn btn-admin-profile">Administrar empresa</button>
                   </Link>
@@ -83,7 +83,6 @@ const administratorProfile = () => {
             </div>
           </div>
         </div>
-
         </div>
         <Footer></Footer>
     </div>

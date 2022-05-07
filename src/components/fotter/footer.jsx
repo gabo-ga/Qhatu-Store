@@ -3,10 +3,10 @@ import './footer.css'
 
 const footer = () => {
   return (
-    <div className="container-fluid p-0">
-        <div className="row p-0">
+    <div className="container-fluid">
+        <div className="row">
             <div className="col-12 p-0">
-                <div className="footer-page text-center d-flex align-items-center justify-content-center">
+                <div className="footer-page">
                   <footer>
                   </footer>
                 </div>
