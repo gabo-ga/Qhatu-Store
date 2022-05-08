@@ -55,7 +55,7 @@ const EditCompany = (props) => {
                                 <div>
                                 <div class="mb-3" id="grupo-nombre">
                                     <label for="name" class="form-label" >Nombre de la empresa</label>
-                                    <input type="text" className='form-control input-text' placeholder={companyData.name}zz
+                                    <input type="text" className='form-control input-text' defaultValue={companyData.name||''}
                                     {...register("name",{
                                         required:true,
                                         pattern: companyData.companyPattern
@@ -65,7 +65,7 @@ const EditCompany = (props) => {
                             
                                 <div class="mb-3">
                                     <label for="direction" class="form-label" name="direccion">Dirección de la central</label>
-                                    <input type="text" class="form-control input-text" placeholder={companyData.address}
+                                    <input type="text" class="form-control input-text" defaultValue={companyData.address||''}
                                     {...register("direction",{
                                         required:true,
                                         pattern: companyData.directionPattern
@@ -77,7 +77,7 @@ const EditCompany = (props) => {
 
                                 <div class="mb-3">
                                     <label for="phone" class="form-label" name="telefono">Teléfono del representante</label>
-                                    <input type="number" class="form-control input-text" placeholder={companyData.representativePhone} min="60000000" max="79999999"
+                                    <input type="number" class="form-control input-text"  defaultValue={companyData.representativePhone||''} min="60000000" max="79999999"
                                     {...register("phone",{
                                         required:true,
                                         valueAsNumber: true,
@@ -92,7 +92,7 @@ const EditCompany = (props) => {
 
                                 <div class="mb-3">
                                     <label for="representantName" class="form-label" name="representante">Nombre del representante</label>
-                                    <input type="text" class="form-control input-text" placeholder={companyData.representativeName}
+                                    <input type="text" class="form-control input-text" defaultValue={companyData.representativeName||''}
                                     {...register("representantName",{
                                         required:true,
                                         pattern: patterns.namePattern
