@@ -78,6 +78,9 @@ label{
     margin-bottom: 4%;
     padding-bottom: 4%;
 }
+.errors{
+    color: #FF724C !important;
+}
 
 
 @media only screen and (max-width: 960px){

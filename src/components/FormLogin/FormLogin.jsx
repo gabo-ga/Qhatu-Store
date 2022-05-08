@@ -25,7 +25,7 @@ const FormLogin = () => {
             }
         })
         if(!encontrado){
-            alert("Email y/o contraseña incorrecto perro");
+            alert("Email y/o contraseña incorrecto");
         }
     };
     useEffect(()=>{
@@ -61,6 +61,8 @@ const FormLogin = () => {
                                             {...register("email",{ 
                                                 required:true
                                              })}/>{errors.email?.type === 'required' && "Email es requerido"}
+                                             <div className='errors'>{errors.email?.type === 'pattern' && 'Formato de Correo Inválido'}</div>
+                                             <div className='errors'>{errors.email?.type === 'pattern' && 'ejemplo: SantiagoHernandez@gmail.com'}</div>
                                 </div>
                                 <div className='col-12 text-center login-labels'>
                                         <label for="password" class="form-label">Contraseña</label>
@@ -75,7 +77,7 @@ const FormLogin = () => {
                         <div className='col-12'>
                             <div className="boton">
                                 <button className="btn btn-primary btn-form-admin" type="submit" onClick={()=>{
-                                    {errors.email?.type === 'required' &&
+                                   {errors.email?.type === 'required' &&
                                     errors.password?.type === 'required' &&
                                     alert("Todos los campos son requeridos")}
                                     }}>

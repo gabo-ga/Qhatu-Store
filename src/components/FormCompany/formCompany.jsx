@@ -70,7 +70,7 @@ const FormCompany = ({cargo}) => {
                                     required:true,
                                     pattern: patterns.companyPattern
                                 })}/>{errors.name && "Nombre de empresa requerido"}
-                                <p className="forms-input-error"> El nombre de la empresa solo acepta caracteres alfabeticos</p>
+                                <div className='errors'>{errors.name?.type === 'pattern' && 'El nombre de la empresa solo acepta caracteres alfabeticos'}</div>
                             </div>
                         
 
@@ -81,14 +81,12 @@ const FormCompany = ({cargo}) => {
                                     required:true,
                                     pattern: patterns.directionPattern
                                 })}/>{errors.direction && "Direccion de central requerida"}
-                            </div>
-                            <div>
-                                <p className="forms-input-error">La direccion no debe ser mayor a 40 caracteres</p>
+                                <div className='errors'>{errors.direction?.type === 'pattern' && 'La direccion no debe ser mayor a 40 caracteres'}</div>
                             </div>
 
                             <div class="mb-3">
                                 <label for="phone" class="form-label" name="telefono">Teléfono del representante</label>
-                                <input type="number" class="form-control input-text" placeholder="76543211" min="60000000" max="79999999"
+                                <input type="number" class="form-control input-text" placeholder="76543211" 
                                 {...register("phone",{
                                     required:true,
                                     valueAsNumber: true,
@@ -96,9 +94,9 @@ const FormCompany = ({cargo}) => {
                                     max:79999999,
                                     pattern: patterns.phonePattern
                                 })}/>{errors.phone && "Telefono del representante requerido"}
-                            </div>
-                            <div>
-                                <p className="forms-input-error">El numero no debe tener caracteres alfabeticos</p>
+                                <div className='errors'>{errors.phone?.type === 'pattern' && 'El numero no debe tener caracteres alfabeticos'}</div>
+                                <div className='errors'>{errors.phone?.type === 'min' && 'Tamaño de número Invalido'}</div>
+                                <div className='errors'>{errors.phone?.type === 'max' && 'Tamaño de número Invalido'}</div>
                             </div>
 
                             <div class="mb-3">
@@ -108,10 +106,9 @@ const FormCompany = ({cargo}) => {
                                     required:true,
                                     pattern: patterns.namePattern
                                 })}/>{errors.representantName && "Nombre del representante requerido"}
+                                <div className='errors'>{errors.representantName?.type === 'pattern' && 'El nombre y apellido deben empezar por mayúscula'}</div>
+                                <div className='errors'>{errors.representantName?.type === 'pattern' && 'El nombre no debe contener numeros'}</div>
                             </div>
-                                <div>
-                                    <p className="forms-input-error">el nombre no debe tener valores numericos</p>
-                                </div>
 
                             <div className='col-12'>
                                 <div className="boton">
