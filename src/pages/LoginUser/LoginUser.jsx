@@ -1,10 +1,11 @@
 import React from 'react'
+import './LoginUser.css'
 import FormLogin from '../../components/FormLogin/FormLogin'
 
 const LoginUser = () => {
   return (
-    <div className="formCont">
-        <div className=" align-middle">
+    <div className="Login-background">
+        <div className="align-middle">
             <FormLogin ></FormLogin>
         </div>
     </div>
