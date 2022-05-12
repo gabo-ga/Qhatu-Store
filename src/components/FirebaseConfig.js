@@ -54,4 +54,8 @@ export const editCompany =  (id, data) =>{
     representativeName: data.representantName
   });
 }
+
+//Register Product
+export const registerProduct = (name, description, price, company) =>
+  addDoc(collection(db, "product"),{name, description, price, company});
   
