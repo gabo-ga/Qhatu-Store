@@ -130,7 +130,9 @@ form{
     padding-top: 0;
     padding-bottom: 0;
 }
-
+.errors{
+    color: #FF724C !important;
+}
 .mb-3{
     align-items: center !important;
     margin-left: 5% !important;

@@ -76,7 +76,8 @@ const ProductForm = () => {
                                 {...register("name",{
                                     required:true,
                                     pattern: patterns.productPattern
-                                })}/>{errors.name && "Nombre del producto requerido"}
+                                })}/>
+                                <div className='errors'>{errors.name?.type === 'pattern' && 'Nombre del Producto requerido'}</div>
                                 <p className="forms-input-error"> El nombre de la empresa solo acepta caracteres alfabeticos</p>
                             </div>
                         
@@ -88,6 +89,8 @@ const ProductForm = () => {
                                     required:true,
                                     pattern: patterns.descriptionPattern
                                 })}/>{errors.direction && "Descripcion requerida"}
+                                <div className='errors'>{errors.description?.type === 'pattern' && 'Descripcion requerida'}</div>
+                                
                             </div>
                             <div>
                                 <p className="forms-input-error">La descripcion no debe ser mayor a 40 caracteres</p>
@@ -103,6 +106,7 @@ const ProductForm = () => {
                                     max:999,
                                     pattern: patterns.pricePattern
                                 })}/>{errors.phone && ""}
+                                <div className='errors'>{errors.price?.type === 'pattern' && ''}</div>
 
                                 <label class= "bs col col-lg-2" >Bs.</label>
                                 
