@@ -1,0 +1,16 @@
+.form-AddOrder-bg {
+    width: 1075px;
+    height: 864px;
+    background-color: #FDBF50;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.form-AddOrder-list-bg {
+    background-color: #F4F4F8;
+    padding: 29px 30px 55px 29px;
+    width: min-content;
+    height: 458px;
+}

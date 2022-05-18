@@ -1,9 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import { useForm } from 'react-hook-form';
-import {onGetCompany, editCompany} from '../FirebaseConfig';
+import {onGetCompany} from '../FirebaseConfig';
 import { useNavigate } from "react-router-dom";
 
-import './editCompany.css'
+import UsersTable from '../../components/usersTable/usersTable'
+import ListUsersTable from '../companiesTable/listCompaniesTable';
+import AddOrderTable from '../addOrderTable/AddOrderTable';
+
+import "./AddOrderForm.css"
 
 const inputs = document.querySelectorAll('#formulario input');
 
@@ -20,7 +24,7 @@ inputs.forEach((input) => {
     });
 })
 
-const EditCompany = (props) => {
+const AddOrderForm = (props) => {
     const [companyData,setCompanyData]= useState([]);
     const getCompanyById = async (id) => {
         try {
@@ -38,20 +42,17 @@ const EditCompany = (props) => {
     const { register,formState:{ errors }, handleSubmit }=useForm();
     let navigate = useNavigate();
     const onSubmit= (data) => {
-        editCompany(props.id, data)
-        navigate(-1)
     };
+
+
     return(
         
         <div class="container-fluid d-flex justify-content-center">
-            <div className='container1 d-flex justify-content-center'>
+            <div className='form-AddOrder-bg d-flex justify-content-center'>
                 <div className="row flex-fill d-flex justify-content-center">
-                    <div className='col-12 edit-company-tittle text-center'>
-                        Modificar Datos
-                    </div>
-                    <div className="col-12 d-flex justify-content-center">
+                    <div className="col-12 d-flex justify-content-center pt-5">
                         <form onSubmit={handleSubmit(onSubmit)} id="formulario" className='flex-fill row '>
-                            <div className='col-12 d-flex justify-content-center'>
+                            <div className='col-6'>
                                 <div>
                                 <div class="mb-3" id="grupo-nombre">
                                     <label for="name" class="form-label" >Nombre de la empresa</label>
@@ -64,7 +65,7 @@ const EditCompany = (props) => {
                                 </div>
                             
                                 <div class="mb-3">
-                                    <label for="direction" class="form-label" name="direccion">Dirección de la central</label>
+                                    <label for="direction" class="form-label" name="direccion">Fecha</label>
                                     <input type="text" class="form-control input-text" defaultValue={companyData.address||''}
                                     {...register("direction",{
                                         required:true,
@@ -75,37 +76,29 @@ const EditCompany = (props) => {
                                     <p className="forms-input-error">La direccion no debe ser mayor a 40 caracteres</p>
                                 </div>
 
-                                <div class="mb-3">
-                                    <label for="phone" class="form-label" name="telefono">Teléfono del representante</label>
-                                    <input type="number" class="form-control input-text"  defaultValue={companyData.representativePhone||''} min="60000000" max="79999999"
-                                    {...register("phone",{
-                                        required:true,
-                                        valueAsNumber: true,
-                                        min:60000000,
-                                        max:79999999,
-                                        pattern: patterns.phonePattern
-                                    })}/>{errors.phone && "Telefono del representante requerido"}
-                                </div>
-                                <div>
-                                    <p className="forms-input-error">El numero no debe tener caracteres alfabeticos</p>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="representantName" class="form-label" name="representante">Nombre del representante</label>
-                                    <input type="text" class="form-control input-text" defaultValue={companyData.representativeName||''}
-                                    {...register("representantName",{
-                                        required:true,
-                                        pattern: patterns.namePattern
-                                    })}/>{errors.representantName && "Nombre del representante requerido"}
-                                </div>
-                                    <div>
-                                        <p className="forms-input-error">el nombre no debe tener valores numericos</p>
-                                    </div>
-
                                 </div>
                             </div>
-                            <div className='col-12 col-lg-6'>
-                            <div className="boton">
+                            <div className='col-6'>
+                                <div>
+                                <div class="mb-3" id="grupo-nombre">
+                                    <label for="name" class="form-label" >Detalle</label>
+                                    <input type="text" className='form-control input-text' Value="Coca Cola"/>
+                                </div>
+                                </div>
+                            </div>
+                            <div className='col-12 d-flex justify-content-center'>
+                                <div className='form-AddOrder-list-bg shadow d-flex justify-content-center'>
+                                    <div className='container-fluid p-0 '>
+                                        <div className='row d-flex justify-content-center'>
+                                            <div className='col-12 table-container order-5'>
+                                            <AddOrderTable></AddOrderTable>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='col-12 '>
+                            <div className="boton m-0">
                                             <button className="btn btn-form-editCompany" type="submit" onClick={()=>{
                                                 {errors.name?.type === 'required' &&
                                                 errors.direction?.type === 'required' &&
@@ -113,16 +106,9 @@ const EditCompany = (props) => {
                                                 errors.representantName?.type === 'required' &&
                                                 alert("Todos los campos son requeridos")}
                                             }}>
-                                            Guardar Cambios
+                                            Realizar Pedido
                                             </button>
                                     
-                                        </div>
-                            </div>
-                            <div className='col-12 col-lg-6'>
-                            <div className="boton">
-                                            <button className="btn btn-form-editCompany" onClick={() => navigate(-1)}>
-                                            Cancelar
-                                            </button>
                                         </div>
                             </div>
                         </form>
@@ -134,4 +120,4 @@ const EditCompany = (props) => {
     );
 }
 
-export default EditCompany
+export default AddOrderForm;

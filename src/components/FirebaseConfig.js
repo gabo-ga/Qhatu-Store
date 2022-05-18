@@ -59,3 +59,10 @@ export const editCompany =  (id, data) =>{
 export const registerProduct = (name, description, price, company) =>
   addDoc(collection(db, "product"),{name, description, price, company});
   
+
+// Get products
+export const onGetProducts = (callback) =>
+  onSnapshot(collection(db,'product'), callback);
+
+export const onGetProduct = id =>
+  getDoc(doc(db,'company', id));
