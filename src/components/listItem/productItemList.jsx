@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { onGetProduct } from '../FirebaseConfig';
+import React, { useEffect } from 'react';
 
 
 
 const ProductItemList = (props) => {
-const [productData,setProductData]= useState([]);
 let tableNumber=0;
 
 const ColorSelect = (props) => {
@@ -17,30 +15,20 @@ const ColorSelect = (props) => {
   }
 }
 
-const getProductById = async (id) => {
-  try {
-    const doc = await onGetProduct(id);
-    setProductData({ ...doc.data() });
-  } catch (error) {
-    console.error(error);
-  }
-};
-
 useEffect(()=>{
-  getProductById(props.id);
 },[]);
 
   return (
     <div className="container-fluid p-0 ">
         <div className={ ColorSelect(props) ?"emp-item-list-1 row p-0" : "emp-item-list-2 row p-0"}>
-            <div className="col-4 col-lg-4 d-flex align-items-center">
-                <p className='m-0 item-name'>Producto: {productData.name}</p>
+            <div className="col-5 col-lg-5 d-flex align-items-center">
+                <p className='m-0 item-name'>Producto: {props.name}</p>
             </div>
-            <div className="col-lg-4 col-4 d-flex align-items-center">
-                <p className='m-0 item-name'>C/U:{productData.price}</p>
+            <div className="col-lg-5 col-5 d-flex align-items-center">
+                <p className='m-0 item-name'>C/U:{props.price}</p>
             </div>
-            <div className="col-lg-4 col-2 d-flex align-items-center">
-                <p className='m-0 item-name'>Cant: 0</p>
+            <div className="col-lg-2 col-2 d-flex align-items-center">
+              <input type="text" className='form-control text-center' defaultValue={props.cant}/>
             </div>
         </div>
     </div>

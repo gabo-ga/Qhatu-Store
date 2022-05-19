@@ -3,7 +3,6 @@ import ProductItemList from './productItemList';
 
 import { onGetProducts } from '../../components/FirebaseConfig';
 
-import { Link } from 'react-router-dom';
 import './listItem.css'
 import './listCompany.css'
 
@@ -19,6 +18,7 @@ const ListProducto = () => {
           setProductsData(querySnapshot.docs.map((doc) => ({
           id: doc.id,
           data: doc.data(),
+          cant: 0
         })))
       });
     },[]);
@@ -35,9 +35,10 @@ const ListProducto = () => {
 
   return (
     <div className="container-fluid p-0">
-      {productsData?.map((id) =>( 
-        <div className={ ColorSelect(tableNumber) ?"emp-item-list-1 row p-0" : "emp-item-list-2 row p-0"}>
-            <ProductItemList id={id}></ProductItemList>
+      {productsData?.map(({id,data,cant}) =>( 
+        <div key={id} className={ ColorSelect(tableNumber) ?"emp-item-list-1 row p-0" : "emp-item-list-2 row p-0"}>
+            {console.log(productsData)}
+            <ProductItemList name={data.name} price={data.price} cant={cant}></ProductItemList>
         </div>
       ))}
     </div>

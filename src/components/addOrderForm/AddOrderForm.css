@@ -1,6 +1,6 @@
 .form-AddOrder-bg {
     width: 1075px;
-    height: 864px;
+    min-height: 864px;
     background-color: #FDBF50;
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -13,4 +13,30 @@
     padding: 29px 30px 55px 29px;
     width: min-content;
     height: 458px;
+}
+
+.input-addProduct-form{
+    width: 450px;
+    border-bottom-color: 0.5px #2a2c4188 !important;
+    border-top-style: hidden !important;
+    border-left-style: hidden !important;
+    border-right-style: hidden !important;
+    background-color: #FDBF50 !important;
+    border-bottom-left-radius: 0% !important;
+    border-bottom-right-radius: 0% !important;
+}
+
+@media only screen and (max-width: 960px){
+
+    .input-addProduct-form{
+        width: 250px;
+    }
+
+    .form-AddOrder-list-bg {
+        height: 400px;
+    }
+
+    .form-AddOrder-bg {
+        width: 400px;
+    }
 }

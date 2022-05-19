@@ -39,9 +39,7 @@ const AddOrderForm = (props) => {
         getCompanyById(props.id);
       },[]);
 
-    const { register,formState:{ errors }, handleSubmit }=useForm();
-    let navigate = useNavigate();
-    const onSubmit= (data) => {
+    const onSubmit= () => {
     };
 
 
@@ -51,39 +49,26 @@ const AddOrderForm = (props) => {
             <div className='form-AddOrder-bg d-flex justify-content-center'>
                 <div className="row flex-fill d-flex justify-content-center">
                     <div className="col-12 d-flex justify-content-center pt-5">
-                        <form onSubmit={handleSubmit(onSubmit)} id="formulario" className='flex-fill row '>
-                            <div className='col-6'>
+                        <form ñ id="formulario" className='flex-fill row '>
+                            <div className='col-12 col-lg-6'>
                                 <div>
-                                <div class="mb-3" id="grupo-nombre">
-                                    <label for="name" class="form-label" >Nombre de la empresa</label>
-                                    <input type="text" className='form-control input-text' defaultValue={companyData.name||''}
-                                    {...register("name",{
-                                        required:true,
-                                        pattern: companyData.companyPattern
-                                    })}/>{errors.name && "Nombre de empresa requerido"}
-                                    <p className="forms-input-error"> El nombre de la empresa solo acepta caracteres alfabeticos</p>
-                                </div>
-                            
-                                <div class="mb-3">
-                                    <label for="direction" class="form-label" name="direccion">Fecha</label>
-                                    <input type="text" class="form-control input-text" defaultValue={companyData.address||''}
-                                    {...register("direction",{
-                                        required:true,
-                                        pattern: companyData.directionPattern
-                                    })}/>{errors.direction && "Direccion de central requerida"}
-                                </div>
-                                <div>
-                                    <p className="forms-input-error">La direccion no debe ser mayor a 40 caracteres</p>
-                                </div>
-
+                                    <div class="mb-3" id="grupo-nombre">
+                                        <label for="name" class="form-label" >Nombre de la empresa</label>
+                                        <br />
+                                        <input type="text" className='input-addProduct-form ' defaultValue="Coca cola"/>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="direction" class="form-label" name="direccion">Fecha</label>
+                                        <br />
+                                        <input type="text" class="input-addProduct-form" defaultValue="DD/MM/AA"/>
+                                    </div>
                                 </div>
                             </div>
-                            <div className='col-6'>
-                                <div>
+                            <div className='col-12 col-lg-6'>
                                 <div class="mb-3" id="grupo-nombre">
                                     <label for="name" class="form-label" >Detalle</label>
-                                    <input type="text" className='form-control input-text' Value="Coca Cola"/>
-                                </div>
+                                    <br />
+                                    <input type="text" className='input-addProduct-form' />
                                 </div>
                             </div>
                             <div className='col-12 d-flex justify-content-center'>
@@ -91,30 +76,56 @@ const AddOrderForm = (props) => {
                                     <div className='container-fluid p-0 '>
                                         <div className='row d-flex justify-content-center'>
                                             <div className='col-12 table-container order-5'>
-                                            <AddOrderTable></AddOrderTable>
+                                                <AddOrderTable></AddOrderTable>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className='col-12 '>
-                            <div className="boton m-0">
-                                            <button className="btn btn-form-editCompany" type="submit" onClick={()=>{
-                                                {errors.name?.type === 'required' &&
-                                                errors.direction?.type === 'required' &&
-                                                errors.phone?.type === 'required' &&
-                                                errors.representantName?.type === 'required' &&
-                                                alert("Todos los campos son requeridos")}
-                                            }}>
-                                            Realizar Pedido
-                                            </button>
-                                    
-                                        </div>
+                                <div className="boton m-0">
+                                    <button className="btn btn-form-editCompany" type="button"  data-bs-toggle="modal" data-bs-target="#orderDetails">
+                                                Realizar Pedido
+                                    </button>         
+                                </div>
                             </div>
                         </form>
                     </div>
                 </div>           
             </div>
+            <div class="modal fade " id="orderDetails" tabindex="-1" aria-labelledby="orderDetails" aria-hidden="true">
+                <div className='d-flex justify-content-center'>
+                <div class="modal-dialog modal-body-del d-flex justify-content-center">
+                  <div class="modal-content modal-body-del ">
+                    <div class="modal-body  d-flex justify-content-center">
+                    <div className='modal-del-container'>
+                        <div className='row'>
+                          <div className='col-12 p-0 text-center '>
+                            <div className='modal-del-header'>
+                              ¿Seguro que desea editar la empresa?
+                            </div>
+                          </div>
+                          <div className='col-12 modal-del-data '>
+                            <p>
+                              Empresa:   
+                            </p>
+                            <p>
+                              Representante: 
+                           </p>
+                          </div>
+                          <div className='col-12 d-flex justify-content-evenly modal-del-btns'>
+                              <button type="button" class="btn modal-del-btn " data-bs-dismiss="modal"
+                              >Editar</button>
+                              <button type="button" class="btn modal-del-btn" data-bs-dismiss="modal">Cancelar</button>
+                            </div>
+                      </div>
+                  </div>
+                    </div>
+                  </div>
+                </div>
+
+                </div>
+        </div>
         </div>
 
     );
