@@ -1,5 +1,4 @@
 import React from 'react'
-import ListCompany from '../listItem/listCompany'
 import ListProducto from '../listItem/listProduct'
 
 const AddOrderTable = () => {

@@ -1,22 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import { useForm } from 'react-hook-form';
-import {onGetCompany} from '../FirebaseConfig';
-import { useNavigate } from "react-router-dom";
-
-import UsersTable from '../../components/usersTable/usersTable'
-import ListUsersTable from '../companiesTable/listCompaniesTable';
 import AddOrderTable from '../addOrderTable/AddOrderTable';
+import { useProduct  } from '../../components/context/products';
 
 import "./AddOrderForm.css"
 
 const inputs = document.querySelectorAll('#formulario input');
 
-const patterns = {
-    namePattern:/^(?=.{3,39}$)[A-Z][a-z]+(?: [A-Z][a-z]+)+$/g,
-    companyPattern:/^(?=.*[a-zA-Z])([A-Z a-z\d]|[^ ]){3,39}$/i,
-    phonePattern:/^[6-7][0-9]{8}$/i,
-    directionPattern: /^(?=.*[a-zA-Z])(?!.*[!$%()=?¡¿'¨"´+[~^`{}*])(?!.*[\t\n])([A-Z a-z\d]|[^ ]){3,39}$/i
-}
 
 inputs.forEach((input) => {
     input.addEventListener('keyup',() => {
@@ -25,18 +14,24 @@ inputs.forEach((input) => {
 })
 
 const AddOrderForm = (props) => {
-    const [companyData,setCompanyData]= useState([]);
-    const getCompanyById = async (id) => {
-        try {
-          const doc = await onGetCompany(id);
-          setCompanyData({ ...doc.data() });
-        } catch (error) {
-          console.error(error);
-        }
-      };
+    const {productsData} = useProduct(); 
+    const fechaActual = new Date()
+    const añoActual = fechaActual.getFullYear();
+    const hoy = fechaActual.getDate();
+    const mesActual = fechaActual.getMonth() + 1; 
+    const date = (hoy+"/"+mesActual+ "/"+añoActual);
+    const companyProducts = "fast food"
 
+
+    let filterproducts = productsData.filter(item  => item.data.company === companyProducts)
+    
+    const filtrarproductos = (nameCompany) =>{
+        filterproducts = productsData.filter(item  => item.data.company === nameCompany)
+    }
+
+    //const filterproducts = productsData.filter(item  => item.data.company === "coca cola")
     useEffect(()=>{
-        getCompanyById(props.id);
+        filtrarproductos(companyProducts);
       },[]);
 
     const onSubmit= () => {
@@ -55,12 +50,12 @@ const AddOrderForm = (props) => {
                                     <div class="mb-3" id="grupo-nombre">
                                         <label for="name" class="form-label" >Nombre de la empresa</label>
                                         <br />
-                                        <input type="text" className='input-addProduct-form ' defaultValue="Coca cola"/>
+                                        <label for="name" class="form-label" >{companyProducts}</label>
                                     </div>
                                     <div class="mb-3">
                                         <label for="direction" class="form-label" name="direccion">Fecha</label>
                                         <br />
-                                        <input type="text" class="input-addProduct-form" defaultValue="DD/MM/AA"/>
+                                        <label for="direction" class="form-label" name="direccion">{date}</label>
                                     </div>
                                 </div>
                             </div>
@@ -93,29 +88,43 @@ const AddOrderForm = (props) => {
                     </div>
                 </div>           
             </div>
-            <div class="modal fade " id="orderDetails" tabindex="-1" aria-labelledby="orderDetails" aria-hidden="true">
+            <div class="modal fade" id="orderDetails" tabindex="-1" aria-labelledby="orderDetails" aria-hidden="true">
                 <div className='d-flex justify-content-center'>
-                <div class="modal-dialog modal-body-del d-flex justify-content-center">
-                  <div class="modal-content modal-body-del ">
+                <div class="modal-dialog modal-orderData-body d-flex justify-content-center">
+                  <div class="modal-content modal-orderData-body ">
                     <div class="modal-body  d-flex justify-content-center">
-                    <div className='modal-del-container'>
+                    <div className='modal-orderData-container'>
                         <div className='row'>
                           <div className='col-12 p-0 text-center '>
                             <div className='modal-del-header'>
-                              ¿Seguro que desea editar la empresa?
+                              Confirmacion de pedido
                             </div>
                           </div>
-                          <div className='col-12 modal-del-data '>
-                            <p>
+                          <div className='col-12 modal-del-data'>
+                            <p className="text-center">
                               Empresa:   
                             </p>
-                            <p>
-                              Representante: 
+                            <p className="text-center">
+                              Fecha: 
                            </p>
+                           <div className="p-5 container-fluid">
+                            {filterproducts?.map(({id,data,cant}) =>( 
+                                <div key={id} className="row">
+                                    <div  className="col-6">
+                                        <p >Producto: {data.name}</p>
+                                    </div>
+                                    <div  className="col-6 text-center">
+                                        <p >Cantidad: {cant}</p>
+                                    </div>
+                                </div>
+                                ))} 
+                           </div>
+                            <p className="text-center">
+                              Total: 
+                           </p>                       
                           </div>
                           <div className='col-12 d-flex justify-content-evenly modal-del-btns'>
-                              <button type="button" class="btn modal-del-btn " data-bs-dismiss="modal"
-                              >Editar</button>
+                              <button type="button" class="btn modal-del-btn " data-bs-dismiss="modal">Aceptar</button>
                               <button type="button" class="btn modal-del-btn" data-bs-dismiss="modal">Cancelar</button>
                             </div>
                       </div>

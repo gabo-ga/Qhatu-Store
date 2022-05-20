@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
 
-
-
 const ProductItemList = (props) => {
 let tableNumber=0;
 

@@ -1,11 +1,10 @@
 import React from 'react';
-import FormCompany from '../../components/FormCompany/formCompany';
 import AddOrderForm from '../../components/addOrderForm/AddOrderForm';
 import "./addOrder.css"
 
+import { useProduct, ProductsProvider } from '../../components/context/products';
 
-const addOrder = () => {
-
+const AddOrder = () => {
 
   return (
     <div className="form-addOrder-pg">
@@ -13,10 +12,12 @@ const addOrder = () => {
                 <h1 className="titleQhatu text-center">Qhatu Store</h1>
             </div>
             <div>
-                <AddOrderForm cargo="supervisor"></AddOrderForm>
+              <AddOrderForm cargo="supervisor"></AddOrderForm>
             </div>
         </div>
   )
 }
 
-export default addOrder
+export default () => <ProductsProvider>
+  <AddOrder></AddOrder>
+</ProductsProvider> 
