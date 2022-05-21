@@ -2,8 +2,9 @@ import React, {useEffect, useState} from 'react';
 import AddOrderTable from '../addOrderTable/AddOrderTable';
 import { useProduct  } from '../../components/context/products';
 import { useNavigate } from "react-router-dom";
-import { useParams } from 'react-router-dom'
-
+import { useParams } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { registerOrder } from '../FirebaseConfig';
 
 import "./AddOrderForm.css"
 
@@ -16,13 +17,17 @@ inputs.forEach((input) => {
     });
 })
 
-const AddOrderForm = (props) => {
-    const [order, setOrder] = useState("Oden:")
+const AddOrderForm = (cargo) => {
+    const patterns = {
+        namePattern:/^(?=.{3,39}$)[A-Z][a-z]+(?: [A-Z][a-z]+)+$/g,
+        companyPattern:/^(?=.*[a-zA-Z])([A-Z a-z\d]|[^ ]){3,39}$/i
+    }
+    const [order, setOrder] = useState("Orden:")
     const [total, setTotal] = useState(0)
 
+    const { register,formState:{ errors }, handleSubmit }=useForm();
 
     let {id} = useParams();
-    const companyProducts = id
 
     const {productsData} = useProduct(); 
 
@@ -32,10 +37,13 @@ const AddOrderForm = (props) => {
     const añoActual = fechaActual.getFullYear();
     const hoy = fechaActual.getDate();
     const mesActual = fechaActual.getMonth() + 1; 
-    const date = (hoy+"/"+mesActual+ "/"+añoActual);
-
-    let filterproducts = productsData.filter(item  => item.data.company === companyProducts)
     
+    let path ="/"+cargo;
+    //
+    const date = (hoy+"/"+mesActual+ "/"+añoActual);
+    const companyProducts = id
+    let filterproducts = productsData.filter(item  => item.data.company === companyProducts)
+    //
     const filtrarproductos = (nameCompany) =>{
         filterproducts = productsData.filter(item  => item.data.company === nameCompany)
     }
@@ -57,17 +65,19 @@ const AddOrderForm = (props) => {
             setTotal(0)
     )
 
-    const onSubmit= () => {
+    const onSubmit = (data) => {
+        registerOrder(date, data.place,data.seller,order,companyProducts,0,data.details);
+        navigate(path, {replace: true});
     };
 
 
     return(
         
         <div class="container-fluid d-flex justify-content-center">
-            <div className='form-AddOrder-bg d-flex justify-content-center'>
-                <div className="row flex-fill d-flex justify-content-center">
-                    <div className="col-12 d-flex justify-content-center pt-5">
-                        <form ñ id="formulario" className='flex-fill row '>
+        <form onSubmit={ handleSubmit(onSubmit)} id="formulario" className='flex-fill container-fluid d-flex justify-content-center '>
+            <div className=' d-flex justify-content-center'>
+                <div className="flex-fill d-flex justify-content-center form-AddOrder-bg">
+                    <div className="d-flex justify-content-center pt-5 row form-AddOrder-bg">
                             <div className='col-12 col-lg-6'>
                                 <div>
                                     <div class="mb-3" id="grupo-nombre">
@@ -84,9 +94,42 @@ const AddOrderForm = (props) => {
                             </div>
                             <div className='col-12 col-lg-6'>
                                 <div class="mb-3" id="grupo-nombre">
+                                    <label for="name" class="form-label" >Vendededor</label>
+                                    <br />
+                                    <input type="text" className='input-addProduct-form' 
+                                    {...register("seller",{ 
+                                        required:true,
+                                        maxLength:40,
+                                        minLength:3,
+                                        pattern:patterns.namePattern
+                                    })}
+                                    />{errors.seller && "Nombre de vendedor requerido"}
+                                    <p className="forms-input-error"> El nombre del vendedor solo acepta caracteres alfabeticos</p>
+                                </div>
+                                <div class="mb-3" id="grupo-nombre">
+                                    <label for="name" class="form-label" >Punto de venta</label>
+                                    <br />
+                                    <input type="text" className='input-addProduct-form' 
+                                    {...register("place",{ 
+                                        required:true,
+                                        maxLength:40,
+                                        minLength:3,
+                                        pattern:patterns.companyPattern
+                                    })}
+                                    />{errors.place && "Nombre de empresa requerido"}
+                                    <p className="forms-input-error"> El punto de venta solo acepta caracteres alfabeticos</p>
+                                </div>
+                                <div class="mb-3" id="grupo-nombre">
                                     <label for="name" class="form-label" >Detalle</label>
                                     <br />
-                                    <input type="text" className='input-addProduct-form' />
+                                    <input type="text" className='input-addProduct-form' 
+                                    {...register("details",{ 
+                                        required:true,
+                                        maxLength:40,
+                                        minLength:3,
+                                    })}
+                                    />{errors.details && "Detalle de orden requerido"}
+                                    <p className="forms-input-error"> El Detalle solo acepta caracteres alfabeticos</p>
                                 </div>
                             </div>
                             <div className='col-12 d-flex justify-content-center'>
@@ -107,7 +150,6 @@ const AddOrderForm = (props) => {
                                     </button>         
                                 </div>
                             </div>
-                        </form>
                     </div>
                 </div>           
             </div>
@@ -143,11 +185,17 @@ const AddOrderForm = (props) => {
                                 ))} 
                            </div>
                             <p className="text-center">
-                              Total: {total} <br /> {order}
+                              Total: {total} <br />
                            </p>                       
                           </div>
                           <div className='col-12 d-flex justify-content-evenly modal-del-btns'>
-                              <button type="button" class="btn modal-del-btn " data-bs-dismiss="modal" onClick={() => navigate(-1)}>Aceptar</button>
+                              <button  type="submit"  class="btn modal-del-btn " data-bs-dismiss="modal" onClick={()=>{
+                                        {errors.seller?.type === 'required' &&
+                                        errors.place?.type === 'required' &&
+                                        errors.details?.type === 'required' &&
+                                        alert("Todos los campos son requeridos")
+                                        /*navigate(-1)*/}
+                                    }} >Aceptar</button>
                               <button type="button" class="btn modal-del-btn" data-bs-dismiss="modal" onClick={() => cleanProduct()}>Cancelar</button>
                             </div>
                       </div>
@@ -157,7 +205,8 @@ const AddOrderForm = (props) => {
                 </div>
 
                 </div>
-        </div>
+                </div>
+            </form>
         </div>
 
     );

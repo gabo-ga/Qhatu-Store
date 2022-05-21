@@ -31,7 +31,9 @@ function App() {
         <Route exact path="/administrator/editcompany/:id" element={ <EditCompanyView cargo="administrator"/> }></Route>
         <Route exact path="/login" element={ <LoginUser></LoginUser> }></Route>
         <Route exact path="/registerProduct" element={<AddProduct />} />
-        <Route exact path="/addOrder/:id" element={ <AddOrder></AddOrder> } ></Route>
+        <Route exact path="/administrator/addOrder/:id" element={ <AddOrder cargo="administrator" ></AddOrder> } ></Route>
+        <Route exact path="/supervisor/addOrder/:id" element={ <AddOrder cargo="supervisor" ></AddOrder> } ></Route>
+        <Route exact path="/seller/addOrder/:id" element={ <AddOrder cargo="seller" ></AddOrder> } ></Route>
       </Routes>
     </BrowserRouter>
   );
