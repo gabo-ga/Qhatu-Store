@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import AddOrderTable from '../addOrderTable/AddOrderTable';
 import { useProduct  } from '../../components/context/products';
+import { useNavigate } from "react-router-dom";
+import { useParams } from 'react-router-dom'
+
 
 import "./AddOrderForm.css"
 
@@ -14,14 +17,22 @@ inputs.forEach((input) => {
 })
 
 const AddOrderForm = (props) => {
+    const [order, setOrder] = useState("Oden:")
+    const [total, setTotal] = useState(0)
+
+
+    let {id} = useParams();
+    const companyProducts = id
+
     const {productsData} = useProduct(); 
+
+    let navigate = useNavigate();
+
     const fechaActual = new Date()
     const añoActual = fechaActual.getFullYear();
     const hoy = fechaActual.getDate();
     const mesActual = fechaActual.getMonth() + 1; 
     const date = (hoy+"/"+mesActual+ "/"+añoActual);
-    const companyProducts = "fast food"
-
 
     let filterproducts = productsData.filter(item  => item.data.company === companyProducts)
     
@@ -33,6 +44,18 @@ const AddOrderForm = (props) => {
     useEffect(()=>{
         filtrarproductos(companyProducts);
       },[]);
+
+    const addProduct = () => {
+        {filterproducts.map(({data,cant}) =>( 
+            setOrder(order + "(product: " + data.name +", " + cant + ")"),
+            setTotal(total + cant)
+            ))} 
+    }
+
+    const cleanProduct = () => (
+            setOrder("Order: "),
+            setTotal(0)
+    )
 
     const onSubmit= () => {
     };
@@ -79,7 +102,7 @@ const AddOrderForm = (props) => {
                             </div>
                             <div className='col-12 '>
                                 <div className="boton m-0">
-                                    <button className="btn btn-form-editCompany" type="button"  data-bs-toggle="modal" data-bs-target="#orderDetails">
+                                    <button className="btn btn-form-editCompany" type="button"  data-bs-toggle="modal" data-bs-target="#orderDetails"  onClick={() => addProduct()}>
                                                 Realizar Pedido
                                     </button>         
                                 </div>
@@ -102,10 +125,10 @@ const AddOrderForm = (props) => {
                           </div>
                           <div className='col-12 modal-del-data'>
                             <p className="text-center">
-                              Empresa:   
+                              Empresa: {companyProducts}
                             </p>
                             <p className="text-center">
-                              Fecha: 
+                              Fecha: {date}
                            </p>
                            <div className="p-5 container-fluid">
                             {filterproducts?.map(({id,data,cant}) =>( 
@@ -120,12 +143,12 @@ const AddOrderForm = (props) => {
                                 ))} 
                            </div>
                             <p className="text-center">
-                              Total: 
+                              Total: {total} <br /> {order}
                            </p>                       
                           </div>
                           <div className='col-12 d-flex justify-content-evenly modal-del-btns'>
-                              <button type="button" class="btn modal-del-btn " data-bs-dismiss="modal">Aceptar</button>
-                              <button type="button" class="btn modal-del-btn" data-bs-dismiss="modal">Cancelar</button>
+                              <button type="button" class="btn modal-del-btn " data-bs-dismiss="modal" onClick={() => navigate(-1)}>Aceptar</button>
+                              <button type="button" class="btn modal-del-btn" data-bs-dismiss="modal" onClick={() => cleanProduct()}>Cancelar</button>
                             </div>
                       </div>
                   </div>
