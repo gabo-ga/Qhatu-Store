@@ -9,6 +9,7 @@ import RegisterCompany from './pages/addCompanyView/registerCompany';
 import EditCompanyView from './pages/editCompany/editCompanyView';
 import LoginUser from './pages/LoginUser/LoginUser';
 import AddProduct from './pages/addProduct/AddProduct';
+import AddOrder from './pages/addOrder/addOrder';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -30,6 +31,9 @@ function App() {
         <Route exact path="/administrator/editcompany/:id" element={ <EditCompanyView cargo="administrator"/> }></Route>
         <Route exact path="/login" element={ <LoginUser></LoginUser> }></Route>
         <Route exact path="/registerProduct" element={<AddProduct />} />
+        <Route exact path="/administrator/addOrder/:id" element={ <AddOrder cargo="administrator" ></AddOrder> } ></Route>
+        <Route exact path="/supervisor/addOrder/:id" element={ <AddOrder cargo="supervisor" ></AddOrder> } ></Route>
+        <Route exact path="/seller/addOrder/:id" element={ <AddOrder cargo="seller" ></AddOrder> } ></Route>
       </Routes>
     </BrowserRouter>
   );
