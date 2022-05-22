@@ -23,3 +23,14 @@
     max-width: 120px;
 }
 
+@media screen and (max-width: 960px){
+    .product-item{
+        max-width: 45% !important;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .product-item{
+        min-width: 90% !important;
+    }
+}

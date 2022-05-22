@@ -1,5 +1,4 @@
 import React from "react";
-import UsersTable from "../../components/usersTable/usersTable";
 import PerfilCard from "../../components/perfilCard/perfilCard";
 import Footer from "../../components/fotter/footer";
 import Navbar from "../../components/navbar/navbar";
@@ -19,24 +18,16 @@ const productCatalog = () => {
         <div className='container-fluid'>
         <div className='row'>
           <div className='col-xxl-8 col-12 col-table d-flex justify-content-center order-2 order-xxl-1'>
-            <div>
-              <div className='table_background shadow'>
-                <div className='container-fluid p-0 '>
-                  <div className='row d-flex justify-content-center'>
-                    {}
-                    
-                    <div className='col-12 table-container  order-5'>
-                        <div className="col-12 row justify-content-around product-items-list">
+            
+              <div className='table_background shadow row d-flex justify-content-center'>
+                        <div className="col-12 col-sm-12 row justify-content-center product-items-list">
                             <Product></Product>
                             <Product></Product>
                             <Product></Product>
                             <Product></Product>
                         </div>
-                    </div>
-                  </div>
-                </div>
               </div>
-            </div>
+            
           </div>
 
           <div className='col-xxl-4 col-12 col-profile order-1 order-xxl-2'>
