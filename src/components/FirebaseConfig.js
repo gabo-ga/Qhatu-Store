@@ -70,3 +70,7 @@ export const onGetProduct = id =>
 // Register order
 export const registerOrder = (date, place, seller, products, company, total, details) =>
   addDoc(collection(db, "order"),{date, place, seller, products, company, total, details});
+
+  // Get orders  
+export const onGetOrders = (callback) =>
+onSnapshot(collection(db,'order'), callback);
