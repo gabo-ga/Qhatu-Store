@@ -21,10 +21,46 @@ const productCatalog = () => {
             
               <div className='table_background shadow row d-flex justify-content-center'>
                         <div className="col-12 col-sm-12 row justify-content-center product-items-list">
-                            <Product></Product>
-                            <Product></Product>
-                            <Product></Product>
-                            <Product></Product>
+                            <Product
+                              src="http://assets.stickpng.com/thumbs/580b57fbd9996e24bc43c0de.png"
+                              nombreProducto="Cocacola"
+                              precio="6 Bs"
+                            ></Product>
+                            <Product
+                              src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c1dd.png"
+                              nombreProducto="Pepsi"
+                              precio="5 Bs"
+                            ></Product>
+                            <Product
+                              src="https://www.reinsac.com/wp-content/uploads/2020/06/336978.png"
+                              nombreProducto="Inca Kola"
+                              precio="8 Bs"
+                            ></Product>
+                            <Product
+                              src="https://www.pngmart.com/files/1/Sprite-Bottle-PNG-File.png"
+                              nombreProducto="Sprite"
+                              precio="6 Bs"
+                            ></Product>
+                            <Product
+                              src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c1dd.png"
+                              nombreProducto="Pepsi"
+                              precio="5 Bs"
+                            ></Product>
+                             <Product
+                              src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c1dd.png"
+                              nombreProducto="Pepsi"
+                              precio="5 Bs"
+                            ></Product>
+                            <Product
+                              src="https://www.pngmart.com/files/1/Sprite-Bottle-PNG-File.png"
+                              nombreProducto="Sprite"
+                              precio="6 Bs"
+                            ></Product>
+                            <Product
+                              src="https://www.pngmart.com/files/1/Sprite-Bottle-PNG-File.png"
+                              nombreProducto="Sprite"
+                              precio="6 Bs"
+                            ></Product>
                         </div>
               </div>
             
