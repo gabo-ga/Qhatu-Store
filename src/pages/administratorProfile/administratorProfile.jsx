@@ -49,7 +49,7 @@ const administratorProfile = () => {
                     </div>
                     */}
                     
-                    <div className='col-12 table-container  order-5'>
+                    <div className='col-12 table-container order-5'>
                       <UsersTable></UsersTable>
                     </div>
                   </div>

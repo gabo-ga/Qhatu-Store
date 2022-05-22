@@ -1,0 +1,24 @@
+* { 
+    padding:0;
+    margin:0;
+    font-family: sans-serif;
+  }
+
+  html{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    background-color: #fdbe5044;
+}
+  
+  .formCont{
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+  
+  .titleQhatu{
+      padding: 1.5%;
+    width: 100%;
+    height: 85px;
+  }
+  
