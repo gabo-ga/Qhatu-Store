@@ -1,0 +1,37 @@
+.img-banner-admin{
+    background-color: aqua;
+}
+
+.table_background {
+    padding: 29px 22px 09px 46px;  
+}
+
+.table_container{
+    display: flex;
+    justify-content: center;  
+}
+
+.product-items-list{ 
+    background-color: rgba(253, 190, 80, 0.5);
+    height: auto;
+    padding-top: 36px;
+    max-width: 100%;
+    margin: 0px 16px;
+}
+
+@media screen and (max-width: 960px) {
+    .table_background{
+        width: 100% !important ;
+        margin: 0px 16px;
+        padding: 16px 12px !important;
+    }
+
+    .product-items-list{
+        max-width: 90%;
+        margin: 0px 16px 0px 100px;
+    }
+
+    .table_container{
+        width: 500px !important;
+    }
+}
