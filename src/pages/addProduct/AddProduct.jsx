@@ -9,7 +9,7 @@ const AddProduct = () => {
             <div >
                 <h1 className="titleQhatu text-center">Qhatu Store</h1>
             </div>
-            <div className="align-middle">
+            <div className="align-middle addproduct-form-container">
                 <Form></Form>
             </div>
         </div>
