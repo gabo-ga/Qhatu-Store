@@ -13,7 +13,7 @@ const productCatalog = () => {
         <Navbar></Navbar>
         <div className='img-banner-admin p-0'>
           <img
-              src="https://astelus.com/wp-content/viajes/Lago-Moraine-Parque-Nacional-Banff-Alberta-Canada.jpg"/>
+              src="https://www.journeygazer.com/wp-content/uploads/2019/03/Moraine-lake-destination.jpg"/>
         </div>
         <div className='container-fluid'>
         <div className='row'>
