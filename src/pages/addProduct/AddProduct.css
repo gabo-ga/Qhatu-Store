@@ -1,0 +1,32 @@
+* { 
+    padding:0;
+    margin:0;
+    font-family: sans-serif;
+  }
+
+  html{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+.addproduct-form-container{
+  padding-top: 148px;
+  padding-bottom: 148px;
+}
+  .formCont{
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+  
+  .titleQhatu{
+      padding: 1.5%;
+    width: 100%;
+    height: 85px;
+  }
+  
+  @media screen and (max-width: 960px) {
+    .addproduct-form-container{
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+  }
