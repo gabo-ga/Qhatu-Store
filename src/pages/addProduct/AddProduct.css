@@ -8,9 +8,11 @@
     height: 100%;
     width: 100%;
     padding: 0;
-    background-color: #fdbe5044;
 }
-  
+.addproduct-form-container{
+  padding-top: 148px;
+  padding-bottom: 148px;
+}
   .formCont{
     padding-bottom: 0px;
     padding-top: 0px;
@@ -22,3 +24,9 @@
     height: 85px;
   }
   
+  @media screen and (max-width: 960px) {
+    .addproduct-form-container{
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+  }
