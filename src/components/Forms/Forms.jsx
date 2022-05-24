@@ -136,6 +136,11 @@ const Forms = () => {
                                 }}>
                                     Crear cuenta
                                 </button>
+                                <a href="/administrator/adminuser">
+                                        <button className="btn-cancel" type="button">
+                                        Cancelar
+                                        </button>
+                                    </a>
                             </div>
                         </div>
                 </div>

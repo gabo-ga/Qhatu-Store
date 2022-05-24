@@ -23,7 +23,21 @@
     margin-right: auto !important;
     text-align: center !important;
     margin-top: 2%;
-    
+
+}
+
+.btn-cancel{
+    color: white;
+    background-color: #FF724C !important;
+    border-radius: 30px !important;
+    border-style: none !important;
+    width: 200px;
+    font-size: 20px !important;
+    height: 56px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    margin-top: 2%;
 }
 
 .form-control{
