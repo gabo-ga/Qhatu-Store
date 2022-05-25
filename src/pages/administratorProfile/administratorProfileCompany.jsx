@@ -61,7 +61,12 @@ const administratorProfile = () => {
                 </div> 
                 <div className='col-lg-12 col-6 d-flex justify-content-center buttons-colection-item'>
                     <button type="button" class="btn btn-admin-profile">Administrar Empresa</button>
-                </div>   
+                </div>
+                <div className='col-lg-12 col-6 d-flex justify-content-center buttons-colection-item'>
+                  <Link to="/administrator/productCatalog">
+                    <button type="button" class="btn btn-admin-profile">Administrar Productos</button>
+                  </Link>
+                </div>      
               </div>
             </div>
           </div>

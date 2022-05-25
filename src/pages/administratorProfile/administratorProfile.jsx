@@ -49,7 +49,7 @@ const administratorProfile = () => {
                     </div>
                     */}
                     
-                    <div className='col-12 table-container  order-5'>
+                    <div className='col-12 table-container order-5'>
                       <UsersTable></UsersTable>
                     </div>
                   </div>
@@ -78,7 +78,12 @@ const administratorProfile = () => {
                   <Link to="/administrator/admincompany">
                     <button type="button" class="btn btn-admin-profile">Administrar Empresa</button>
                   </Link>
-                </div>   
+                </div>
+                <div className='col-lg-12 col-6 d-flex justify-content-center buttons-colection-item'>
+                  <Link to="/administrator/productCatalog">
+                    <button type="button" class="btn btn-admin-profile">Administrar Productos</button>
+                  </Link>
+                </div>    
               </div>
             </div>
           </div>
