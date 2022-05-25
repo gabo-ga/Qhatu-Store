@@ -27,8 +27,8 @@ button{
     width: 350px;
     height: 250px;
     display: inline-block;
-    margin: 30px;
-    border-radius: 10px;
+    margin: 30px !important;
+    border-radius: 10px !important;
 }
 
 img{

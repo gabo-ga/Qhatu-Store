@@ -1,14 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import AddOrderTable from '../addOrderTable/AddOrderTable';
 import { useProduct  } from '../../components/context/products';
 import { useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { registerOrder } from '../FirebaseConfig';
-
 import "./sellerMainView.css"
 
-const sellerMain = () => {
+const SellerMain = () => {
     return(
         <body>
             <header>
@@ -36,4 +33,4 @@ const sellerMain = () => {
     );
 }
 
-export default sellerMain;
+export default SellerMain
