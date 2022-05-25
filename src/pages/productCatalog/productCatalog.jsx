@@ -42,7 +42,7 @@ const ProductCatalog = () => {
                       </Link>
                     </div>
                     
-                    <div className='col-12 table-container order-5 d-flex justify-content-center'>
+                    <div className='col-12 table-container-product-list order-5 d-flex justify-content-center'>
                       <div className="product-items-list-height ">
                         <div className="row">
                             {productsData?.map(({id,data}) =>( 

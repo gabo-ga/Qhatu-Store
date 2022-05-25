@@ -28,6 +28,12 @@
     width: 880px;
 }
 
+.table-container-product-list{
+    padding: 0px!important;
+}
+
+
+
 @media screen and (max-width: 960px) {
 
     .table_background-products-list {
@@ -39,6 +45,10 @@
     .product-items-list{
         max-width: 90%;
         margin: 0px 16px 0px 100px;
+    }
+
+    .product-items-list-height{
+        width: 316px;
     }
 
     .table_container{

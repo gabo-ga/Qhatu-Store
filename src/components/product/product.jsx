@@ -17,7 +17,7 @@ const Product = (props) => {
                 </div>
                 <p>{props.nombreProducto}</p>
                 <p>{props.precio}</p>
-                <button type="button" class="btn btn-primary" onClick={() => handleClick(id)}>Eliminar</button>
+                <button type="button" class="btn btn-add-product" onClick={() => handleClick(id)}>Eliminar</button>
             </div>
         </div>
     )

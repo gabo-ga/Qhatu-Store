@@ -26,8 +26,17 @@
     max-width: 120px;
 }
 
+.btn-add-product {
+    width: 120px;
+    border-radius: 30px !important;
+    background-color: #FF724C !important;
+    color: #ffff !important;
+    font-size: 16px !important;
+    height: 32px;
+}
+
 @media screen and (max-width: 960px){
     .product-item{
-       width: 300px;
+       width: 250px;
     }
 }
