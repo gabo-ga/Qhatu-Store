@@ -30,7 +30,7 @@ const ProductCatalog = () => {
         <div className='row'>
           <div className='col-xxl-8 col-12 col-table d-flex justify-content-center order-2 order-xxl-1'>
             <div>
-            <div className='table_background shadow'>
+            <div className='table_background-products-list shadow'>
                 <div className='container-fluid p-0 '>
                   <div className='row d-flex justify-content-center'>
 
@@ -42,48 +42,24 @@ const ProductCatalog = () => {
                       </Link>
                     </div>
                     
-                    <div className='col-12 table-container  order-5'>
-                      <div className="row product-items-list-height">
-                    {productsData?.map(({id,data}) =>( 
-                                    <Product
-                                    src=".."
-                                    id = {id}
-                                    nombreProducto={data.name}
-                                    precio={data.price}
-                                  ></Product>
-                          ))} 
-
+                    <div className='col-12 table-container order-5 d-flex justify-content-center'>
+                      <div className="product-items-list-height ">
+                        <div className="row">
+                            {productsData?.map(({id,data}) =>( 
+                                      <Product
+                                      src=".."
+                                      id = {id}
+                                      nombreProducto={data.name}
+                                      precio={data.price}
+                                    ></Product>
+                            ))} 
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-                <div className='table_background-products-list shadow'>
-                  <div className='container-fluid p-0 '>
-                    <div className='row d-flex justify-content-center'>
-                      <div className='col-12 d-flex justify-content-xl-center  justify-content-center order-2'>
-                        <Link to='/registerProduct'>
-                          <button type="button" class="btn btn-admin-profile table-item button-item-det">
-                            Añadir Producto
-                          </button>
-                        </Link>
-                      </div>
-                        <div className='col-12 table-container d-flex justify-content-center  order-5'>
-                          <div className="row products-items-list d-flex justify-content-around">
-                          {productsData?.map(({id,data}) =>( 
-                                    <Product
-                                    src=".."
-                                    id = {id}
-                                    nombreProducto={data.name}
-                                    precio={data.price}
-                                  ></Product>
-                          ))} 
-                          </div>     
-                        </div>
-                      </div>
-                  </div>
-                </div>
-                </div>
+            </div>
               </div>
           <div className='col-xxl-4 col-12 col-profile order-1 order-xxl-2'>
             <div className='d-flex justify-content-center'>
@@ -104,7 +80,7 @@ const ProductCatalog = () => {
                 </div>
                 <div className='col-lg-12 col-6 d-flex justify-content-center buttons-colection-item'>
                   <Link to="/administrator/productCatalog">
-                    <button type="button" class="btn btn-admin-profile">Administrar Producto</button>
+                    <button type="button" class="btn btn-admin-profile">Administrar Productos</button>
                   </Link>
                 </div>    
               </div>

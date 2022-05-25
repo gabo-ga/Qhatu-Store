@@ -5,7 +5,7 @@
 .table_background-products-list {
     background-color: #F4F4F8;
     width: 958px;
-    min-height: 554px;
+    max-height: 554px;
 }
 
 
@@ -15,7 +15,9 @@
 }
 
 .product-items-list-height{
-    max-height: 880px;
+    width: 880px;
+    height: 400px;
+    overflow-x: hidden;
     overflow-y: scroll;
 }
 
@@ -27,9 +29,11 @@
 }
 
 @media screen and (max-width: 960px) {
-    .table_background{
-        margin: 0px 16px;
-        padding: 16px 12px !important;
+
+    .table_background-products-list {
+        padding: 14px 8px 0px 8px!important;
+        width: 328px;
+        max-height: 500px;
     }
 
     .product-items-list{
