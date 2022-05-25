@@ -1,17 +1,26 @@
 import React from "react";
+import { deleteProduct } from "../FirebaseConfig";
 
 import './product.css'
 
-const product = (props) => {
+const Product = (props) => {
+    let id = props.id
+    const handleClick= (id) =>{
+        deleteProduct(id);
+    }
+
     return(
-        <div className="col-4 col-sm-6 product-item">
-            <div className="product-image">
-                <img src={props.src} />
+        <div className="col-lg-4 col-6  d-flex justify-content-center product-container">
+            <div className="product-item">
+                <div className="product-image">
+                    <img src={props.src} alt="imagen del producto"/>
+                </div>
+                <p>{props.nombreProducto}</p>
+                <p>{props.precio}</p>
+                <button type="button" class="btn btn-primary" onClick={() => handleClick(id)}>Eliminar</button>
             </div>
-            <p>{props.nombreProducto}</p>
-            <p>{props.precio}</p>
         </div>
     )
 }
 
-export default product
+export default Product
