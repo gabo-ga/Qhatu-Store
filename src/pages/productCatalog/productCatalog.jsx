@@ -34,7 +34,7 @@ const ProductCatalog = () => {
                 <div className='container-fluid p-0 '>
                   <div className='row d-flex justify-content-center'>
 
-                    <div className='col-12 d-flex justify-content-xl-center  justify-content-center order-2'>
+                    <div className='col-12 d-flex justify-content-xl-center  justify-content-center order-2 pt-4'>
                       <Link to='/registerProduct'>
                         <button type="button" class="btn btn-admin-profile table-item button-item-det">
                           Añadir Producto
@@ -49,8 +49,9 @@ const ProductCatalog = () => {
                                       <Product
                                       src=".."
                                       id = {id}
-                                      nombreProducto={data.name}
+                                      name={data.name}
                                       precio={data.price}
+                                      company={data.company}
                                     ></Product>
                             ))} 
                         </div>

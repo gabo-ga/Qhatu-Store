@@ -2,14 +2,14 @@
     background-color: rgba(253, 190, 80, 1); 
     font-size: 16px;
     text-align: center;
-    width: 250px !important;
+    width: 250px ;
     height: 200px;
     border-radius: 8px;
     padding-bottom: 16px;
 }
 
 .product-container{
-    padding: 16px 0px;
+    padding: 16px;
 }
 
 .product-item p{
@@ -37,6 +37,6 @@
 
 @media screen and (max-width: 960px){
     .product-item{
-       width: 250px;
+       width: 200px;
     }
 }

@@ -37,7 +37,7 @@
 @media screen and (max-width: 960px) {
 
     .table_background-products-list {
-        padding: 14px 8px 0px 8px!important;
+        padding: 0px 8px 0px 8px!important;
         width: 328px;
         max-height: 500px;
     }
