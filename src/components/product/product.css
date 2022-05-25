@@ -2,11 +2,14 @@
     background-color: rgba(253, 190, 80, 1); 
     font-size: 16px;
     text-align: center;
-    margin: 0px auto 36px auto;
-    max-width: 28% !important;
-    max-height: 250px;
+    width: 250px !important;
+    height: 200px;
     border-radius: 8px;
     padding-bottom: 16px;
+}
+
+.product-container{
+    padding: 16px 0px;
 }
 
 .product-item p{
@@ -23,14 +26,17 @@
     max-width: 120px;
 }
 
-@media screen and (max-width: 960px){
-    .product-item{
-        max-width: 45% !important;
-    }
+.btn-add-product {
+    width: 120px;
+    border-radius: 30px !important;
+    background-color: #FF724C !important;
+    color: #ffff !important;
+    font-size: 16px !important;
+    height: 32px;
 }
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 960px){
     .product-item{
-        min-width: 90% !important;
+       width: 250px;
     }
 }
