@@ -22,7 +22,7 @@ const administratorProfile = () => {
         <div className='row'>
           <div className='col-xxl-8 col-12 col-table d-flex justify-content-center order-2 order-xxl-1'>
             <div>
-              <div className='table_background shadow'>
+              <div className='table_background-admin shadow'>
                 <div className='container-fluid p-0 '>
                   <div className='row d-flex justify-content-center'>
 
