@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import PerfilCard from "../../components/perfilCard/perfilCard";
 import Footer from "../../components/fotter/footer";
 import Navbar from "../../components/navbar/navbar";
 import Product from "../../components/product/product";
 import { Link } from "react-router-dom";
+import { onGetProducts } from '../../components/FirebaseConfig';
 
 import './productCatalog.css'
 
-const productCatalog = () => {
+const ProductCatalog = () => {
+  const [productsData,setProductsData]= useState([]);
+
+  useEffect(()=>{
+      onGetProducts((querySnapshot) => {
+          setProductsData(querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data()
+        })))
+      });
+    },[]);
     return(
         <div className='container-fluid  p-0'>
         <Navbar></Navbar>
@@ -19,66 +30,37 @@ const productCatalog = () => {
         <div className='row'>
           <div className='col-xxl-8 col-12 col-table d-flex justify-content-center order-2 order-xxl-1'>
             <div>
-                <div className='table_background shadow'>
-                  <div className='container-fluid p-0 '>
-                    <div className='row d-flex justify-content-center'>
+            <div className='table_background-products-list shadow'>
+                <div className='container-fluid p-0 '>
+                  <div className='row d-flex justify-content-center'>
 
-                      <div className='col-12 d-flex justify-content-xl-center  justify-content-center order-2'>
-                        <Link to='/registerProduct'>
-                          <button type="button" class="btn btn-admin-profile table-item button-item-det">
-                            Añadir Producto
-                          </button>
-                        </Link>
-                      </div>
-                      
-                      <div className='col-12 table-container  order-5'>
-                      <div className="col-12 col-sm-12 row justify-content-center product-items-list">
-                            <Product
-                              src="http://assets.stickpng.com/thumbs/580b57fbd9996e24bc43c0de.png"
-                              nombreProducto="Cocacola"
-                              precio="6 Bs"
-                            ></Product>
-                            <Product
-                              src="https://camelchile.cl/wp-content/uploads/2021/11/BEBIDA_LATA_PEPSI_350CC-1.png"
-                              nombreProducto="Pepsi"
-                              precio="5 Bs"
-                            ></Product>
-                            <Product
-                              src="https://www.reinsac.com/wp-content/uploads/2020/06/336978.png"
-                              nombreProducto="Inca Kola"
-                              precio="8 Bs"
-                            ></Product>
-                            <Product
-                              src="https://www.pngmart.com/files/1/Sprite-Bottle-PNG-File.png"
-                              nombreProducto="Sprite"
-                              precio="6 Bs"
-                            ></Product>
-                            <Product
-                              src="https://camelchile.cl/wp-content/uploads/2021/11/BEBIDA_LATA_PEPSI_350CC-1.png"
-                              nombreProducto="Pepsi"
-                              precio="5 Bs"
-                            ></Product>
-                            <Product
-                              src="https://camelchile.cl/wp-content/uploads/2021/11/BEBIDA_LATA_PEPSI_350CC-1.png"
-                              nombreProducto="Pepsi"
-                              precio="5 Bs"
-                            ></Product>
-                            <Product
-                              src="https://www.pngmart.com/files/1/Sprite-Bottle-PNG-File.png"
-                              nombreProducto="Sprite"
-                              precio="6 Bs"
-                            ></Product>
-                            <Product
-                              src="https://www.pngmart.com/files/1/Sprite-Bottle-PNG-File.png"
-                              nombreProducto="Sprite"
-                              precio="6 Bs"
-                            ></Product>
-                        </div>     
+                    <div className='col-12 d-flex justify-content-xl-center  justify-content-center order-2 pt-4'>
+                      <Link to='/registerProduct'>
+                        <button type="button" class="btn btn-admin-profile table-item button-item-det">
+                          Añadir Producto
+                        </button>
+                      </Link>
+                    </div>
+                    
+                    <div className='col-12 table-container-product-list order-5 d-flex justify-content-center'>
+                      <div className="product-items-list-height ">
+                        <div className="row">
+                            {productsData?.map(({id,data}) =>( 
+                                      <Product
+                                      src=".."
+                                      id = {id}
+                                      name={data.name}
+                                      precio={data.price}
+                                      company={data.company}
+                                    ></Product>
+                            ))} 
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                </div>
+              </div>
+            </div>
               </div>
           <div className='col-xxl-4 col-12 col-profile order-1 order-xxl-2'>
             <div className='d-flex justify-content-center'>
@@ -99,7 +81,7 @@ const productCatalog = () => {
                 </div>
                 <div className='col-lg-12 col-6 d-flex justify-content-center buttons-colection-item'>
                   <Link to="/administrator/productCatalog">
-                    <button type="button" class="btn btn-admin-profile">Administrar Producto</button>
+                    <button type="button" class="btn btn-admin-profile">Administrar Productos</button>
                   </Link>
                 </div>    
               </div>
@@ -112,4 +94,4 @@ const productCatalog = () => {
     )
 } 
 
-export default productCatalog
+export default ProductCatalog

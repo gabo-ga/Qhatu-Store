@@ -60,7 +60,9 @@ const administratorProfile = () => {
                   </Link>
                 </div> 
                 <div className='col-lg-12 col-6 d-flex justify-content-center buttons-colection-item'>
+                  <Link to="#">
                     <button type="button" class="btn btn-admin-profile">Administrar Empresa</button>
+                  </Link>
                 </div>
                 <div className='col-lg-12 col-6 d-flex justify-content-center buttons-colection-item'>
                   <Link to="/administrator/productCatalog">
