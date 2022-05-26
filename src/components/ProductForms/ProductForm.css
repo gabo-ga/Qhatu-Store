@@ -121,9 +121,9 @@ form{
       width: 20px !important;
   } 
 
-.container1{
-    width: 70%;
-    height: 550px;
+.container1-form-product{
+    width: 1075px;
+    height: 716px;
     background-color: #FDBF50;
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -169,7 +169,7 @@ input[type=number] { -moz-appearance:textfield; }
 
 @media only screen and (max-width: 960px){
 
-    .container1{
+    .container1-form-product{
         Width: 320px;
         Height: 648px;
     } 

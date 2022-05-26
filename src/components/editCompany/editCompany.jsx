@@ -44,7 +44,7 @@ const EditCompany = (props) => {
     return(
         
         <div class="container-fluid d-flex justify-content-center">
-            <div className='container1 d-flex justify-content-center'>
+            <div className='container1-form-editCompany  d-flex justify-content-center'>
                 <div className="row flex-fill d-flex justify-content-center">
                     <div className='col-12 edit-company-tittle text-center'>
                         Modificar Datos

@@ -66,7 +66,7 @@ const ProductForm = () => {
     return(
         
         <div class="container-fluid d-flex justify-content-center">
-            <div className='container1 d-flex justify-content-center'>
+            <div className='container1-form-product d-flex justify-content-center'>
                 <div className="row align-self-center flex-fill">
                     <div className="col-12 d-flex justify-content-center">
                         <form onSubmit={handleSubmit(onSubmit)} id="formulario">
