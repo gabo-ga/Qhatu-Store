@@ -4,18 +4,17 @@
     margin: 0;
 }
 
-header{
+.hdr-seller{
     background-color: #FF724C;
     height: 70px;
 }
-h1{
+.h1-seler{
     padding-left: 20px;
     padding-top: 15px;
     color: white;
 }
-h2{
+.h2-seller{
     padding-left: 20px;
-    padding-top: 5px;
 }
 
 main{
@@ -23,7 +22,7 @@ main{
     background-color: #FDBF50;
 }
 
-button{
+.btn-seller{
     width: 350px;
     height: 250px;
     display: inline-block;
