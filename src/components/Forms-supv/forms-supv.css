@@ -39,7 +39,7 @@ form{
 }
 
 
-.container1{
+.container1-formSupv{
     width: 1075px;
     height: 716px;
     background-color: #FDBF50;
@@ -90,7 +90,7 @@ label{
 
 @media only screen and (max-width: 960px){
 
-    .container1{
+    .container1-formSupv{
         Width: 320px;
         Height: 648px;
     } 

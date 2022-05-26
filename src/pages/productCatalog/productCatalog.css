@@ -5,7 +5,7 @@
 .table_background-products-list {
     background-color: #F4F4F8;
     width: 958px;
-    max-height: 554px;
+    height: 554px;
 }
 
 
@@ -39,7 +39,7 @@
     .table_background-products-list {
         padding: 0px 8px 0px 8px!important;
         width: 328px;
-        max-height: 500px;
+        height: 500px;
     }
 
     .product-items-list{
