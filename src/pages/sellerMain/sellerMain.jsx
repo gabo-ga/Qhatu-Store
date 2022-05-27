@@ -5,7 +5,7 @@ import Footer from '../../components/fotter/footer'
 import Navbar from '../../components/navbar/navbar'
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom'
-import ListItem from '../../components/listItem/listItem';
+import UsersTable from '../../components/usersTable/usersTable'
 
 import "./sellerMainView.css"
 
@@ -25,9 +25,8 @@ const SellerMain = () => {
               <div className='table_background shadow'>
                 <div className='container-fluid p-0 '>
                   <div className='row d-flex justify-content-center'>
-                    <div className='col-12 table-container  order-5'>
-                      {/*<ListCompanySeller></ListCompanySeller>*/}
-                      <ListItem></ListItem>
+                  <div className='col-12 table-container order-5'>
+                      <UsersTable></UsersTable>
                     </div>
                   </div>
                 </div>
