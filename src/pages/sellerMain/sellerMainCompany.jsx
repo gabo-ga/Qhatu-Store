@@ -26,7 +26,6 @@ const SellerMain = () => {
                 <div className='container-fluid p-0 '>
                   <div className='row d-flex justify-content-center'>
                     <div className='col-12 table-container  order-5'>
-                      {/*<ListCompanySeller></ListCompanySeller>*/}
                       <ListCompanySeller></ListCompanySeller>
                     </div>
                   </div>
