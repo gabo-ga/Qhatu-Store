@@ -21,6 +21,7 @@ const Forms = () => {
     };
     
     
+    
     const patterns = {
         namePattern:/^(?=.{3,39}$)[A-Z][a-z]+(?: [A-Z][a-z]+)+$/g,
         emailPattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/i,
