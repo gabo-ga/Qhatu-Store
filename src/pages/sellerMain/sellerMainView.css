@@ -35,7 +35,7 @@
     margin-bottom: 20px;
 }
 
-.btn-supv-profile {
+.btn-sllr-profile {
     width: 253px;
     border-radius: 30px !important;
     background-color: #FF724C !important;
@@ -49,11 +49,11 @@
     margin-bottom: 20px;
 }
 
-.table_background-supv {
+.table_background {
     background-color: #F4F4F8;
     padding: 29px 22px 09px 29px;
     width: 958px;
-    max-height: 554px;
+    height: 554px;
 }
 
 .table-print-button {
@@ -96,11 +96,11 @@
         height: 12px;
     }
 
-    .table_background-supv {
+    .table_background {
         background-color: #F4F4F8;
         padding: 14px 8px 0px 8px!important;
         width: 328px;
-        max-height: 500;
+        min-height: 554px;
     }
 
     .table-container{
@@ -142,7 +142,6 @@
     .buttons-colection{
         margin: 20px 0px !important;
     }
-
 
   }
 

@@ -22,7 +22,7 @@ const administratorProfile = () => {
         <div className='row'>
           <div className='col-xxl-8 col-12 col-table d-flex justify-content-center order-2 order-xxl-1'>
             <div>
-              <div className='table_background shadow'>
+              <div className='table_background-admin shadow'>
                 <div className='container-fluid p-0 '>
                   <div className='row d-flex justify-content-center'>
 
@@ -55,7 +55,9 @@ const administratorProfile = () => {
                 </div>
                 */}
                 <div className='col-lg-12 col-6 d-flex justify-content-center buttons-colection-item'>
+                  <Link to="#">
                   <button type="button" class="btn btn-admin-profile">Administrar Usuario</button>
+                  </Link>
                 </div> 
                 <div className='col-lg-12 col-6 d-flex justify-content-center buttons-colection-item'>
                   <Link to="/administrator/admincompany">

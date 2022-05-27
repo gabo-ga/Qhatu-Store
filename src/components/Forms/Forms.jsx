@@ -21,6 +21,7 @@ const Forms = () => {
     };
     
     
+    
     const patterns = {
         namePattern:/^(?=.{3,39}$)[A-Z][a-z]+(?: [A-Z][a-z]+)+$/g,
         emailPattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/i,
@@ -31,7 +32,7 @@ const Forms = () => {
     return(
         
         <div className="container-fluid d-flex justify-content-center">
-            <div className='container1 d-flex justify-content-center'>
+            <div className='container1-formuser d-flex justify-content-center'>
             <form onSubmit={ handleSubmit(onSubmit)} className='d-flex align-self-center'>
                 <div className="row d-flex align-self-center justify-content-center">
                         <div className="col-lg-6 col-12 ">
@@ -136,6 +137,11 @@ const Forms = () => {
                                 }}>
                                     Crear cuenta
                                 </button>
+                                <a href="/administrator/adminuser">
+                                        <button className="btn-cancel" type="button">
+                                        Cancelar
+                                        </button>
+                                    </a>
                             </div>
                         </div>
                 </div>

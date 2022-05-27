@@ -32,7 +32,7 @@ const FormsSupv = () => {
     return(
         
         <div className="container-fluid d-flex justify-content-center">
-            <div className='container1 d-flex justify-content-center align-self-center'>
+            <div className='container1-formSupv d-flex justify-content-center align-self-center'>
                 <form onSubmit={ handleSubmit(onSubmit)} className="d-flex justify-content-center align-self-center">
                     <div className="row d-flex align-self-center justify-content-center">
                         <div className="col-lg-6 col-12">

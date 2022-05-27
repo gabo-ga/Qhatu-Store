@@ -22,7 +22,7 @@ const SupervisorProfile = () => {
           <div className='row'>
           <div className='col-xxl-8 col-12 col-table d-flex justify-content-center order-2 order-xxl-1'>
             <div>
-              <div className='table_background shadow'>
+              <div className='table_background-supv shadow'>
                 <div className='container-fluid p-0 '>
                   <div className='row d-flex justify-content-center'>
                     {/*
@@ -53,8 +53,6 @@ const SupervisorProfile = () => {
                     <div className='col-12 table-container  order-5'>
                       <UsersTable></UsersTable>
                     </div>
-
-
                   </div>
                 </div>
               </div>

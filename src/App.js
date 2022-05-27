@@ -11,6 +11,8 @@ import LoginUser from './pages/LoginUser/LoginUser';
 import ProductCatalog from './pages/productCatalog/productCatalog';
 import AddProduct from './pages/addProduct/AddProduct';
 import AddOrder from './pages/addOrder/addOrder';
+import SellerMain from './pages/sellerMain/sellerMain';
+import SellerMainCompany from './components/sellerLists/listCompanySeller'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -37,6 +39,8 @@ function App() {
         <Route exact path="/administrator/addOrder/:id" element={ <AddOrder cargo="administrator" ></AddOrder> } ></Route>
         <Route exact path="/supervisor/addOrder/:id" element={ <AddOrder cargo="supervisor" ></AddOrder> } ></Route>
         <Route exact path="/seller/addOrder/:id" element={ <AddOrder cargo="seller" ></AddOrder> } ></Route>
+        <Route exact path="/seller" element={ <SellerMain></SellerMain>} ></Route>
+        <Route exact path="/seller/companies" element={<SellerMainCompany></SellerMainCompany>}></Route>
       </Routes>
     </BrowserRouter>
   );
