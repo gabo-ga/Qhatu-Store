@@ -1,44 +1,148 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+@import url('https://fonts.google.com/specimen/Roboto');
+
+* { 
+    padding:0;
+    margin:0;
+    font-family: sans-serif;
+ }
+
+.col-table { 
+    padding-top: 299px;
 }
 
-header{
-    background-color: #FF724C;
-    height: 70px;
-}
-h1{
-    padding-left: 20px;
-    padding-top: 15px;
-    color: white;
-}
-h2{
-    padding-left: 20px;
-    padding-top: 5px;
+.col-profile {
+    padding-top: 60px;
 }
 
-main{
-    position: relative;
-    background-color: #FDBF50;
-}
-
-button{
-    width: 350px;
-    height: 250px;
-    display: inline-block;
-    margin: 30px !important;
-    border-radius: 10px !important;
-}
-
-img{
+.img-banner-suprv {
+    position: absolute;
+    z-index: -1;
     width: 100%;
-    height: 100%;
 }
+
+.img-banner-suprv > img{
+	width: fit-content;
+	height: 246px;
+    width: 100%;
+	object-fit:cover;
+}
+
+.buttons-colection{
+    margin-top: 57px;
+}
+
+.buttons-colection-item{
+    margin-bottom: 20px;
+}
+
+.btn-sllr-profile {
+    width: 253px;
+    border-radius: 30px !important;
+    background-color: #FF724C !important;
+    color: #ffff !important;
+    font-size: 20px !important;
+    height: 56px;
+    margin-bottom: 20px !important;
+}
+
+.table-item {
+    margin-bottom: 20px;
+}
+
+.table_background {
+    background-color: #F4F4F8;
+    padding: 29px 22px 09px 29px;
+    width: 958px;
+    min-height: 554px;
+}
+
+.table-print-button {
+    font-size: 20px;
+    border: #000 3px solid !important;
+    border-radius: 8px !important;
+    height: 44px;
+    width: 144px;
+}
+
+.table-print-img {
+    width: 24px;
+    height: 24px;
+}
+
+
+.table-input{
+    font-size: 20px;
+    width: 353px;
+    height: 44px;
+}
+
+.table-container{
+    padding: 0px !important;
+}
+
+
 
 @media screen and (max-width: 960px) {
-    .btn-colection{
-        margin-left: 3%;
-        margin-right: 3%;
+    .table-print-button {
+        font-size: 14px;
+        border: #000 3px solid !important;
+        border-radius: 8px !important;
+        height: 44px;
+        width: 100px;
     }
-}
+
+    .table-print-img {
+        width: 12px;
+        height: 12px;
+    }
+
+    .table_background {
+        background-color: #F4F4F8;
+        padding: 14px 8px 0px 8px!important;
+        width: 328px;
+        min-height: 554px;
+    }
+
+    .table-container{
+        padding: 0px 0px 0px 10px !important;
+    }
+
+    .btn-supv-profile {
+        min-width: 154px;
+        border-radius: 30px !important;
+        background-color: #FF724C !important;
+        color: #ffff !important;
+        font-size: 16px !important;
+        height: 48px;
+    }
+
+    .table-input{
+        font-size: 14px;
+        width: 213px ;
+    }
+
+  }
+
+
+  @media screen and (max-width:  1200px) {
+    .col-table { 
+        padding-top: 0px;
+    }
+
+    .btn-supv-profile {
+        width: 154px;
+        border-radius: 30px !important;
+        background-color: #FF724C !important;
+        color: #ffff !important;
+        font-size: 16px !important;
+        height: 48px;
+        padding: 0px !important;
+    }
+
+    .buttons-colection{
+        margin: 20px 0px !important;
+    }
+
+  }
+
+ 
