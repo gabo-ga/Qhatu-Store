@@ -3,7 +3,6 @@ import EditCompany from '../../components/editCompany/editCompany'
 import { useParams } from 'react-router-dom'
 
 const EditCompanyView = () => {
-    let params = useParams();
     let {id} = useParams();
   return (
     <div className="formCont">
@@ -13,7 +12,7 @@ const EditCompanyView = () => {
             <div>
 
             </div>
-            <div className="align-middle">
+            <div className="align-middle addproduct-form-container">
                 <EditCompany id={id}></EditCompany>
             </div>
         </div>

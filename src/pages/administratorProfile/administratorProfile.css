@@ -48,11 +48,11 @@
     margin-bottom: 20px;
 }
 
-.table_background {
+.table_background-admin {
     background-color: #F4F4F8;
     padding: 29px 22px 09px 29px;
     width: 958px;
-    min-height: 554px;
+    height: 554px;
 }
 
 .table-print-button {
@@ -95,11 +95,11 @@
         height: 12px;
     }
 
-    .table_background {
+    .table_background-admin {
         background-color: #F4F4F8;
         padding: 14px 8px 0px 8px!important;
         width: 328px;
-        min-height: 554px;
+        height: 500px;
     }
 
     .table-container{

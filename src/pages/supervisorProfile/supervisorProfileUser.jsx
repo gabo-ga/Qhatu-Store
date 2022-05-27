@@ -22,7 +22,7 @@ const supervisorProfile = () => {
         <div className='row'>
           <div className='col-xl-8 col-12 col-table d-flex justify-content-center order-2 order-xl-1'>
             <div>
-              <div className='table_background shadow'>
+              <div className='table_background-supv shadow'>
                 <div className='container-fluid p-0'>
                   <div className='row d-flex justify-content-center'>
 
@@ -58,7 +58,9 @@ const supervisorProfile = () => {
                 </div>
                 */}
                 <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
+                  <Link to="#">
                   <button type="button" class="btn btn-supv-profile">Administrar Usuario</button>
+                  </Link>
                 </div>
                 <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
                   <Link to="/supervisor/registercompany">
