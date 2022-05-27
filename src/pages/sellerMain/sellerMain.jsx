@@ -5,6 +5,7 @@ import Footer from '../../components/fotter/footer'
 import Navbar from '../../components/navbar/navbar'
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom'
+import ListItem from '../../components/listItem/listItem';
 
 import "./sellerMainView.css"
 
@@ -26,6 +27,7 @@ const SellerMain = () => {
                   <div className='row d-flex justify-content-center'>
                     <div className='col-12 table-container  order-5'>
                       {/*<ListCompanySeller></ListCompanySeller>*/}
+                      <ListItem></ListItem>
                     </div>
                   </div>
                 </div>
@@ -39,8 +41,8 @@ const SellerMain = () => {
             <div className='buttons-colection'>
               <div className='row'>
                 <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
-                  <Link to="/seller">
-                    <button type="button" class="btn btn-sller-profile">Catalogo de empresas</button>
+                  <Link to="/seller/companies">
+                    <button type="button" class="btn btn-sllr-profile">Catalogo de empresas</button>
                   </Link>
                   <Link to='/seller'>
                     <button type="button" className='btn btn-sllr-profile'> Pedidos</button>
