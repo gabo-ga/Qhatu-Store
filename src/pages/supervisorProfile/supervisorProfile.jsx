@@ -53,8 +53,6 @@ const SupervisorProfile = () => {
                     <div className='col-12 table-container  order-5'>
                       <UsersTable></UsersTable>
                     </div>
-
-
                   </div>
                 </div>
               </div>

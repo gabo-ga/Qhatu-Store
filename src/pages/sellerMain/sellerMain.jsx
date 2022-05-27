@@ -1,35 +1,59 @@
-import React, {useEffect, useState} from 'react';
-import { useProduct  } from '../../components/context/products';
-import { useNavigate } from "react-router-dom";
-import { useParams } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
+import React from 'react';
+import ListCompanySeller from '../../components/sellerLists/listCompanySeller';
+import PerfilCard from '../../components/perfilCard/perfilCard';
+import Footer from '../../components/fotter/footer'
+import Navbar from '../../components/navbar/navbar'
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom'
+
 import "./sellerMainView.css"
 
 const SellerMain = () => {
+    let {name} = useParams();
     return(
-        <body>
-            <header className='hdr-seller'>
-                <nav>
-                    <h1 className='h1-seller'>TODO LO QUE NECESITAS</h1>
-                </nav>
-            </header>
-            <main>
-                <div>
-                    <h2 className='h2-seller'>Bienvenido</h2>
-                    <h2 className='h2-seller'>Seleccione una marca para elegir productos</h2>
+        <div className='container-fluid  p-0'>
+        <Navbar></Navbar>
+        <div className='img-banner-suprv'>
+            <img
+              src="https://www.journeygazer.com/wp-content/uploads/2019/03/Moraine-lake-destination.jpg"/>
+        </div>
+        <div className='container-fluid'>
+          <div className='row'>
+          <div className='col-xxl-8 col-12 col-table d-flex justify-content-center order-2 order-xxl-1'>
+            <div>
+              <div className='table_background shadow'>
+                <div className='container-fluid p-0 '>
+                  <div className='row d-flex justify-content-center'>
+                    <div className='col-12 table-container  order-5'>
+                      {/*<ListCompanySeller></ListCompanySeller>*/}
+                    </div>
+                  </div>
                 </div>
-                <div className='btn-colection'>
-                <button className='btn-seller' type="button" onclick="alert('helllo')">
-                     <img src="https://firebasestorage.googleapis.com/v0/b/qhatu-store.appspot.com/o/cocacola-logo.jpg?alt=media&token=eda01c06-b9de-40be-89a0-c6ef12665e04"></img>
-                </button>
-                <button className='btn-seller' type="button"> <img src="https://firebasestorage.googleapis.com/v0/b/qhatu-store.appspot.com/o/mabel_logi.png?alt=media&token=71774bb9-bf31-4a5f-b528-2b0c4d68936c" ></img></button>
-                <button className='btn-seller' type="button"> <img src="https://firebasestorage.googleapis.com/v0/b/qhatu-store.appspot.com/o/delizia_logo.jpg?alt=media&token=c7304b56-3706-4e4b-bb53-15023a85cc91" ></img></button>
-                <button className='btn-seller' type="button"> <img src="https://firebasestorage.googleapis.com/v0/b/qhatu-store.appspot.com/o/arcor.png?alt=media&token=e0003505-5f0a-4b94-a43e-5863c446135c"></img></button>
-                <button className='btn-seller' type="button"> <img src="https://firebasestorage.googleapis.com/v0/b/qhatu-store.appspot.com/o/ola_logo.webp?alt=media&token=9779b8ad-d4ef-4edd-893d-eaeb24b0e3c8" ></img></button>
-                <button className='btn-seller' type="button"> <img src="https://firebasestorage.googleapis.com/v0/b/qhatu-store.appspot.com/o/pil_logo.jpg?alt=media&token=3a274325-3d42-48ab-8574-aa2393059007"></img></button>
+              </div>
+            </div>
+          </div>
+          <div className='col-xxl-4 col-12 col-profile order-1 order-xxl-2 '>
+            <div className='d-flex justify-content-center'>
+              <PerfilCard cargo="Vendedor" name={name}></PerfilCard>
+            </div>
+            <div className='buttons-colection'>
+              <div className='row'>
+                <div className='col-xl-12 col-6 d-flex justify-content-center buttons-colection-item'>
+                  <Link to="/seller">
+                    <button type="button" class="btn btn-sller-profile">Catalogo de empresas</button>
+                  </Link>
+                  <Link to='/seller'>
+                    <button type="button" className='btn btn-sllr-profile'> Pedidos</button>
+                    </Link>
                 </div>
-            </main>
-        </body>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+        <Footer></Footer>
+    </div>
     );
 }
 
