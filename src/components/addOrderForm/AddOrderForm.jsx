@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { registerOrder } from '../FirebaseConfig';
+import { Link } from 'react-router-dom';
 
 import "./AddOrderForm.css"
 
@@ -189,6 +190,7 @@ const AddOrderForm = (cargo) => {
                            </p>                       
                           </div>
                           <div className='col-12 d-flex justify-content-evenly modal-del-btns'>
+                              <Link to= '/seller/companies'>
                               <button  type="submit"  class="btn modal-del-btn " data-bs-dismiss="modal" onClick={()=>{
                                         {errors.seller?.type === 'required' &&
                                         errors.place?.type === 'required' &&
@@ -196,6 +198,7 @@ const AddOrderForm = (cargo) => {
                                         alert("Todos los campos son requeridos")
                                         /*navigate(-1)*/}
                                     }} >Aceptar</button>
+                                    </Link>
                               <button type="button" class="btn modal-del-btn" data-bs-dismiss="modal" onClick={() => cleanProduct()}>Cancelar</button>
                             </div>
                       </div>

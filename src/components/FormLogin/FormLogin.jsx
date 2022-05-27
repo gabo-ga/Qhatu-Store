@@ -20,7 +20,7 @@ const FormLogin = () => {
                 }else if(data.typeOfUser=='Administrator'){
                     navigate('/administrator', {state:{name:data.name}});
                 }else if(data.typeOfUser=='Vendedor'){
-                    navigate('/vendedor', {state:{name:data.name}});
+                    navigate('/seller', {state:{name:data.name}});
                 }
             }
         })
