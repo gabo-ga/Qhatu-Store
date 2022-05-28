@@ -5,8 +5,10 @@ const ProductsCollection = React.createContext();
 
 export function ProductsProvider (props) {
     const [productsData,setProductsData]= useState([]);
+    const cargo = props.cargo;
 
     useEffect(()=>{
+        console.log(props.cargo);
         onGetProducts((querySnapshot) => {
             setProductsData(querySnapshot.docs.map((doc) => ({
             id: doc.id,
@@ -19,6 +21,7 @@ export function ProductsProvider (props) {
       const value = useMemo(() => {
           return({
               productsData,
+              cargo,
             })
       },[productsData])
 
