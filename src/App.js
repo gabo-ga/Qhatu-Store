@@ -13,7 +13,6 @@ import AddProduct from './pages/addProduct/AddProduct';
 import AddOrder from './pages/addOrder/addOrder';
 import SellerMain from './pages/sellerMain/sellerMain';
 import SellerMainCompany from './components/sellerLists/listCompanySeller'
-import { ProductsProvider } from './components/context/products';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
