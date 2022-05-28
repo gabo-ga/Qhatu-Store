@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import AddOrderTable from '../addOrderTable/AddOrderTable';
-import { useProduct  } from '../../components/context/products';
+import { useProduct, ProductsProvider } from '../../components/context/products';
 import { useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { registerOrder } from '../FirebaseConfig';
-import { Link } from 'react-router-dom';
 
 import "./AddOrderForm.css"
 
@@ -18,7 +17,7 @@ inputs.forEach((input) => {
     });
 })
 
-const AddOrderForm = (cargo) => {
+const AddOrderForm = (props) => {
     const patterns = {
         namePattern:/^(?=.{3,39}$)[A-Z][a-z]+(?: [A-Z][a-z]+)+$/g,
         companyPattern:/^(?=.*[a-zA-Z])([A-Z a-z\d]|[^ ]){3,39}$/i
@@ -39,7 +38,7 @@ const AddOrderForm = (cargo) => {
     const hoy = fechaActual.getDate();
     const mesActual = fechaActual.getMonth() + 1; 
     
-    let path ="/"+cargo;
+    let path ="/seller";
     //
     const date = (hoy+"/"+mesActual+ "/"+añoActual);
     const companyProducts = id
@@ -190,15 +189,13 @@ const AddOrderForm = (cargo) => {
                            </p>                       
                           </div>
                           <div className='col-12 d-flex justify-content-evenly modal-del-btns'>
-                              <Link to= '/seller/companies'>
                               <button  type="submit"  class="btn modal-del-btn " data-bs-dismiss="modal" onClick={()=>{
                                         {errors.seller?.type === 'required' &&
                                         errors.place?.type === 'required' &&
                                         errors.details?.type === 'required' &&
                                         alert("Todos los campos son requeridos")
-                                        /*navigate(-1)*/}
+                                        }
                                     }} >Aceptar</button>
-                                    </Link>
                               <button type="button" class="btn modal-del-btn" data-bs-dismiss="modal" onClick={() => cleanProduct()}>Cancelar</button>
                             </div>
                       </div>
@@ -215,4 +212,7 @@ const AddOrderForm = (cargo) => {
     );
 }
 
-export default AddOrderForm;
+export default () =>
+<ProductsProvider>
+<AddOrderForm></AddOrderForm>
+</ProductsProvider> ;
