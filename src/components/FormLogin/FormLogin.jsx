@@ -25,7 +25,7 @@ const FormLogin = () => {
             }
         })
         if(!encontrado){
-            alert("Email y/o contraseña incorrecto perro");
+            alert("Email y/o contraseña incorrecto");
         }
     };
     useEffect(()=>{
