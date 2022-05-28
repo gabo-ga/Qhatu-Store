@@ -171,22 +171,7 @@ const AddOrderForm = (props) => {
                             </p>
                             <p className="text-center">
                               Fecha: {date}
-                           </p>
-                           <div className="p-5 container-fluid">
-                            {filterproducts?.map(({id,data,cant}) =>( 
-                                <div key={id} className="row">
-                                    <div  className="col-6">
-                                        <p >Producto: {data.name}</p>
-                                    </div>
-                                    <div  className="col-6 text-center">
-                                        <p >Cantidad: {cant}</p>
-                                    </div>
-                                </div>
-                                ))} 
-                           </div>
-                            <p className="text-center">
-                              Total: {total} <br />
-                           </p>                       
+                           </p>                    
                           </div>
                           <div className='col-12 d-flex justify-content-evenly modal-del-btns'>
                               <button  type="submit"  class="btn modal-del-btn " data-bs-dismiss="modal" onClick={()=>{
