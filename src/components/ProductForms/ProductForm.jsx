@@ -55,12 +55,12 @@ const ProductForm = () => {
 
     useEffect(()=>{
         onGetCompanies((querySnapshot) => {
-          setCompanyData(querySnapshot.docs.map((doc) => ({
+        setCompanyData(querySnapshot.docs.map((doc) => ({
             id: doc.id,
             data: doc.data(),
-          })))
+        })))
         });
-      },[]);
+    },[]);
 
 
     return(
@@ -79,7 +79,7 @@ const ProductForm = () => {
                                 {...register("name",{
                                     required:true,
                                     pattern: patterns.productPattern
-                                })}/>{errors.name && "Nombre del producto requerido"}
+                                })}/>{errors.name?.type == 'required' && "Nombre del producto requerido"}
                                 <p className="forms-input-error"> El nombre de la empresa solo acepta caracteres alfabeticos</p>
                             </div>
                         
@@ -90,7 +90,7 @@ const ProductForm = () => {
                                 {...register("description",{
                                     required:true,
                                     pattern: patterns.descriptionPattern
-                                })}/>{errors.direction && "Descripcion requerida"}
+                                })}/>{errors.description?.type === 'required' && "Descripcion requerida"}
                             </div>
                             <div>
                                 <p className="forms-input-error">La descripcion no debe ser mayor a 40 caracteres</p>
@@ -105,7 +105,7 @@ const ProductForm = () => {
                                     min:1,
                                     max:999,
                                     pattern: patterns.pricePattern
-                                })}/>{errors.phone && ""}
+                                })}/>{errors.price?.type === 'required' && "Se requiere precio unitario"}
 
                                 <label class= "bs col col-lg-2" >Bs.</label>
                                 

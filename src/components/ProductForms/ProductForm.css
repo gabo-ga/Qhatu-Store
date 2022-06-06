@@ -92,7 +92,7 @@ form{
     justify-content: center;
     align-items: center;
     border-radius: 3px;
-    content: 'Añadir una foto'; /* testo por defecto */
+    content: 'Añadir una foto'; /* texto por defecto */
     position: absolute;
     left: 0;
     right: 0;
