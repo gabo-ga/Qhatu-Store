@@ -92,7 +92,7 @@ form{
     justify-content: center;
     align-items: center;
     border-radius: 3px;
-    content: 'Añadir una foto'; /* testo por defecto */
+    content: 'Añadir una foto'; /* texto por defecto */
     position: absolute;
     left: 0;
     right: 0;
@@ -166,6 +166,12 @@ input[type=number]::-webkit-outer-spin-button {
     }
 input[type=number] { -moz-appearance:textfield; }
 
+.FormTittle{
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 56px ;
+}
+
 
 @media only screen and (max-width: 960px){
 
@@ -198,5 +204,10 @@ input[type=number] { -moz-appearance:textfield; }
     
     .price input{
         width: 10% !important;
+    }
+
+    .FormTittle{
+        font-size: 20px;
+        margin-bottom: 46px ;
     }
 }

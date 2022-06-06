@@ -55,12 +55,12 @@ const ProductForm = () => {
 
     useEffect(()=>{
         onGetCompanies((querySnapshot) => {
-          setCompanyData(querySnapshot.docs.map((doc) => ({
+        setCompanyData(querySnapshot.docs.map((doc) => ({
             id: doc.id,
             data: doc.data(),
-          })))
+        })))
         });
-      },[]);
+    },[]);
 
 
     return(
@@ -70,13 +70,16 @@ const ProductForm = () => {
                 <div className="row align-self-center flex-fill">
                     <div className="col-12 d-flex justify-content-center">
                         <form onSubmit={handleSubmit(onSubmit)} id="formulario">
+                            <div className="FormTittle">
+                                <p>Formulario para añadir productos</p>
+                            </div>
                             <div class="mb-3" id="grupo-nombre">
                                 <label for="name" class="form-label" >Nombre del producto</label>
                                 <input type="text" className='form-control input-text' placeholder="Coca-Cola 3Lts."
                                 {...register("name",{
                                     required:true,
                                     pattern: patterns.productPattern
-                                })}/>{errors.name && "Nombre del producto requerido"}
+                                })}/>{errors.name?.type == 'required' && "Nombre del producto requerido"}
                                 <p className="forms-input-error"> El nombre de la empresa solo acepta caracteres alfabeticos</p>
                             </div>
                         
@@ -87,7 +90,7 @@ const ProductForm = () => {
                                 {...register("description",{
                                     required:true,
                                     pattern: patterns.descriptionPattern
-                                })}/>{errors.direction && "Descripcion requerida"}
+                                })}/>{errors.description?.type === 'required' && "Descripcion requerida"}
                             </div>
                             <div>
                                 <p className="forms-input-error">La descripcion no debe ser mayor a 40 caracteres</p>
@@ -102,7 +105,7 @@ const ProductForm = () => {
                                     min:1,
                                     max:999,
                                     pattern: patterns.pricePattern
-                                })}/>{errors.phone && ""}
+                                })}/>{errors.price?.type === 'required' && "Se requiere precio unitario"}
 
                                 <label class= "bs col col-lg-2" >Bs.</label>
                                 
