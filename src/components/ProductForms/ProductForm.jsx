@@ -70,6 +70,9 @@ const ProductForm = () => {
                 <div className="row align-self-center flex-fill">
                     <div className="col-12 d-flex justify-content-center">
                         <form onSubmit={handleSubmit(onSubmit)} id="formulario">
+                            <div className="FormTittle">
+                                <p>Formulario para añadir productos</p>
+                            </div>
                             <div class="mb-3" id="grupo-nombre">
                                 <label for="name" class="form-label" >Nombre del producto</label>
                                 <input type="text" className='form-control input-text' placeholder="Coca-Cola 3Lts."
